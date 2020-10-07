@@ -1,0 +1,161 @@
+.Confirm {
+  &__Header {
+    background-color: whitesmoke;
+    display: flex;
+    height: 100px;
+    &__logo {
+      margin: auto;
+      height: 60px;
+      // width: 300px;
+    }
+  }
+  &__Main {
+    background-color:whitesmoke;
+    min-height: calc(100vh - 300px);
+    &__content {
+      background-color: white;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 700px;
+      &__title {
+        font-size: 30px;
+        font-weight: bold;
+        margin: auto;
+        border-bottom: gainsboro solid 1px;
+        padding: 32px 16px;
+        max-width: 375px;
+      }
+      &__purchasedetail {
+        display: flex;
+        margin: 0 auto;
+        border-bottom: gainsboro solid 1px;
+        padding: 32px 16px;
+        max-width: 375px;
+        &__image {
+          border-radius: 5px;
+          height: 80px;
+          width: 80px;
+        }
+        &__detail {
+          margin-left: 16px;
+          width: calc(100% - 80px);
+          &__name {
+            text-align: left;
+            margin-bottom: 10px;
+          }
+          &__price {
+            display: flex;
+            justify-content: flex-end;
+            text-align: right;
+            &__text {
+            }
+            &__price {
+              font-weight: bold;
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+      &__payment {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        border-bottom: gainsboro solid 1px;
+        padding: 32px 16px;
+        max-width: 375px;
+        font-size: 24px;
+        font-weight: bold;
+        &__text {
+
+        }
+      }
+      &__payment-method {
+        margin: 0 auto;
+        border-bottom: gainsboro solid 1px;
+        padding: 32px 16px;
+        max-width: 375px;
+        text-align: left;
+        &__menu {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          &__text {
+            font-weight: bold;
+          }
+          &__change {
+            // text-decoration: none;
+            // color: aquamarine;
+            // aタグをまとめてやったほうが良さそう
+          }
+        }
+        &__method{
+        }
+      }
+      &__address {
+        margin: 0 auto;
+        border-bottom: gainsboro solid 1px;
+        padding: 32px 16px;
+        max-width: 375px;
+        text-align: left;
+        &__menu {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          &__code {
+
+          }
+          &__text {
+            font-weight: bold;
+          }
+          &__change {
+
+          }
+        }
+        &__address {
+
+        }
+        &__name {
+
+        }
+      }
+      &__purchase-button {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 32px 16px 48px;
+        max-width: 375px;
+        &__button {
+          background-color: turquoise;
+          color: white;
+          border-radius: 5px;
+          width: 100%;
+          height: 48px;
+          line-height: 48px;
+        }
+      }
+    }
+  }
+  &__Footer {
+    display: flex;
+    background-color: whitesmoke;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    height: 200px;
+    box-sizing: border-box;
+    &__content {
+
+    }
+    &__logo {
+      filter: grayscale(100%) opacity(25%);
+      display: block;
+      margin: 20px auto;
+      height: 48px;
+      // width: 150px;
+    }
+    &__copyright {
+
+    }
+
+  }
+}

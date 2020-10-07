@@ -1,0 +1,52 @@
+.Confirm__Header
+  %img.Confirm__Header__logo{ src:"/assets/material/logo/logo.png", alt:"furima" }
+
+.Confirm__Main
+  .Confirm__Main__content
+    .Confirm__Main__content__title
+      購入内容の確認
+    .Confirm__Main__content__purchasedetail
+      %img.Confirm__Main__content__purchasedetail__image{ src:"https://1.bp.blogspot.com/-7bdMfdETO2o/X1CLWOB81KI/AAAAAAABa7w/z5MpjoVAv9E_uw3y73m5DQifQkHVbnqwgCNcBGAsYHQ/s400/nigaoe_zeami.png", alt:"商品画像"}
+      .Confirm__Main__content__purchasedetail__detail
+        .Confirm__Main__content__purchasedetail__detail__name
+          世阿弥
+        .Confirm__Main__content__purchasedetail__detail__price
+          .Confirm__Main__content__purchasedetail__detail__price__text
+            送料込み(税込)
+          .Confirm__Main__content__purchasedetail__detail__price__price
+            ¥999,999,999
+    .Confirm__Main__content__payment
+      .Confirm__Main__content__payment__text
+        支払い金額
+      .Confirm__Main__content__payment__money
+        ¥999,999,999
+    .Confirm__Main__content__payment-method
+      .Confirm__Main__content__payment-method__menu
+        .Confirm__Main__content__payment-method__menu__text
+          支払い方法
+        .Confirm__Main__content__payment-method__menu__change
+          = link_to "変更する >", "#"
+      .Confirm__Main__content__payment-method__menu__method
+        カード払い
+    .Confirm__Main__content__address
+      .Confirm__Main__content__address__menu
+        .Confirm__Main__content__address__menu__text
+          配送先
+        .Confirm__Main__content__address__menu__change
+          = link_to "変更する >", "#"
+      .Confirm__Main__content__address__code
+        〒542-0076
+      .Confirm__Main__content__address__address
+        大阪府大阪市中央区難波5丁目1−60 なんばスカイオ15階
+      .Confirm__Main__content__address__name
+        鉄躯 太郎
+    .Confirm__Main__content__purchase-button
+      .Confirm__Main__content__purchase-button__button
+        購入する
+
+.Confirm__Footer
+  .Confirm__Footer__content
+    content
+  %img.Confirm__Footer__logo{ src:"/assets/material/logo/logo.png", alt:"logo"}
+  .Confirm__Footer__copyright
+    ©FURIMA
