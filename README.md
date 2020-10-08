@@ -53,7 +53,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key: true|
-|goods_id|references|null: false,foreign_key: true|
+|product_id|references|null: false,foreign_key: true|
 |buy_day|date|null:false|
 
 ### Association
