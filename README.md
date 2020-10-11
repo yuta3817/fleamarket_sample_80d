@@ -54,7 +54,6 @@
 |------|----|-------|
 |user_id|references|null: false,foreign_key: true|
 |product_id|references|null: false,foreign_key: true|
-|buy_day|date|null:false|
 
 ### Association
 - belongs_to :user
