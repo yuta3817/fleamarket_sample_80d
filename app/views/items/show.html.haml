@@ -9,9 +9,11 @@
       %p フリマアプリです。
     .Top__FirstImg__content__link
       .Top__FirstImg__content__link__apple
-        %img.Top__FirstImg__content__link__apple__icon{src: "/assets/material/icon/appstore.svg"}
+        = link_to "#" do
+          %img.Top__FirstImg__content__link__apple__icon{src: "/assets/material/icon/appstore.svg"}
       .Top__FirstImg__content__link__google
-        %img.Top__FirstImg__content__link__google__icon{src: "/assets/material/icon/google.png"}
+        = link_to "#" do
+          %img.Top__FirstImg__content__link__google__icon{src: "/assets/material/icon/google.svg"}
 
 .Top__Introduction
   .Top__Introduction__contents
@@ -57,10 +59,11 @@
       %p ほしかったあの商品に出会えるかもしれません。
     .Top__FirstImg__content__link
       .Top__FirstImg__content__link__apple
-        %img.Top__FirstImg__content__link__apple__icon{src: "/assets/material/icon/appstore.svg"}
+        = link_to "#" do
+          %img.Top__FirstImg__content__link__apple__icon{src: "/assets/material/icon/appstore.svg"}
       .Top__FirstImg__content__link__google
-        %img.Top__FirstImg__content__link__google__icon{src: "/assets/material/icon/google.png"}
-
+        = link_to "#" do
+          %img.Top__FirstImg__content__link__google__icon{src: "/assets/material/icon/google.svg"}
 
 .Top__Feature
   .Top__Feature__contents
@@ -163,9 +166,9 @@
 .Top__PickupCategory
   .Top__PickupCategory__contents
     .Top__PickupCategory__contents__title
-      ピックアップカテゴリー
+      ピックアップブランド
     .Top__PickupCategory__contents__subtitle
-      新規投稿商品
+      アーカイバ
     .Top__PickupCategory__contents__boxes
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
