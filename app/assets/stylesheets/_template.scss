@@ -59,8 +59,43 @@
   }
 }
 
+.App {
+  background-color: #272727;
+  background-image: url("/assets/material/pict/bg-appBanner-pict.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 100px 40px;
+  color: white;
+  text-shadow: 0 0 0.2em gray;
+  text-align: center;
+  &__inner {
+    &__title {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    &__text {
+      font-size: 35px;
+    }
+  &__badge {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 20px auto 0;
+    width: 100%;
+    &__apple {
+      margin-right: 10px;
+      width: 180px;
+    }
+    &__google {
+      width: 180px;
+    }
+  }
+  }
+}
+
 .Footer {
-  background-color: lightcyan;
+  background-color: #272727;
+  padding: 60px 0;
 }
 
 .Listing-button {
