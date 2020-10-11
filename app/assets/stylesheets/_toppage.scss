@@ -272,6 +272,15 @@
         margin-top: 50px;
         display: flex;
 
+        &__link{
+          text-decoration: none;
+          color: black;
+        }
+
+        &__link:hover{
+          opacity: 0.6;
+        }
+
         &__block{
 
           &__imgblock{
@@ -310,13 +319,4 @@
       }
     }
   }
-}
-
-.link_to_deco{
-  text-decoration: none;
-  color: black;
-}
-
-.link_to_deco:hover{
-  opacity: 0.6;
 }
