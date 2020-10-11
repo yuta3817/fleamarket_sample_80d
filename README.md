@@ -2,7 +2,7 @@
 
 # fleamarket_sample_80d DB設計
 
-## userテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false, unique: true|
@@ -30,13 +30,12 @@
 - has_many :products
 - has_many :buyings
 
-## productテーブル
+## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false|
 |detail|text|null:false|
-|category|string|null: false|
-|image|text|null: false|
+|small_category_id|references|null: false,foreign_key: true|
 |brand|string||
 |status|string|null:false|
 |delivery_charge|integer|null:false|
@@ -48,8 +47,46 @@
 ### Association
 - belongs_to :user
 - has_one :buying
+- has_many :images
 
-## buyingテーブル
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|product_id|references|null: false,foreign_key: true|
+|image|text|null: false|
+
+### Association
+- belongs_to :product
+
+## big_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+
+### Association
+- has_many :medium_categories
+
+## medium_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|big_category_id|references|null: false,foreign_key: true|
+
+### Association
+- has_many :small_categories
+- belongs_to :big_category
+
+## small_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|medium_category_id|references|null: false,foreign_key: true|
+
+### Association
+- has_many :products
+- belongs_to :medium_category
+
+## buyingsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key: true|
@@ -58,3 +95,4 @@
 ### Association
 - belongs_to :user
 - has_one :product
+
