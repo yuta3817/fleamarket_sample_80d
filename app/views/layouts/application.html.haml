@@ -2,6 +2,7 @@
 %html
   %head
     %meta{ content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    -# %meta(name="viewport" content="width=device-width, initial-scale=1.0")/
     %title FleamarketSample80d
     = csrf_meta_tags
     = csp_meta_tag
@@ -9,4 +10,93 @@
     = javascript_include_tag 'application'
     %script{src: "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
   %body
+    .Header
+      .Header__inner
+        = link_to "#" do
+          %img.Header__inner__logo{ src:"/assets/material/logo/logo.png", alt:"furima" }
+        .Header__inner__searchbox
+          = form_with url: "#" do |form|
+            = form.text_field :keyword, placeholder: "キーワードから探す", class: "Header__inner__searchbox__form"
+            %button{ type:"submit", class:"Header__inner__searchbox__button" }
+              %img.Header__inner__searchbox__button-image{ src:"/assets/material/icon/icon-search 1", alt:"search" }
+      .Header__nav
+        %ul.Header__nav__left
+          %li.Header__nav__left__list
+            = link_to "#", class:"Header__black Header__hover" do
+              カテゴリー
+          %li.Header__nav__left__list
+            = link_to "#", class:"Header__black Header__hover" do
+              ブランド
+        %ul.Header__nav__right
+          %li.Header__nav__right__list
+            = link_to "#", class:"Header__black" do
+              ログイン
+          %li.Header__nav__right__list
+            = link_to "#", class:"Header__black" do
+              新規会員登録
+
     = yield
+
+    .App
+      .App__inner
+        .App__inner__title
+          だれでもかんたん、人生を変えるフリマアプリ
+        .App__inner__text
+          今すぐ無料ダウンロード！
+        .App__inner__badge
+          %img.App__inner__badge__apple{src: "/assets/material/icon/appstore.svg"}
+          %img.App__inner__badge__google{src: "/assets/material/icon/google.svg"}
+
+    .Footer
+      .Footer__inner
+        %ul.Footer__inner__contents
+          %li.Footer__inner__contents__content
+            .Footer__inner__contents__content__list-head
+              FURIMAについて
+            %ul.Footer__inner__contents__content__list
+              %li.Footer__inner__contents__content__list__content
+                = link_to "#", class:"Footer__white" do
+                  会社概要（運営会社）
+              %li.Footer__inner__contents__content__list__content
+                = link_to "#", class:"Footer__white" do
+                  プライバシーポリシー
+              %li.Footer__inner__contents__content__list__content
+                = link_to "#", class:"Footer__white" do
+                  FURIMA利用規約
+              %li.Footer__inner__contents__content__list__content
+                = link_to "#", class:"Footer__white" do
+                  ポイントに関する特約
+          %li.Footer__inner__contents__content
+            .Footer__inner__contents__content__list-head
+              FURIMAを見る
+            %ul.Footer__inner__contents__content__list
+              %li.Footer__inner__contents__content__list__content
+                = link_to "#", class:"Footer__white" do
+                  カテゴリー一覧
+              %li.Footer__inner__contents__content__list__content
+                = link_to "#", class:"Footer__white" do
+                  ブランド一覧
+          %li.Footer__inner__contents__content
+            .Footer__inner__contents__content__list-head
+              ヘルプ＆ガイド
+            %ul.Footer__inner__contents__content__list
+              %li.Footer__inner__contents__content__list__content
+                = link_to "#", class:"Footer__white" do
+                  FURIMAガイド
+              %li.Footer__inner__contents__content__list__content
+                = link_to "#", class:"Footer__white" do
+                  FURIMAロゴ利用ガイドライン
+              %li.Footer__inner__contents__content__list__content
+                = link_to "#", class:"Footer__white" do
+                  お知らせ
+        = link_to "#" do
+          %img.Footer__inner__contents__logo{ src:"/assets/material/logo/logo-white.png", alt:"furima" }
+        .Footer__inner__contents__copyright
+          © FURIMA
+
+    = link_to "#" do
+      .Listing-button
+        .Listing-button__text
+          出品する
+        
+        %img.Listing-button__image{ src:"/assets/material/icon/icon_camera.png", alt:"camera" }
