@@ -46,8 +46,6 @@
             display: flex;
             justify-content: flex-end;
             text-align: right;
-            &__text {
-            }
             &__price {
               font-weight: bold;
               padding-left: 10px;
@@ -64,9 +62,6 @@
         max-width: 375px;
         font-size: 24px;
         font-weight: bold;
-        &__text {
-
-        }
       }
       &__payment-method {
         margin: 0 auto;
@@ -82,8 +77,6 @@
             font-weight: bold;
           }
         }
-        &__method{
-        }
       }
       &__address {
         margin: 0 auto;
@@ -95,21 +88,9 @@
           display: flex;
           justify-content: space-between;
           margin-bottom: 10px;
-          &__code {
-
-          }
           &__text {
             font-weight: bold;
           }
-          &__change {
-
-          }
-        }
-        &__address {
-
-        }
-        &__name {
-
         }
       }
       &__purchase-button {
@@ -137,18 +118,11 @@
     padding: 20px 0;
     height: 200px;
     box-sizing: border-box;
-    &__content {
-
-    }
     &__logo {
       filter: grayscale(100%) opacity(25%);
       display: block;
       margin: 20px auto;
       height: 48px;
     }
-    &__copyright {
-
-    }
-
   }
 }
