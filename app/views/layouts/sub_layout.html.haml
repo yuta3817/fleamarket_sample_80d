@@ -11,11 +11,11 @@
     %script{src: "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
   %body
     .Confirm__Header
-      %img.Confirm__Header__logo{ src:"/assets/material/logo/logo.png", alt:"furima" }
+      = image_tag "/assets/material/logo/logo.png", alt: "furima", class: "Confirm__Header__logo"
     = yield
     .Confirm__Footer
       .Confirm__Footer__content
         content
-      %img.Confirm__Footer__logo{ src:"/assets/material/logo/logo.png", alt:"logo"}
+      = image_tag "/assets/material/logo/logo.png", alt: "furima", class: "Confirm__Footer__logo"
       .Confirm__Footer__copyright
         ©FURIMA
