@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # root 'items#index'
   root 'items#show'
   get 'confirm', to: 'items#confirm'
 
