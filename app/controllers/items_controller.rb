@@ -3,5 +3,9 @@ class ItemsController < ApplicationController
   end
   
   def confirm
+    render layout: "sub_layout"
+  end
+
+  def show
   end
 end
