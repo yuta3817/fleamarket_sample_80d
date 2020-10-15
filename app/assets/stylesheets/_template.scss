@@ -91,8 +91,14 @@
       margin-right: 10px;
       width: 180px;
     }
+    &__apple:hover {
+      opacity: 0.6;
+    }
     &__google {
       width: 180px;
+    }
+    &__google:hover {
+      opacity: 0.6;
     }
   }
   }
@@ -162,5 +168,5 @@
 }
 
 .Listing-button:hover {
-  opacity: 90%;
+  opacity: 0.9;
 }

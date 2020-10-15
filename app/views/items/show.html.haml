@@ -10,10 +10,10 @@
     .Top__FirstImg__content__link
       .Top__FirstImg__content__link__apple
         = link_to "#" do
-          %img.Top__FirstImg__content__link__apple__icon{src: "/assets/material/icon/appstore.svg"}
+          = image_tag  "/assets/material/icon/appstore.svg", class: "Top__FirstImg__content__link__apple__icon"
       .Top__FirstImg__content__link__google
         = link_to "#" do
-          %img.Top__FirstImg__content__link__google__icon{src: "/assets/material/icon/google.svg"}
+          = image_tag "/assets/material/icon/google.svg", class: "Top__FirstImg__content__link__google__icon"
 
 .Top__Introduction
   .Top__Introduction__contents
@@ -22,7 +22,7 @@
     .Top__Introduction__contents__line
     .Top__Introduction__contents__boxes
       .Top__Introduction__contents__boxes__block
-        %img.Top__Introduction__contents__boxes__block__img{src: "/assets/material/pict/pict-reason-01.jpg"}
+        = image_tag "/assets/material/pict/pict-reason-01.jpg", class: "Top__Introduction__contents__boxes__block__img"
         .Top__Introduction__contents__boxes__block__num
           1
         .Top__Introduction__contents__boxes__block__title
@@ -31,7 +31,7 @@
         .Top__Introduction__contents__boxes__block__text
           スマホで入力するだけで簡単に出品できる！
       .Top__Introduction__contents__boxes__block
-        %img.Top__Introduction__contents__boxes__block__img{src: "/assets/material/pict/pict-reason-02.jpg"}
+        = image_tag "/assets/material/pict/pict-reason-02.jpg", class: "Top__Introduction__contents__boxes__block__img"
         .Top__Introduction__contents__boxes__block__num
           2
         .Top__Introduction__contents__boxes__block__title
@@ -40,7 +40,7 @@
         .Top__Introduction__contents__boxes__block__text
           めんどくさい入力は必要なく、検索も購入もスムーズ！
       .Top__Introduction__contents__boxes__block
-        %img.Top__Introduction__contents__boxes__block__img{src: "/assets/material/pict/pict-reason-03.jpg"}
+        = image_tag "/assets/material/pict/pict-reason-03.jpg", class: "Top__Introduction__contents__boxes__block__img"
         .Top__Introduction__contents__boxes__block__num
           3
         .Top__Introduction__contents__boxes__block__title
@@ -60,10 +60,10 @@
     .Top__FirstImg__content__link
       .Top__FirstImg__content__link__apple
         = link_to "#" do
-          %img.Top__FirstImg__content__link__apple__icon{src: "/assets/material/icon/appstore.svg"}
+          = image_tag "/assets/material/icon/appstore.svg", class: "Top__FirstImg__content__link__apple__icon"
       .Top__FirstImg__content__link__google
         = link_to "#" do
-          %img.Top__FirstImg__content__link__google__icon{src: "/assets/material/icon/google.svg"}
+          = image_tag "/assets/material/icon/google.svg", class: "Top__FirstImg__content__link__google__icon"
 
 .Top__Feature
   .Top__Feature__contents
@@ -72,19 +72,19 @@
     .Top__Feature__contents__line
     .Top__Feature__contents__boxes
       .Top__Feature__contents__boxes__block
-        %img.Top__Feature__contents__boxes__block__img{src: "/assets/material/icon/icon-01.png"}
+        = image_tag "/assets/material/icon/icon-01.png", class: "Top__Feature__contents__boxes__block__img"
         .Top__Feature__contents__boxes__block__title
           簡単に売り買いできる
         .Top__Feature__contents__boxes__block__text
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       .Top__Feature__contents__boxes__block
-        %img.Top__Feature__contents__boxes__block__img{src: "/assets/material/icon/icon-03.png"}
+        = image_tag "/assets/material/icon/icon-03.png", class: "Top__Feature__contents__boxes__block__img"
         .Top__Feature__contents__boxes__block__title
           売上金は即日振込みに対応
         .Top__Feature__contents__boxes__block__text
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
       .Top__Feature__contents__boxes__block
-        %img.Top__Feature__contents__boxes__block__img{src: "/assets/material/icon/icon-04.png"}
+        = image_tag "/assets/material/icon/icon-04.png", class: "Top__Feature__contents__boxes__block__img"
         .Top__Feature__contents__boxes__block__title
           様々な支払いに対応
         .Top__Feature__contents__boxes__block__text
@@ -100,7 +100,7 @@
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
           .Top__PickupCategory__contents__boxes__block__imgblock
-            %img.Top__PickupCategory__contents__boxes__block__imgblock__img{src: "/assets/material/pict/food1.jpg"}
+            = image_tag "/assets/material/pict/food1.jpg", class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
             %p 豚骨ラーメン
           .Top__PickupCategory__contents__boxes__block__text
@@ -113,7 +113,7 @@
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
           .Top__PickupCategory__contents__boxes__block__imgblock
-            %img.Top__PickupCategory__contents__boxes__block__imgblock__img{src: "/assets/material/pict/food2.jpg"}
+            = image_tag "/assets/material/pict/food2.jpg", class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
             %p 二郎系ラーメン
           .Top__PickupCategory__contents__boxes__block__text
@@ -126,7 +126,7 @@
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
           .Top__PickupCategory__contents__boxes__block__imgblock
-            %img.Top__PickupCategory__contents__boxes__block__imgblock__img{src: "/assets/material/pict/food3.jpg"}
+            =image_tag "/assets/material/pict/food3.jpg", class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
             %p 鶏白湯ラーメン
           .Top__PickupCategory__contents__boxes__block__text
@@ -139,7 +139,7 @@
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
           .Top__PickupCategory__contents__boxes__block__imgblock
-            %img.Top__PickupCategory__contents__boxes__block__imgblock__img{src: "/assets/material/pict/food4.jpg"}
+            =image_tag "/assets/material/pict/food4.jpg", class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
             %p 背脂ラーメン
           .Top__PickupCategory__contents__boxes__block__text
@@ -152,7 +152,7 @@
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
           .Top__PickupCategory__contents__boxes__block__imgblock
-            %img.Top__PickupCategory__contents__boxes__block__imgblock__img{src: "/assets/material/pict/food5.jpg"}
+            =image_tag "/assets/material/pict/food5.jpg", class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
             %p ずんどう屋ラーメン
           .Top__PickupCategory__contents__boxes__block__text
@@ -173,7 +173,7 @@
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
           .Top__PickupCategory__contents__boxes__block__imgblock
-            %img.Top__PickupCategory__contents__boxes__block__imgblock__img{src: "/assets/material/pict/food1.jpg"}
+            = image_tag "/assets/material/pict/food1.jpg", class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
             %p 豚骨ラーメン
           .Top__PickupCategory__contents__boxes__block__text
@@ -186,7 +186,7 @@
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
           .Top__PickupCategory__contents__boxes__block__imgblock
-            %img.Top__PickupCategory__contents__boxes__block__imgblock__img{src: "/assets/material/pict/food2.jpg"}
+            =image_tag "/assets/material/pict/food2.jpg", class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
             %p 二郎系ラーメン
           .Top__PickupCategory__contents__boxes__block__text
@@ -199,7 +199,7 @@
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
           .Top__PickupCategory__contents__boxes__block__imgblock
-            %img.Top__PickupCategory__contents__boxes__block__imgblock__img{src: "/assets/material/pict/food3.jpg"}
+            = image_tag "/assets/material/pict/food3.jpg", class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
             %p 鶏白湯ラーメン
           .Top__PickupCategory__contents__boxes__block__text
@@ -212,7 +212,7 @@
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
           .Top__PickupCategory__contents__boxes__block__imgblock
-            %img.Top__PickupCategory__contents__boxes__block__imgblock__img{src: "/assets/material/pict/food4.jpg"}
+            = image_tag "/assets/material/pict/food4.jpg", class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
             %p 背脂ラーメン
           .Top__PickupCategory__contents__boxes__block__text
@@ -225,7 +225,7 @@
       = link_to "#", class: "Top__PickupCategory__contents__boxes__link" do
         .Top__PickupCategory__contents__boxes__block
           .Top__PickupCategory__contents__boxes__block__imgblock
-            %img.Top__PickupCategory__contents__boxes__block__imgblock__img{src: "/assets/material/pict/food5.jpg"}
+            = image_tag "/assets/material/pict/food5.jpg", class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
             %p ずんどう屋ラーメン
           .Top__PickupCategory__contents__boxes__block__text
