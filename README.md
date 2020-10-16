@@ -13,6 +13,17 @@
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
 |birthday|date|null:false|
+|card_id|string|null:false|
+|address_id|references|null: false,foreign_key: true|
+
+### Association
+- has_many :products
+- has_many :buyings
+- has_one :address
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |address_first_name|string|null:false|
 |address_last_name|string|null:false|
 |address_first_name_kana|string|null:false|
@@ -24,11 +35,9 @@
 |address_number|string|null:false|
 |address_building|string||
 |address_telephone|integer||
-|card_id|string|null:false|
 
 ### Association
-- has_many :products
-- has_many :buyings
+- belongs_to :user
 
 ## productsテーブル
 |Column|Type|Options|
