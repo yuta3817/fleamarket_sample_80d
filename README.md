@@ -55,7 +55,7 @@
 
 ### Association
 - belongs_to :user
-- belongs_to :small_category
+- belongs_to :category
 - has_one :buying
 - has_many :images
 
