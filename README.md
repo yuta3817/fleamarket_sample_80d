@@ -28,7 +28,7 @@
 |address_last_name|string|null:false|
 |address_first_name_kana|string|null:false|
 |address_last_name_kana|string|null:false|
-|zip_code|integer|null:false|
+|zip_code|string|null:false|
 |address_prefecture|string|null:false|
 |address_city|string|null:false|
 |address_town|string|null:false|
