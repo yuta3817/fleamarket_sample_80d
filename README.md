@@ -44,7 +44,7 @@
 |------|----|-------|
 |name|string|null:false|
 |detail|text|null:false|
-|small_category_id|references|null: false,foreign_key: true|
+|category_id|references|null: false,foreign_key: true|
 |brand|string||
 |status|string|null:false|
 |delivery_charge|integer|null:false|
