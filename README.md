@@ -34,7 +34,7 @@
 |address_town|string|null:false|
 |address_number|string|null:false|
 |address_building|string||
-|address_telephone|integer||
+|address_telephone|string||
 
 ### Association
 - belongs_to :user
