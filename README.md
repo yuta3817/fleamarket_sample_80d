@@ -13,8 +13,6 @@
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
 |birthday|date|null:false|
-|card_id|string|null:false|
-|address_id|references|null: false,foreign_key: true|
 
 ### Association
 - has_many :products
