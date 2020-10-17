@@ -33,6 +33,7 @@
 |address_number|string|null:false|
 |address_building|string||
 |address_telephone|string||
+|user_id|references|null: false,foreign_key: true|
 
 ### Association
 - belongs_to :user
