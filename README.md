@@ -47,7 +47,7 @@
 |brand|string||
 |status|string|null:false|
 |delivery_charge|integer|null:false|
-|shipping_area|string|null:false|
+|prefecture_id|string|null:false|
 |delivery_date|integer|null:false|
 |price|integer|null:false|
 |user_id|references|null: false,foreign_key: true|
@@ -57,6 +57,7 @@
 - belongs_to :category
 - has_one :buying
 - has_many :images
+- belongs_to_active_hash :prefecture
 
 ## product_imagesテーブル
 |Column|Type|Options|
