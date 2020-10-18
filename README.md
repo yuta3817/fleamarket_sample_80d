@@ -15,8 +15,8 @@
 |birthday|date|null:false|
 
 ### Association
-- has_many :products
-- has_many :buyings
+- has_many :products 
+- has_many :product_purchase
 - has_one :address
 
 ## addressesテーブル
@@ -55,8 +55,10 @@
 ### Association
 - belongs_to :user
 - belongs_to :category
-- has_one :buying
+- has_one :product_purchase
 - has_many :images
+- belongs_to_active_hash :brand
+- belongs_to_active_hash :status
 - belongs_to_active_hash :prefecture
 
 ## product_imagesテーブル
