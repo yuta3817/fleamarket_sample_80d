@@ -8,4 +8,8 @@ class ItemsController < ApplicationController
 
   def show
   end
+
+  def listing
+    render layout: "sub_layout"
+  end
 end
