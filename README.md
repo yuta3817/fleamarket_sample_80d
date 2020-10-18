@@ -22,17 +22,17 @@
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|address_first_name|string|null:false|
-|address_last_name|string|null:false|
-|address_first_name_kana|string|null:false|
-|address_last_name_kana|string|null:false|
+|first_name|string|null:false|
+|last_name|string|null:false|
+|first_name_kana|string|null:false|
+|last_name_kana|string|null:false|
 |zip_code|string|null:false|
-|address_prefecture|string|null:false|
-|address_city|string|null:false|
-|address_town|string|null:false|
-|address_number|string|null:false|
-|address_building|string||
-|address_telephone|string||
+|prefecture|string|null:false|
+|city|string|null:false|
+|town|string|null:false|
+|number|string|null:false|
+|building|string||
+|telephone|string||
 |user_id|references|null: false,foreign_key: true|
 
 ### Association
