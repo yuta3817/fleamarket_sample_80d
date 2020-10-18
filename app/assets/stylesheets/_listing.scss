@@ -44,12 +44,9 @@
         border-color: rgb(204,204,204);
         height: 150px;
         margin-top: 16px;
-        height: 150px;
         display: block;
         cursor: pointer;
-        border-width: 1px;
-        border-style: dashed;
-        border-color: blue($color: #000000);
+        border: 1px dashed rgb(204,204,204);
         &__content{
           height: 100%;
           font-size: 12px;
