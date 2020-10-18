@@ -15,9 +15,9 @@
 |birthday|date|null:false|
 
 ### Association
-- has_many :products 
-- has_many :product_purchase
-- has_one :address
+- has_many :products, dependent: :destroy
+- has_many :product_purchase, dependent: :destroy
+- has_one :address, dependent: :destroy
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -55,8 +55,8 @@
 ### Association
 - belongs_to :user
 - belongs_to :category
-- has_one :product_purchase
-- has_many :images
+- has_one :product_purchase, dependent: :destroy
+- has_many :images, dependent: :destroy
 - belongs_to_active_hash :brand
 - belongs_to_active_hash :status
 - belongs_to_active_hash :prefecture
@@ -78,7 +78,7 @@
 |ancestry|string||
 
 ### Association
-- has_many :products
+- has_many :products, dependent: :restrict_with_exception
 
 ## product_purchaseテーブル
 |Column|Type|Options|
