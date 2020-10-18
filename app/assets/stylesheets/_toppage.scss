@@ -1,0 +1,322 @@
+.Top{
+
+  &__Header{
+
+    &__up{
+
+      display: flex;
+      padding-top: 15px;
+      
+
+      &__logo{
+        
+        &__content{
+          height: 40px;
+        }
+      }
+
+      &__searchbox{
+
+        &__text{
+          padding: 3px;
+        }
+
+        &__icon{
+          height: 50px;
+          width: 50px;
+          background-color:#3CCACE;
+        }
+      }
+    }
+
+    &__navi{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__FirstImg{
+    width: 100vw;
+    height: 550px;
+    background-image:image-url("/assets/material/pict/bg-mainVisual-pict_pc.jpg");
+    background-size: cover;
+    position: relative;
+    
+
+    &__content{
+      position: absolute;
+      top: 200px;
+      padding-left: 50px;
+
+      &__title{
+        font-size: 60px;
+        color: white;
+        text-shadow: 0 0 0.1em gray;
+      }
+
+      &__subtitle{
+        font-size: 18px;
+        color: white;
+        text-shadow: 0 0 0.1em gray;
+        margin-top: 20px;
+      }
+
+      &__link{
+        margin-top: 20px;
+        display: flex;
+
+        &__apple{
+
+          &__icon{
+          width: 180px;
+          margin-right: 15px;
+          }
+        }
+
+        &__apple:hover{
+          opacity: 0.6;
+        }
+  
+        &__google{
+
+          &__icon{
+            width: 180px;
+          }
+        }
+
+        &__google:hover{
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  &__Introduction{
+
+    &__contents{
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__title{
+        font-weight: bold;
+        font-size: 26px;
+      }
+
+      &__line{
+        border-bottom: solid 4px #3CCACE;
+        height: 10px;
+        width: 70px;
+      }
+
+      &__boxes{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        width: 80vw;
+
+        &__block{
+          width: 300px;
+          margin: 30px;
+          position: relative;
+
+          &__img{
+            height: 300px;
+          }
+
+          &__num{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 50px;
+            width: 50px;
+            background-color: #3CCACE;
+            text-align: center;
+            line-height: 50px;
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+          }
+
+          &__title{
+            margin-top: 15px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+
+            &__color{
+              color: #3CCACE;
+            }
+          }
+
+          &__text{
+            margin-top: 15px;
+            font-size: 18px;
+          }
+          
+          &__text1{
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  &__SecondImg{
+    width: 100vw;
+    height: 400px;
+    background-image:url("/assets/material/pict/bg-topMiddleDl-pict.jpg");
+    background-size: cover;
+    position: relative;
+    margin-top: 80px;
+
+    &__content{
+      position: absolute;
+      top: 100px;
+      padding-left: 80px;
+
+      &__title{
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0 0 0.2em gray;
+      }
+
+      &__subtitle{
+        font-size: 18px;
+        color: white;
+        text-shadow: 0 0 0.1em gray;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__Feature{
+
+    &__contents{
+      margin: 50px 0 ;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__title{
+        font-weight: bold;
+        font-size: 26px;
+      }
+
+      &__line{
+        border-bottom: solid 4px #3CCACE;
+        height: 10px;
+        width: 70px;
+      }
+
+      &__boxes{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        width: 80vw;
+
+        &__block{
+          width: 300px;
+          margin: 30px;
+
+          &__img{
+            height: 300px;
+          }
+
+          &__title{
+            margin-top: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+
+            &__color{
+              color: #3CCACE;
+            }
+          }
+
+          &__text{
+            margin-top: 15px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &__PickupCategory{
+    background-color: whitesmoke;
+    height: 550px;
+
+    &__contents{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__title{
+        font-weight: bold;
+        font-size: 26px;
+        margin-top: 100px;
+      }
+
+      &__subtitle{
+        font-weight: bold;
+        font-size: 24px;
+        color: #3CCACE;
+      }
+
+      &__boxes{
+        margin-top: 50px;
+        display: flex;
+
+        &__link{
+          text-decoration: none;
+          color: black;
+        }
+
+        &__link:hover{
+          opacity: 0.6;
+        }
+
+        &__block{
+
+          &__imgblock{
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+          
+            &__img{
+              height: 100%;
+              width: auto;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          &__name{
+            padding: 15px 10px 0 10px;
+          }
+
+          &__text{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+
+            &__price{
+
+              &__tax{
+                font-size: 9px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
