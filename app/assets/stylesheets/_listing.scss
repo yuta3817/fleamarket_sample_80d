@@ -107,6 +107,7 @@
           padding: 13px 16px;
           box-sizing:border-box;
           font-size: 16px;
+          border-color: #ccc;
         }
         
       }
@@ -145,6 +146,11 @@
         }
       }
       &__area{
+        &__title{
+          margin-top: 16px;
+        }
+      }
+      &__days{
         &__title{
           margin-top: 16px;
         }
@@ -244,6 +250,7 @@
         padding: 0 24px;
         border-radius: 4px;
         margin-top: 24px;
+        cursor: pointer;
       }
       .back{
         margin-top: 24px;
