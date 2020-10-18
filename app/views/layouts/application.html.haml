@@ -14,12 +14,12 @@
       .Header__center
         .Header__inner
           = link_to "#" do
-            %img.Header__inner__logo{ src:"/assets/material/logo/logo.png", alt:"furima" }
+            = image_tag asset_path("logo.png"), class: "Header__inner__logo"
           .Header__inner__searchbox
             = form_with url: "#" do |form|
               = form.text_field :keyword, placeholder: "キーワードから探す", class: "Header__inner__searchbox__form"
               %button{ type:"submit", class:"Header__inner__searchbox__button" }
-                %img.Header__inner__searchbox__button-image{ src:"/assets/material/icon/icon-search 1", alt:"search" }
+                = image_tag asset_path("icon-search 1"), class:"Header__inner__searchbox__button-image"
         .Header__nav
           %ul.Header__nav__left
             %li.Header__nav__left__list
@@ -45,8 +45,8 @@
         .App__inner__text
           今すぐ無料ダウンロード！
         .App__inner__badge
-          %img.App__inner__badge__apple{src: "/assets/material/icon/appstore.svg"}
-          %img.App__inner__badge__google{src: "/assets/material/icon/google.svg"}
+          = image_tag asset_path("appstore.svg"), class: "App__inner__badge__apple"
+          = image_tag asset_path("google.svg"), class: "App__inner__badge__google"
 
     .Footer
       .Footer__inner
@@ -91,7 +91,7 @@
                 = link_to "#", class:"Footer__white" do
                   お知らせ
         = link_to "#" do
-          %img.Footer__inner__contents__logo{ src:"/assets/material/logo/logo-white.png", alt:"furima" }
+          = image_tag asset_path("logo-white.png"), class: "Footer__inner__contents__logo"
         .Footer__inner__contents__copyright
           © FURIMA
 
@@ -99,5 +99,4 @@
       .Listing-button
         .Listing-button__text
           出品する
-        
-        -# %img.Listing-button__image{ src:"/assets/materialicon_camera.png", alt:"camera" }
+        = image_tag asset_path("icon_camera.png"), class: "Listing-button__image"
