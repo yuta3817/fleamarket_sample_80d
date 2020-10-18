@@ -78,7 +78,7 @@
 ### Association
 - has_many :products
 
-## buyingsテーブル
+## product_purchaseテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key: true|
