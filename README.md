@@ -44,10 +44,10 @@
 |name|string|null:false|
 |detail|text|null:false|
 |category_id|references|null: false,foreign_key: true|
-|brand|string||
-|status|string|null:false|
+|brand_id|integer||
+|status_id|integer|null:false|
 |delivery_charge|integer|null:false|
-|prefecture_id|string|null:false|
+|prefecture_id|integer|null:false|
 |delivery_date|integer|null:false|
 |price|integer|null:false|
 |user_id|references|null: false,foreign_key: true|
