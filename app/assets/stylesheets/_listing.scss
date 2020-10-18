@@ -1,0 +1,261 @@
+*{
+  box-sizing: border-box;
+}
+.Listing{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(245,245,245);
+  font-family: Arial, Helvetica, sans-serif;
+
+  &__Main{
+    width: 700px;
+    padding: 40px;
+    background-color: white;
+
+    .Listing-title{
+      font-weight: 600;
+    }
+    .Listing-subtitle{
+      background-color: red;
+      color: white;
+    }
+    .Listing-input{
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      opacity: 0.7;
+      width: 100%;
+      height: 48px;
+      padding: 0 56px 0 16px;
+      margin-top: 16px;
+      background-color: white;
+      %option{
+        padding-left: 40px;
+      }
+    }
+
+    &__ListingImage{
+      padding-bottom: 40px;
+      &__title{
+        margin-bottom: 16px;
+      }
+      &__picture{
+        background-color: rgb(245,245,245);
+        border-color: rgb(204,204,204);
+        height: 150px;
+        margin-top: 16px;
+        display: block;
+        cursor: pointer;
+        border: 1px dashed rgb(204,204,204);
+        &__content{
+          height: 100%;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          line-height: 1.4em;
+          form{
+            height: 100%;
+            width: 100%;
+            .picture-form{
+              height: 100%;
+              .Listing-formspace{
+                height: 100%;
+                font-size: 12px;
+                line-height: 1.4em;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                .icon-camera{
+                  height: 24px;
+                  width: 24px;
+                }
+                .file-field{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    &__ListingProduct{
+      padding: 40px 0;
+      &__name{
+        margin-bottom: 16px;
+        &__title{
+          margin-bottom: 16px;
+        }
+      }
+      &__explain{
+        &__title{
+          margin-bottom: 16px;
+        }
+        &__content-area{
+          height: calc(16px * 9);
+          width: 100%;
+          border-radius: 4px;
+          padding: 13px 16px;
+          box-sizing:border-box;
+          font-size: 16px;
+          border-color: #ccc;
+        }
+        
+      }
+    }
+
+
+    &__ListingDetail{
+      padding: 40px 0;
+      &__category{
+        &__title{
+          margin-top: 16px;
+        }
+      }
+      &__brand{
+        &__title{
+          margin-top: 16px;
+        }
+        span{
+          color: white;
+          background-color: #bfbfbf;
+        }
+      }
+      &__status{
+        &__title{
+          margin-top: 16px;
+        }
+      }
+    }
+
+
+    &__ListingDelivary{
+      padding-bottom: 40px;
+      &__barden{
+        &__title{
+          margin-top: 16px;
+        }
+      }
+      &__area{
+        &__title{
+          margin-top: 16px;
+        }
+      }
+      &__days{
+        &__title{
+          margin-top: 16px;
+        }
+      }
+    }
+
+
+    &__ListingPrice{
+      p{
+        padding: 40px 0;
+      }
+      &__sellingprice{
+        margin-bottom: 40px;
+        &__title{
+          padding-top: 0px;
+          display: flex;
+          align-items: center;
+          box-sizing: content-box;
+          height: 46px;
+          margin-right: auto;
+          white-space: nowrap;
+          justify-content: space-between;
+          span{
+            font-size: 14px;
+            margin-right: 8px;
+          }
+        }
+        &__input{
+          display: inline-flex;
+          align-items: center;
+          width: 100%;
+          max-width: 285px;
+          &__number{
+            display: inline-block;
+            position: relative;
+            width: inherit;
+            .input-number{
+              text-align: right;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              opacity: 0.7;
+              width: 100%;
+              height: 48px;
+              padding: 0 16px;
+            }
+          }
+        }
+        &__fee{
+          padding:12px 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          span{
+            font-size: 14px;
+          }
+        }
+        &__profit{
+          padding:12px 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          span{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    &__ListingButton{
+      width: 360px;
+      margin: 0 auto 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .listing-button{
+        font-weight: bold;
+        font-size: 17px;
+        background-color: #3CCACE;
+        color: white;
+        width: 100%;
+        min-height: 48px;
+        padding: 0 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        text-shadow: none;
+        border: none;
+        cursor: pointer;
+      }
+      .save-button{
+        border: none;
+        font-weight: bold;
+        font-size: 17px;
+        background-color: gray;
+        width: 100%;
+        min-height: 48px;
+        padding: 0 24px;
+        border-radius: 4px;
+        margin-top: 24px;
+        cursor: pointer;
+      }
+      .back{
+        margin-top: 24px;
+        color: #0095ee;
+      }
+    }
+    &__caution{
+      margin: 0 40px 60px;
+    }
+  }
+}
