@@ -58,7 +58,7 @@
 - has_one :buying
 - has_many :images
 
-## imagesテーブル
+## product_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |product_id|references|null: false,foreign_key: true|
