@@ -10,7 +10,7 @@
           = form_with url: "#" do |form|
             = form.label :image, class: "picture-form" do
               .Listing-formspace
-                = image_tag "/assets/material/icon/icon_camera.png", alt: "icon-camera", class: "icon-camera"
+                = image_tag asset_path("icon_camera.png"), class: "icon-camera"
                 = form.file_field :image, class: "file-field"
                 %p ドラッグアンドドロップ 
                 %p またはクリックしてファイルをアップロード
