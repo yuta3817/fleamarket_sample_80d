@@ -7,11 +7,11 @@
       %p 最大10枚までアップロードできます
       .Listing__Main__ListingImage__picture
         .Listing__Main__ListingImage__picture__content
-          = form_with url: "#" do |form|
-            = form.label :image, class: "picture-form" do
+          = form_with model: @product do |f|
+            = f.label :image, class: "picture-form" do
               .Listing-formspace
                 = image_tag asset_path("icon_camera.png"), class: "icon-camera"
-                = form.file_field :image, class: "file-field"
+                = f.file_field :image, class: "file-field"
                 %p ドラッグアンドドロップ 
                 %p またはクリックしてファイルをアップロード
 
