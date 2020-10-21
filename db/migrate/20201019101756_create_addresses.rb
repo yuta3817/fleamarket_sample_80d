@@ -12,7 +12,7 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string :number, null: false
       t.string :building
       t.string :telephone
-      t.references :user, null: false, foregin_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

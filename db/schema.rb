@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_101948) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "users"
 end
