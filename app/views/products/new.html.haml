@@ -8,11 +8,15 @@
         %p 最大10枚までアップロードできます
         .Listing__Main__ListingImage__picture
           .Listing__Main__ListingImage__picture__content
-            = f.fields_for :product_images, class: "picture-form" do |i|
-              = i.file_field :image, class: "file-field"
-              = image_tag asset_path("icon_camera.png"), class: "icon-camera"
-              %p ドラッグアンドドロップ 
-              %p またはクリックしてファイルをアップロード
+            #image-box
+              = f.fields_for :product_images, class: "picture-form" do |image|
+                .js-file_group{data: {index: "#{image.index}"}}
+                  = image.file_field :image, class: "file-field js-file"
+                  .js-remove
+                    削除
+                = image_tag asset_path("icon_camera.png"), class: "icon-camera"
+                %p ドラッグアンドドロップ 
+                %p またはクリックしてファイルをアップロード
       %hr
       .Listing__Main__ListingProduct
         .Listing__Main__ListingProduct__name
