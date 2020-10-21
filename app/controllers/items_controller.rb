@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   end
   
   def confirm
+    @product = Product.find_by(id: 1)
     render layout: "sub_layout"
   end
 end

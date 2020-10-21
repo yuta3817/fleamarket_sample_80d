@@ -6,17 +6,17 @@
       = image_tag "https://1.bp.blogspot.com/-7bdMfdETO2o/X1CLWOB81KI/AAAAAAABa7w/z5MpjoVAv9E_uw3y73m5DQifQkHVbnqwgCNcBGAsYHQ/s400/nigaoe_zeami.png", alt: "商品画像", class: "Confirm__Main__content__purchasedetail__image"
       .Confirm__Main__content__purchasedetail__detail
         .Confirm__Main__content__purchasedetail__detail__name
-          世阿弥
+          = @product.name
         .Confirm__Main__content__purchasedetail__detail__price
           .Confirm__Main__content__purchasedetail__detail__price__text
             送料込み(税込)
           .Confirm__Main__content__purchasedetail__detail__price__price
-            ¥999,999,999
+            = "¥" + @product.price.to_s(:delimited)
     .Confirm__Main__content__payment
       .Confirm__Main__content__payment__text
         支払い金額
       .Confirm__Main__content__payment__money
-        ¥999,999,999
+        = "¥" + @product.price.to_s(:delimited)
     .Confirm__Main__content__payment-method
       .Confirm__Main__content__payment-method__menu
         .Confirm__Main__content__payment-method__menu__text
