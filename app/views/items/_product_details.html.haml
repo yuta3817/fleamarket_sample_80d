@@ -1,5 +1,3 @@
-%header.Header
-  .Header__content
 %nav.Nav
   %ul.Nav__category
     %li.Nav__content
@@ -32,10 +30,10 @@
           .Items__imageall 
             %ul.Items__imageul
               %li.Items__imageli
-                = image_tag src="/assets/material/pict/sweater-1222876_1280.jpg", size: "560x346"
+                = image_tag asset_path("sweater-1222876_1280.jpg")
             %ul.Items__imageulb
               %li.Items__imagelib
-                = image_tag src="/assets/material/pict/sweater-1222876_1280.jpg", size: "140x87"
+                = image_tag asset_path("sweater-1222876_1280.jpg")
           .Items__price
             %span.price
               ¥10000
@@ -130,4 +128,5 @@
         = link_to "レディースをもっと見る", "#"
         .ProductLists
           .ProductList
-            = image_tag src="/assets/material/pict/sweater-1222876_1280.jpg", size: "233x245"
+            = link_to image_tag asset_path("sweater-1222876_1280.jpg")
+              

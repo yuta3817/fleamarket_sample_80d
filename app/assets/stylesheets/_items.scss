@@ -1,18 +1,6 @@
 * {
   box-sizing: border-box;
 }
-.Header {
-  padding: 0 60px;
-  height: 100px;
-  &__content {
-    max-width: 1040px;
-    width: 100%;
-    min-height: 82px;
-    margin: 0 auto;
-    padding: 15px 0 0;
-  }
-}
-
 .Nav {
   width: 100%;
   border-top: 1px solid #eee;
@@ -83,6 +71,10 @@
         align-items: center;
         margin: 0 auto;
       }
+      &__imageli img {
+        width: 560px;
+        height: 346px;
+      }
       &__imageulb {
         display: flex;
         justify-content: center;
@@ -91,6 +83,10 @@
       &__imagelib {
         width: 25%;
         margin: 0 10px 0 0;
+      }
+      &__imagelib img {
+        width: 140px;
+        height: 87px;
       }
       &__price {
         margin: 24px 0 24px;
@@ -286,4 +282,8 @@
     font-weight: bold;
     font-size: 22px;
     position: relative;
+  }
+  .ProductList img {
+    width: 233px;
+    height: 245px;
   }
