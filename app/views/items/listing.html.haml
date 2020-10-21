@@ -1,182 +1,101 @@
 .Listing
-  .Listing__Main
-    .Listing__Main__ListingImage
-      .Listing__Main__ListingImage__title
-        %label.Listing-title 出品画像
-        %span.Listing-subtitle 必須
-      %p 最大10枚までアップロードできます
-      .Listing__Main__ListingImage__picture
-        .Listing__Main__ListingImage__picture__content
-          = form_with model: @product do |f|
-            = f.label :image, class: "picture-form" do
-              .Listing-formspace
-                = image_tag asset_path("icon_camera.png"), class: "icon-camera"
-                = f.file_field :image, class: "file-field"
-                %p ドラッグアンドドロップ 
-                %p またはクリックしてファイルをアップロード
-
-    %hr
-
-    .Listing__Main__ListingProduct
-      .Listing__Main__ListingProduct__name
-        .Listing__Main__ListingProduct__name__title
-          %label.Listing-title 商品名
+  = form_with model: @product, local: true do |f|
+    .Listing__Main
+      .Listing__Main__ListingImage
+        .Listing__Main__ListingImage__title
+          %label.Listing-title 出品画像
           %span.Listing-subtitle 必須
-        %form.Listing__Main__ListingProduct__name__content
-          %input{type: "text",placeholder: "40文字まで",class: "Listing-input"}
-      .Listing__Main_ListingProduct__explain
-        .Listing__Main__ListingProduct__explain__title
-          %label.Listing-title 商品の説明
-          %span.Listing-subtitle 必須
-        %textarea{class: "Listing__Main__ListingProduct__explain__content-area", placeholder: "商品の説明（必須 1,000文字以内）\n\n（色、素材、重さ、定価、注意点など）\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
-
-    %hr
-
-    .Listing__Main__ListingDetail
-      %p 商品の詳細
-      .Listing__Main__ListingDetail__category
-        .Listing__Main__ListingDetail__category__title
-          %label.Listing-title カテゴリー
-          %span.Listing-subtitle 必須
-        %select{name: "category",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} レディース
-          %option{value: "2"} メンズ
-          %option{value: "3"} ベビー・キッズ
-          %option{value: "4"} インテリア・住まい・小物
-          %option{value: "5"} おもちゃ・ホビー・グッズ
-          %option{value: "6"} コスメ・香水・美容
-          %option{value: "7"} 家電・スマホ・カメラ
-          %option{value: "8"} スポーツ・レジャー
-          %option{value: "9"} ハンドメイド
-          %option{value: "10"} チケット
-          %option{value: "11"} 自動車・オートバイ
-          %option{value: "12"} その他
-      .Listing__Main__ListingDetail__brand
-        .Listing__Main__ListingDetail__brand__title
-          %label.Listing-title ブランド
-          %span 任意
-        %input{type: "text", placeholder: "例) シャネル",class: "Listing-input"}
-      .Listing__Main__ListingDetail__status
-        .Listing__Main__ListingDetail__status__title
-          %label.Listing-title 商品の状態
-          %span.Listing-subtitle 必須
-        %select{name: "status",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 新品、未使用
-          %option{value: "2"} 未使用に近い
-          %option{value: "3"} 目立った傷や汚れなし
-          %option{value: "4"} やや傷や汚れあり
-          %option{value: "5"} 傷や汚れあり
-          %option{value: "6"} 全体的に状態が悪い
-
-    %hr
-
-    .Listing__Main__ListingDelivary
-      %p 配送について
-      .Listing__Main__ListingDelivary__barden
-        .Listing__Main__ListingDelivary__barden__title
-          %label.Listing-title 配送料の負担
-          %span.Listing-subtitle 必須
-        %select{name: "barden",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担）
-      .Listing__Main__ListingDelivary__area
-        .Listing__Main__ListingDelivary__area__title
-          %label.Listing-title 発送元の地域
-          %span.Listing-subtitle 必須
-        %select{name: "barden",class: "Listing-input"}
-          %option{ value: "0"}選択してください
-          %option{ value: "1"} 北海道
-          %option{ value: "2"} 青森県
-          %option{ value: "3"} 岩手県
-          %option{ value: "4"} 宮城県
-          %option{ value: "5"} 秋田県
-          %option{ value: "6"} 山形県
-          %option{ value: "7"} 福島県
-          %option{ value: "8"} 茨城県
-          %option{ value: "9"} 栃木県
-          %option{ value: "10"} 群馬県
-          %option{ value: "11"} 埼玉県
-          %option{ value: "12"} 千葉県
-          %option{ value: "13"} 東京都
-          %option{ value: "14"} 神奈川県
-          %option{ value: "15"} 新潟県
-          %option{ value: "16"} 富山県
-          %option{ value: "17"} 石川県
-          %option{ value: "18"} 福井県
-          %option{ value: "19"} 山梨県
-          %option{ value: "20"} 長野県
-          %option{ value: "21"} 岐阜県
-          %option{ value: "22"} 静岡県
-          %option{ value: "23"} 愛知県
-          %option{ value: "24"} 三重県
-          %option{ value: "25"} 滋賀県
-          %option{ value: "26"} 京都府
-          %option{ value: "27"} 大阪府
-          %option{ value: "28"} 兵庫県
-          %option{ value: "29"} 奈良県
-          %option{ value: "30"} 和歌山県
-          %option{ value: "31"} 鳥取県
-          %option{ value: "32"} 島根県
-          %option{ value: "33"} 岡山県
-          %option{ value: "34"} 広島県
-          %option{ value: "35"} 山口県
-          %option{ value: "36"} 徳島県
-          %option{ value: "37"} 香川県
-          %option{ value: "38"} 愛媛県
-          %option{ value: "39"} 高知県
-          %option{ value: "40"} 福岡県
-          %option{ value: "41"} 佐賀県
-          %option{ value: "42"} 長崎県
-          %option{ value: "43"} 熊本県
-          %option{ value: "44"} 大分県
-          %option{ value: "45"} 宮崎県
-          %option{ value: "46"} 鹿児島県
-          %option{ value: "47"} 沖縄県
-      .Listing__Main__ListingDelivary__days
-        .Listing__Main__ListingDelivary__days__title
-          %label.Listing-title 発送までの日数
-          %span.Listing-subtitle 必須
-        %select{name: "days",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 1〜2日で発送
-          %option{value: "2"} 2〜3日で発送
-          %option{value: "3"} 4〜7日で発送
-
-    %hr
-
-    .Listing__Main__ListingPrice
-      %p 価格（¥300〜9,999,999）
-      .Listing__Main__ListingPrice__sellingprice
-        .Listing__Main__ListingPrice__sellingprice__title
-          .Listing__Main__ListingPrice__sellingprice__title__second
-            %label.Listing-title 販売価格
+        %p 最大10枚までアップロードできます
+        .Listing__Main__ListingImage__picture
+          .Listing__Main__ListingImage__picture__content
+            = f.fields_for :product_images, class: "picture-form" do |i|
+              = i.file_field :image, class: "file-field"
+              = image_tag asset_path("icon_camera.png"), class: "icon-camera"
+              %p ドラッグアンドドロップ 
+              %p またはクリックしてファイルをアップロード
+      %hr
+      .Listing__Main__ListingProduct
+        .Listing__Main__ListingProduct__name
+          .Listing__Main__ListingProduct__name__title
+            %label.Listing-title 商品名
             %span.Listing-subtitle 必須
-          .Listing__Main__ListingPrice__sellingprice__input
-            %span ¥
-            .Listing__Main__ListingPrice__sellingprice__input__number
-              %input{type: "number", placeholder: "0",class: "input-number"}
-        .Listing__Main__ListingPrice__sellingprice__fee
-          .Listing__Main__ListingPrice__sellingprice__fee__title
-            %label 販売手数料（10%）
-          %span -
+          %form.Listing__Main__ListingProduct__name__content
+            = f.text_field :name ,placeholder: "40文字まで",class: "Listing-input"
+        .Listing__Main_ListingProduct__explain
+          .Listing__Main__ListingProduct__explain__title
+            %label.Listing-title 商品の説明
+            %span.Listing-subtitle 必須
+          = f.text_area :detail, class: "Listing__Main__ListingProduct__explain__content-area", placeholder: "商品の特徴をここに記載"
+      %hr
+      .Listing__Main__ListingDetail
+        %p 商品の詳細
+        .Listing__Main__ListingDetail__category
+          .Listing__Main__ListingDetail__category__title
+            %label.Listing-title カテゴリー
+            %span.Listing-subtitle 必須
+          = f.collection_select(:category_id, Category.all, :id, :name, {prompt: true}, {class:"Listing-input"})
           
-        %hr
+        .Listing__Main__ListingDetail__brand
+          .Listing__Main__ListingDetail__brand__title
+            %label.Listing-title ブランド
+            %span 任意
+          = f.collection_select(:brand_id, Brand.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+          
+        .Listing__Main__ListingDetail__status
+          .Listing__Main__ListingDetail__status__title
+            %label.Listing-title 商品の状態
+            %span.Listing-subtitle 必須
+          = f.collection_select(:status_id, Status.all, :id, :name, {prompt: true}, {class:"Listing-input"})
 
-        .Listing__Main__ListingPrice__sellingprice__profit
-          .Listing__Main__ListingPrice__sellingprice__profit__title
-            %label 販売利益
-          %span -
-    .Listing__Main__ListingButton
-      %button{type: "submit",class: "listing-button"}
-        出品する
-      %button{type: "submit", class: "save-button"}
-        下書きに保存
-      .back
-        =link_to "#", class: ".Listing__Main__ListingButton__back" do
-          もどる
-    .Listing__Main__caution
-      %p 禁止されている行為および商品は必ずご確認ください
+      %hr
+
+      .Listing__Main__ListingDelivary
+        %p 配送について
+        .Listing__Main__ListingDelivary__barden
+          .Listing__Main__ListingDelivary__barden__title
+            %label.Listing-title 配送料負担
+            %span.Listing-subtitle 必須
+          = f.collection_select(:delivery_charge, Charge.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+        .Listing__Main__ListingDelivary__area
+          .Listing__Main__ListingDelivary__area__title
+            %label.Listing-title 発送元の地域
+            %span.Listing-subtitle 必須
+          = f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+        .Listing__Main__ListingDelivary__days
+          .Listing__Main__ListingDelivary__days__title
+            %label.Listing-title 発送までの日数
+            %span.Listing-subtitle 必須
+          = f.collection_select(:delivery_date, Delivery.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+
+      %hr
+
+      .Listing__Main__ListingPrice
+        %p 価格（¥300〜9,999,999）
+        .Listing__Main__ListingPrice__sellingprice
+          .Listing__Main__ListingPrice__sellingprice__title
+            .Listing__Main__ListingPrice__sellingprice__title__second
+              %label.Listing-title 販売価格
+              %span.Listing-subtitle 必須
+            .Listing__Main__ListingPrice__sellingprice__input
+              %span ¥
+              .Listing__Main__ListingPrice__sellingprice__input__number
+                = f.number_field :price, min: 0,class: "input-number"
+          .Listing__Main__ListingPrice__sellingprice__fee
+            .Listing__Main__ListingPrice__sellingprice__fee__title
+              %label 販売手数料（10%）
+            %span -
+            
+          %hr
+
+          .Listing__Main__ListingPrice__sellingprice__profit
+            .Listing__Main__ListingPrice__sellingprice__profit__title
+              %label 販売利益
+            %span -
+      .Listing__Main__ListingButton
+        = f.submit "出品する", class: "listing-button"
+        .back
+          = link_to "#", class: ".Listing__Main__ListingButton__back" do
+            もどる
+      .Listing__Main__caution
+        %p 禁止されている行為および商品は必ずご確認ください
 
