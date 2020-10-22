@@ -10,9 +10,9 @@ class ItemsController < ApplicationController
   end
   
   def confirm
-    @product = Product.find_by(id: 1)
-    @product_image = ProductImage.find_by(product_id: 1)
-    @address = Address.find_by(user_id: 1)
+    @product = Product.find_by(id: params[:id])
+    @product_image = ProductImage.find_by(product_id: params[:id])
+    @address = Address.find_by(user_id: 1)  #devise実装後current_userに変える
     render layout: "sub_layout"
   end
 end
