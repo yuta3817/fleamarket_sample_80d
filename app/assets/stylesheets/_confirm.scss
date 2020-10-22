@@ -77,6 +77,14 @@
           &__text {
             font-weight: bold;
           }
+          &__change a {
+            text-decoration: none;
+            color: #3CCACE;
+          }
+          &__change a:hover {
+            text-decoration: underline;
+            opacity: 0.6;
+          }
         }
       }
       &__address {
@@ -91,6 +99,14 @@
           margin-bottom: 10px;
           &__text {
             font-weight: bold;
+          }
+          &__change a {
+            text-decoration: none;
+            color: #3CCACE;
+          }
+          &__change a:hover {
+            text-decoration: underline;
+            opacity: 0.6;
           }
         }
       }
@@ -119,11 +135,34 @@
     padding: 20px 0;
     height: 200px;
     box-sizing: border-box;
+    &__content{
+      &__list {
+        display: flex;
+        &__link a {
+          margin: 0 5px;
+          color: #000000;
+          text-decoration: none;
+          font-size: 12px;
+        }
+
+        &__link a:hover {
+          text-decoration: underline;
+          opacity: 0.6;
+        }
+      }
+    }
     &__logo {
       filter: grayscale(100%) opacity(25%);
       display: block;
       margin: 20px auto;
       height: 48px;
     }
+  }
+}
+
+@media (max-width: 640px) {
+  .Confirm__Footer__content__list {
+    display: list-item;
+    text-align: center;
   }
 }

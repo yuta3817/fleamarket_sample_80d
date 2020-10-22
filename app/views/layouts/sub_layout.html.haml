@@ -10,12 +10,22 @@
     = javascript_include_tag 'application'
     %script{src: "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
   %body
-    .Confirm__Header
+    = link_to root_path, class:"Confirm__Header" do
       = image_tag asset_path("logo.png"), alt: "furima", class: "Confirm__Header__logo"
     = yield
     .Confirm__Footer
       .Confirm__Footer__content
-        content
-      = image_tag asset_path("logo.png"), alt: "furima", class: "Confirm__Footer__logo"
+        %ul.Confirm__Footer__content__list
+          %li.Confirm__Footer__content__list__link
+            = link_to "#" do
+              プライバシーポリシー
+          %li.Confirm__Footer__content__list__link
+            = link_to "#" do
+              FURIMA利用規約
+          %li.Confirm__Footer__content__list__link
+            = link_to "#" do
+              特定商取引に関する表記
+      = link_to root_path do
+        = image_tag asset_path("logo.png"), alt: "furima", class: "Confirm__Footer__logo"
       .Confirm__Footer__copyright
         ©FURIMA
