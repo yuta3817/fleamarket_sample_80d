@@ -64,6 +64,7 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'pry-rails'
 gem 'ancestry'
 gem 'active_hash'
+gem 'devise', '4.7.3'
 
 group :production do
   gem 'unicorn'
