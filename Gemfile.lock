@@ -109,6 +109,10 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.9.0)
     erubis (2.7.0)
     ffi (1.13.1)
@@ -325,6 +329,7 @@ DEPENDENCIES
   capistrano3-unicorn
   capybara (>= 2.15)
   devise (= 4.7.3)
+  dotenv-rails
   haml-rails (>= 1.0, <= 2.0.1)
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
