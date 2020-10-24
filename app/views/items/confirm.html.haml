@@ -32,7 +32,7 @@
         .Confirm__Main__content__address__menu__change
           = link_to "変更する >", "#"
       .Confirm__Main__content__address__code
-        = "〒" + @address.zip_code
+        = "〒" + @address.zip_code.insert(3, "-")
       .Confirm__Main__content__address__address
         = @address.prefecture + " " + @address.city + " " + @address.town + " " + @address.number + " " + @address.building
       .Confirm__Main__content__address__name
