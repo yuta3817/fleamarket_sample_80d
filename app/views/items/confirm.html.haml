@@ -36,7 +36,7 @@
       .Confirm__Main__content__address__address
         = @address.prefecture + " " + @address.city + " " + @address.town + " " + @address.number + " " + @address.building
       .Confirm__Main__content__address__name
-        鉄躯 太郎
+        = @address.last_name + " " + @address.first_name
     .Confirm__Main__content__purchase-button
       .Confirm__Main__content__purchase-button__button
         購入する
