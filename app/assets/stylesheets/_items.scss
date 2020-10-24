@@ -102,7 +102,10 @@
       .Items__pricedetail {
         text-align: center;
       }
-      .span {
+      &__left {
+        font-size: 16px;
+      }
+      &__right {
         font-size: 16px;
       }
       &__detail {
