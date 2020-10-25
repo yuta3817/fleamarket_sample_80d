@@ -5,7 +5,7 @@
   .CardForm__outer{id: "expiry-form"}
   セキュリティコード
   .CardForm__outer{id: "cvc-form"}
-  %button{class: "CardForm__button",id: "create_token"}
-    トークン作成
-  %span#token
-    トークン：
+  #message
+  = form_with model: @card, id: "card_form", local: true do |form|
+    #card_token 
+    = form.submit "カードを登録", class:"CardForm__button", id: "create_card"

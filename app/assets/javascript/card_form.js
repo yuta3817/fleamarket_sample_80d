@@ -30,9 +30,19 @@ document.addEventListener('DOMContentLoaded', (e) => {
   cvcElement.mount('#cvc-form')
   
   // ボタンが押されたらtokenを生成する関数を用意します
-  create_token.addEventListener("click", function() {
+  create_card.addEventListener("click", function(e) {
+    e.preventDefault();
     payjp.createToken(numberElement).then(function(r) {
-      document.querySelector('#token').innerText = r.error ? r.error.message : r.id
+      if (r.error) {  // 登録失敗
+        document.querySelector('#message').innerText = r.error.message
+        regist_card.prop('disabled', false)
+      } else {
+        $("#card_token").append(
+          `<input type="hidden" name="payjp_token" value=${r.id}>
+          <input type="hidden" name="card_token" value=${r.card.id}>`
+        );
+        $("#card_form")[0].submit();
+      }
     })
   });
-})
+});
