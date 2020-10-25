@@ -13,7 +13,7 @@
     .Header
       .Header__center
         .Header__inner
-          = link_to "#" do
+          = link_to "/" do
             = image_tag asset_path("logo.png"), class: "Header__inner__logo"
           .Header__inner__searchbox
             = form_with url: "#" do |form|
@@ -95,7 +95,7 @@
         .Footer__inner__contents__copyright
           © FURIMA
 
-    = link_to "#" do
+    = link_to "/items/new" do
       .Listing-button
         .Listing-button__text
           出品する

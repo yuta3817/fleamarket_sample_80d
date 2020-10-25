@@ -1,0 +1,237 @@
+.Top__Header
+
+.Top__FirstImg
+  .Top__FirstImg__content
+    .Top__FirstImg__content__title
+      人生を変えるフリマアプリ
+    .Top__FirstImg__content__subtitle
+      %p FURIMAは誰でもかんたんに出品・購入できる
+      %p フリマアプリです。
+    .Top__FirstImg__content__link
+      .Top__FirstImg__content__link__apple
+        = link_to "#" do
+          = image_tag asset_path("appstore.svg"), class: "Top__FirstImg__content__link__apple__icon"
+      .Top__FirstImg__content__link__google
+        = link_to "#" do
+          = image_tag asset_path("google.svg"), class: "Top__FirstImg__content__link__google__icon"
+
+.Top__Introduction
+  .Top__Introduction__contents
+    .Top__Introduction__contents__title
+      FURIMAが選ばれる3つの理由
+    .Top__Introduction__contents__line
+    .Top__Introduction__contents__boxes
+      .Top__Introduction__contents__boxes__block
+        = image_tag asset_path("pict-reason-01.jpg"), class: "Top__Introduction__contents__boxes__block__img"
+        .Top__Introduction__contents__boxes__block__num
+          1
+        .Top__Introduction__contents__boxes__block__title
+          %span.Top__Introduction__contents__boxes__block__title__color 3分
+          ですぐに出品
+        .Top__Introduction__contents__boxes__block__text
+          スマホで入力するだけで簡単に出品できる！
+      .Top__Introduction__contents__boxes__block
+        = image_tag asset_path("pict-reason-02.jpg"), class: "Top__Introduction__contents__boxes__block__img"
+        .Top__Introduction__contents__boxes__block__num
+          2
+        .Top__Introduction__contents__boxes__block__title
+          %span.Top__Introduction__contents__boxes__block__title__color シンプル
+          で使いやすい
+        .Top__Introduction__contents__boxes__block__text
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      .Top__Introduction__contents__boxes__block
+        = image_tag asset_path("pict-reason-03.jpg"), class: "Top__Introduction__contents__boxes__block__img"
+        .Top__Introduction__contents__boxes__block__num
+          3
+        .Top__Introduction__contents__boxes__block__title
+          手数料
+          %span.Top__Introduction__contents__boxes__block__title__color 業界最安
+        .Top__Introduction__contents__boxes__block__text1
+          最大3%でお得に出品&購入！
+
+.Top__SecondImg
+  .Top__SecondImg__content
+    .Top__SecondImg__content__title
+      会員数日本一位
+    .Top__SecondImg__content__subtitle
+      %p FURIMAは、フリマアプリで最も人気。
+      %p 出品・購入回数も業界最多です！
+      %p ほしかったあの商品に出会えるかもしれません。
+    .Top__FirstImg__content__link
+      .Top__FirstImg__content__link__apple
+        = link_to "#" do
+          = image_tag asset_path("appstore.svg"), class: "Top__FirstImg__content__link__apple__icon"
+      .Top__FirstImg__content__link__google
+        = link_to "#" do
+          = image_tag asset_path("google.svg"), class: "Top__FirstImg__content__link__google__icon"
+
+.Top__Feature
+  .Top__Feature__contents
+    .Top__Feature__contents__title
+      FURIMAの特徴
+    .Top__Feature__contents__line
+    .Top__Feature__contents__boxes
+      .Top__Feature__contents__boxes__block
+        = image_tag asset_path("icon-01.png"), class: "Top__Feature__contents__boxes__block__img"
+        .Top__Feature__contents__boxes__block__title
+          簡単に売り買いできる
+        .Top__Feature__contents__boxes__block__text
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .Top__Feature__contents__boxes__block
+        = image_tag asset_path("icon-03.png"), class: "Top__Feature__contents__boxes__block__img"
+        .Top__Feature__contents__boxes__block__title
+          売上金は即日振込みに対応
+        .Top__Feature__contents__boxes__block__text
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      .Top__Feature__contents__boxes__block
+        = image_tag asset_path("icon-04.png"), class: "Top__Feature__contents__boxes__block__img"
+        .Top__Feature__contents__boxes__block__title
+          様々な支払いに対応
+        .Top__Feature__contents__boxes__block__text
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+.Top__PickupCategory
+  .Top__PickupCategory__contents
+    .Top__PickupCategory__contents__title
+      ピックアップカテゴリー
+    .Top__PickupCategory__contents__subtitle
+      新規投稿商品
+    .Top__PickupCategory__contents__boxes
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food1.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 豚骨ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 890円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★4
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food2.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 二郎系ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 850円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★2
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            =image_tag asset_path("food3.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 鶏白湯ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 950円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★5
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            =image_tag asset_path("food4.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 背脂ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 880円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★3
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            =image_tag asset_path("food5.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p ずんどう屋ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 890円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★1
+
+.Top__PickupCategory
+  .Top__PickupCategory__contents
+    .Top__PickupCategory__contents__title
+      ピックアップブランド
+    .Top__PickupCategory__contents__subtitle
+      アーカイバ
+    .Top__PickupCategory__contents__boxes
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food1.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 豚骨ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 890円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★4
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            =image_tag asset_path("food2.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 二郎系ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 850円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★2
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food3.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 鶏白湯ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 950円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★5
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food4.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 背脂ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 880円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★3
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food5.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p ずんどう屋ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 890円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★1
