@@ -24,4 +24,5 @@ class ItemsController < ApplicationController
       redirect_to action: :index  #仮でindexにしているが実際はユーザー登録画面に飛ばす
     end
   end
+
 end

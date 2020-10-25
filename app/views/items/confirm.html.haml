@@ -25,6 +25,8 @@
           = link_to "変更する >", "#"
       .Confirm__Main__content__payment-method__menu__method
         カード払い
+        -# = form_tag("/pay", method: :post, class: ".Confirm__Main__content__payment-method__menu__payjp") do
+          %script{type: "text/javascript", src: "https://checkout.pay.jp", class:"payjp-button", data: {key:"pk_test_d6ab5eda0ad632f2e194459f", partial: "true"}}
     .Confirm__Main__content__address
       .Confirm__Main__content__address__menu
         .Confirm__Main__content__address__menu__text

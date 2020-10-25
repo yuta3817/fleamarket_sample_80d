@@ -66,7 +66,8 @@ gem 'ancestry'
 gem 'active_hash'
 gem 'devise', '4.7.3'
 gem 'payjp', '0.0.7'
-gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'dotenv-rails'
+gem 'jquery-rails'
 
 group :production do
   gem 'unicorn'
