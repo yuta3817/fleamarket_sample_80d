@@ -20,13 +20,21 @@
     .Confirm__Main__content__payment-method
       .Confirm__Main__content__payment-method__menu
         .Confirm__Main__content__payment-method__menu__text
-          支払い方法
+          カード情報
         .Confirm__Main__content__payment-method__menu__change
-          = link_to "変更する >", "#"
+          - if @card && current_user.id == @card.user_id
+            = link_to "変更する >", "#"
+          - else
+            = link_to "登録する >", "/card/new"
       .Confirm__Main__content__payment-method__menu__method
-        カード払い
+        - if @card && current_user.id == @card.user_id
+          カード番号（下4桁）
+          %div
+            = "* * * * - * * * * - * * * * - " + @card_info.last4
+        - else
+          カードが登録されていません
         -# = form_tag("/pay", method: :post, class: ".Confirm__Main__content__payment-method__menu__payjp") do
-          %script{type: "text/javascript", src: "https://checkout.pay.jp", class:"payjp-button", data: {key:"pk_test_d6ab5eda0ad632f2e194459f", partial: "true"}}
+          -# %script{type: "text/javascript", src: "https://checkout.pay.jp", class:"payjp-button", data: {key:"pk_test_d6ab5eda0ad632f2e194459f", partial: "true"}}
     .Confirm__Main__content__address
       .Confirm__Main__content__address__menu
         .Confirm__Main__content__address__menu__text
@@ -40,5 +48,6 @@
       .Confirm__Main__content__address__name
         = @address.last_name + " " + @address.first_name
     .Confirm__Main__content__purchase-button
-      .Confirm__Main__content__purchase-button__button
-        購入する
+      =link_to "#" do
+        .Confirm__Main__content__purchase-button__button
+          購入する

@@ -3,7 +3,7 @@ class CardController < ApplicationController
   
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to "/" if card.exists? # 仮でルートに飛ばしている
+    redirect_to action: "edit" if card.exists? # 仮でルートに飛ばしている
   end
   
   def create
@@ -12,7 +12,6 @@ class CardController < ApplicationController
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
-        description: 'test',
         card: params['payjp_token'],
         metadata: {user_id: current_user.id}
       )
@@ -22,7 +21,7 @@ class CardController < ApplicationController
         card_id: customer.default_card
       )
       if @card.save
-        redirect_to "/"#仮でルートに飛ばしている
+        redirect_to :back
       else
         redirect_to action: "new"
       end

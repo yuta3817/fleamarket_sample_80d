@@ -1,3 +1,6 @@
+.CardForm__title
+  = title
+
 .CardForm
   カード番号
   .CardForm__outer{id: "number-form"}
@@ -7,5 +10,5 @@
   .CardForm__outer{id: "cvc-form"}
   #message
   = form_with model: @card, id: "card_form", local: true do |form|
-    #card_token 
+    #card_token
     = form.submit "カードを登録", class:"CardForm__button", id: "create_card"
