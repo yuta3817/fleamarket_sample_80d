@@ -2,6 +2,7 @@ class CardController < ApplicationController
   require 'payjp'
   
   def new
+    @title = "カード情報新規登録"
     card = Card.where(user_id: current_user.id)
     redirect_to action: "edit" if card.exists? # 仮でルートに飛ばしている
   end
