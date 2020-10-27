@@ -1,10 +1,12 @@
 class CardController < ApplicationController
   require 'payjp'
+
+  before_action :move_to_login
   
   def new
     @title = "カード情報新規登録"
-    card = Card.where(user_id: current_user.id)
-    redirect_to action: "edit" if card.exists? # 仮でルートに飛ばしている
+    @btn ="登録"
+    redirect_to "/" if Card.find_by(user_id: current_user.id)
   end
   
   def create
@@ -19,17 +21,47 @@ class CardController < ApplicationController
       @card = Card.new(
         user_id: current_user.id,
         customer_id: customer.id,
-        card_id: customer.default_card
+        card_id: params['card_token']
       )
       if @card.save
-        redirect_to :back
+        redirect_back(fallback_location: root_path)
       else
-        redirect_to action: "new"
+        render :new
       end
     end
   end
 
-  def show
+  def edit
+    @title = "カード情報変更"
+    @btn ="変更"
+    @card = Card.find_by(id: params[:id])
+    redirect_to "/" if @card == nil || @card.user_id != current_user.id
   end
 
+  def update
+    @card = Card.find_by(id: params[:id])
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    # 既存のカード情報を削除
+    card = customer.cards.retrieve(@card.card_id)
+    card.delete
+    # カードを新しく登録
+    customer.cards.create(
+      card: params['payjp_token']
+    ) # ここまではできている(カード情報は実際に更新されている)
+    # customer.default_card = card.id # これはたぶんできていない(カードIDがなぜか古いまま)
+    if @card.update(card_id: params['card_token'])  # 古いデフォルトカード情報が保存されている
+      redirect_back(fallback_location: root_path)
+    else
+      render :edit
+    end
+  end
+
+
+    # ログインしていないユーザーをユーザー登録画面へ飛ばす
+    def move_to_login
+      unless user_signed_in?
+        redirect_to "/"
+      end
+    end
 end

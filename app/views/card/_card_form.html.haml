@@ -1,7 +1,7 @@
 
 .CardForm
   .CardForm__title
-    = @title
+    = title
   カード番号
   .CardForm__outer{id: "number-form"}
   有効期限
@@ -9,6 +9,6 @@
   セキュリティコード
   .CardForm__outer{id: "cvc-form"}
   #message
-  = form_with model: @card, id: "card_form", local: true do |form|
+  = form_with model: model, url: path, id: "card_form" do |form|
     #card_token
-    = form.submit "カードを登録", class:"CardForm__button", id: "create_card"
+    = form.submit "#{btn}", class:"CardForm__button", id: "create_card"
