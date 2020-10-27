@@ -7,9 +7,9 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'https://code.jquery.com/jquery-3.3.1.slim.min.js'
+    = javascript_include_tag 'https://js.pay.jp/v2/pay.js'
     = javascript_include_tag 'application'
-    %script{src: "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
-    %script{src: "https://js.pay.jp/v2/pay.js"}
   %body
     .Header
       .Header__center
@@ -101,3 +101,4 @@
         .Listing-button__text
           出品する
         = image_tag asset_path("icon_camera.png"), class: "Listing-button__image"
+        

@@ -2,10 +2,6 @@
 document.addEventListener('DOMContentLoaded', (e) => {
   // 公開鍵を登録し、起点となるオブジェクトを取得します
   var payjp = Payjp('pk_test_d6ab5eda0ad632f2e194459f')
-
-  // elementsを取得します。ページ内に複数フォーム用意する場合は複数取得ください
-  var elements = payjp.elements()
-
   // styleの指定
   var style = {
     base: {
@@ -18,8 +14,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
     invalid: {
       color: 'red',
     }
-  }
-
+  }  
+  // elementsを取得します。ページ内に複数フォーム用意する場合は複数取得ください
+  var elements = payjp.elements()
   // element(入力フォームの単位)を生成します
   var numberElement = elements.create('cardNumber', {style: style})
   var expiryElement = elements.create('cardExpiry', {style: style})
@@ -28,7 +25,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
   numberElement.mount('#number-form')
   expiryElement.mount('#expiry-form')
   cvcElement.mount('#cvc-form')
-  
   // ボタンが押されたらtokenを生成する関数を用意します
   create_card.addEventListener("click", function(e) {
     e.preventDefault();

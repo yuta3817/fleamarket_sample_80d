@@ -23,9 +23,9 @@
           カード情報
         .Confirm__Main__content__payment-method__menu__change
           - if @card && current_user.id == @card.user_id
-            = link_to "変更する >", "#"
+            = link_to "変更する >", edit_card_path(@card.id)
           - else
-            = link_to "登録する >", "/card/new"
+            = link_to "登録する >", new_card_path
       .Confirm__Main__content__payment-method__menu__method
         - if @card && current_user.id == @card.user_id
           カード番号（下4桁）
@@ -33,8 +33,6 @@
             = "* * * * - * * * * - * * * * - " + @card_info.last4
         - else
           カードが登録されていません
-        -# = form_tag("/pay", method: :post, class: ".Confirm__Main__content__payment-method__menu__payjp") do
-          -# %script{type: "text/javascript", src: "https://checkout.pay.jp", class:"payjp-button", data: {key:"pk_test_d6ab5eda0ad632f2e194459f", partial: "true"}}
     .Confirm__Main__content__address
       .Confirm__Main__content__address__menu
         .Confirm__Main__content__address__menu__text
