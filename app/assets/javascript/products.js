@@ -7,6 +7,7 @@ $(document).on('turbolinks:load', ()=> {
                       <input class="file-field js-file" type="file"
                       name="product[product_images_attributes][${num}][image]"
                       id="product_product_images_attributes_${num}_image"><br>
+                      こちらをクリックして画像アップロードしてください
                     </div>
                   </label>`;
     return html;
@@ -19,6 +20,7 @@ $(document).on('turbolinks:load', ()=> {
                       <input class="file-field js-file" type="file"
                       name="product[product_images_attributes][${num}][image]"
                       id="product_product_images_attributes_${num}_image"><br>
+                      こちらをクリックして画像アップロードしてください
                     </div>
                   </label>`;
     return html;

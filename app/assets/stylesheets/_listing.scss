@@ -36,7 +36,7 @@
     }
 
     &__ListingImage{
-      padding-bottom: 40px;
+      margin-bottom: 50px;
 
       &__title{
         margin-bottom: 16px;
@@ -47,25 +47,24 @@
           height: 150px;
           width: 620px;
           cursor: pointer;
-          background-color: lightcoral;
-          float: left;
-        }
+          
 
-        &__field2{
-          height: 150px;
-          width: 620px;
-          cursor: pointer;
-          background-color: lightcoral;
-          display: inline;
+          .js-file_group{
+            height: 140px;
+            width: 115px;
+            margin: 3px 0 0 3px;
+            padding: 30px 5px 0 5px;
+            border: 1px solid rgb(204,204,204);
+            font-size: 11px;
+            color: lightslategrey;
+          }
         }
-
-        
 
         #image-box{
           background-color: rgb(245,245,245);
           border-color: rgb(204,204,204);
           height: 150px;
-          margin: 16px 0 100px 0;
+          margin: 16px 0 0 0;
           border: 1px dashed rgb(204,204,204);
           overflow: hidden;
           
@@ -78,34 +77,9 @@
         .hidden-input{
           display: none;
         }
-          .icon-camera{
-            height: 24px;
-            width: 24px;
-          
-
-          .Listing-formspace{
-            font-size: 12px;
-            line-height: 1.4em;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            .icon-camera{
-              height: 24px;
-              width: 24px;
-            }
-            
-          }
-          
-          
-        }
       }
     }
-    .js-file_group{
-      display: inline-block;
-    }
+
     .file-field{
       font-size: 10px;
       display: none;
@@ -132,7 +106,6 @@
           font-size: 16px;
           border-color: #ccc;
         }
-        
       }
     }
 
@@ -314,6 +287,7 @@
         font-size: 12px;
         color: blue;
         text-align: center;
+        cursor: pointer;
       }
     }
   }  
