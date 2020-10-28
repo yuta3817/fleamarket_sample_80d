@@ -1,5 +1,5 @@
 // DOM読み込みが完了したら実行
-document.addEventListener('DOMContentLoaded', (e) => {
+document.addEventListener('DOMContentLoaded', () => {
   // 公開鍵を登録し、起点となるオブジェクトを取得します
   var payjp = Payjp('pk_test_d6ab5eda0ad632f2e194459f')
   // styleの指定

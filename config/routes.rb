@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items, only: :new
   get 'items/confirm/:id', to: 'items#confirm'
+  post 'items/confirm/:id', to: 'items#pay'
 
   resources :card, only: [:new, :create, :edit, :update]
 end

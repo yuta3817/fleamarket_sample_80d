@@ -1,51 +1,56 @@
 .Confirm__Main
-  .Confirm__Main__content
-    .Confirm__Main__content__title
-      購入内容の確認
-    .Confirm__Main__content__purchasedetail
-      = image_tag "#{@product_image.image}", alt: "商品画像", class: "Confirm__Main__content__purchasedetail__image"
-      .Confirm__Main__content__purchasedetail__detail
-        .Confirm__Main__content__purchasedetail__detail__name
-          = @product.name
-        .Confirm__Main__content__purchasedetail__detail__price
-          .Confirm__Main__content__purchasedetail__detail__price__text
-            送料込み(税込)
-          .Confirm__Main__content__purchasedetail__detail__price__price
-            = "¥" + @product.price.to_s(:delimited)
-    .Confirm__Main__content__payment
-      .Confirm__Main__content__payment__text
-        支払い金額
-      .Confirm__Main__content__payment__money
-        = "¥" + @product.price.to_s(:delimited)
-    .Confirm__Main__content__payment-method
-      .Confirm__Main__content__payment-method__menu
-        .Confirm__Main__content__payment-method__menu__text
-          カード情報
-        .Confirm__Main__content__payment-method__menu__change
+  = form_with(action: :pay, method: :post) do
+    .Confirm__Main__content
+      .Confirm__Main__content__title
+        購入内容の確認
+      .Confirm__Main__content__purchasedetail
+        = image_tag "#{@product_image.image}", alt: "商品画像", class: "Confirm__Main__content__purchasedetail__image"
+        .Confirm__Main__content__purchasedetail__detail
+          .Confirm__Main__content__purchasedetail__detail__name
+            = @product.name
+          .Confirm__Main__content__purchasedetail__detail__price
+            .Confirm__Main__content__purchasedetail__detail__price__text
+              送料込み(税込)
+            .Confirm__Main__content__purchasedetail__detail__price__price
+              = "¥" + @amount.to_s(:delimited)
+      .Confirm__Main__content__payment
+        .Confirm__Main__content__payment__text
+          支払い金額
+        .Confirm__Main__content__payment__money
+          = "¥" + @amount.to_s(:delimited)
+      .Confirm__Main__content__payment-method
+        .Confirm__Main__content__payment-method__menu
+          .Confirm__Main__content__payment-method__menu__text
+            カード情報
+          .Confirm__Main__content__payment-method__menu__change
+            - if @card && current_user.id == @card.user_id
+              = link_to "変更する >", edit_card_path(@card.id)
+            - else
+              = link_to "登録する >", new_card_path
+        .Confirm__Main__content__payment-method__menu__method
           - if @card && current_user.id == @card.user_id
-            = link_to "変更する >", edit_card_path(@card.id)
-          - else
-            = link_to "登録する >", new_card_path
-      .Confirm__Main__content__payment-method__menu__method
-        - if @card && current_user.id == @card.user_id
-          カード番号（下4桁）
-          %div
+            %div
+              = @card_info.brand
+            %div
+              カード番号（下4桁）
             = "* * * * - * * * * - * * * * - " + @card_info.last4
-        - else
-          カードが登録されていません
-    .Confirm__Main__content__address
-      .Confirm__Main__content__address__menu
-        .Confirm__Main__content__address__menu__text
-          配送先
-        .Confirm__Main__content__address__menu__change
-          = link_to "変更する >", "#"
-      .Confirm__Main__content__address__code
-        = "〒" + @address.zip_code.insert(3, "-")
-      .Confirm__Main__content__address__address
-        = @address.prefecture + " " + @address.city + " " + @address.town + " " + @address.number + " " + @address.building
-      .Confirm__Main__content__address__name
-        = @address.last_name + " " + @address.first_name
-    .Confirm__Main__content__purchase-button
-      =link_to "#" do
-        .Confirm__Main__content__purchase-button__button
-          購入する
+          - else
+            カードが登録されていません
+      .Confirm__Main__content__address
+        .Confirm__Main__content__address__menu
+          .Confirm__Main__content__address__menu__text
+            配送先
+          .Confirm__Main__content__address__menu__change
+            = link_to "変更する >", "#"
+        .Confirm__Main__content__address__code
+          = "〒" + @address.zip_code.insert(3, "-")
+        .Confirm__Main__content__address__address
+          = @address.prefecture + " " + @address.city + " " + @address.town + " " + @address.number + " " + @address.building
+        .Confirm__Main__content__address__name
+          = @address.last_name + " " + @address.first_name
+      - if @purchased
+        .Confirm__Main__content__purchase-button
+          = submit_tag("購入できません", disabled: true, class: "Confirm__Main__content__purchase-button__soldout")
+      - else
+        .Confirm__Main__content__purchase-button
+          = submit_tag("購入を確定する", class: "Confirm__Main__content__purchase-button__button")

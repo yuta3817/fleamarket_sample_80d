@@ -122,14 +122,24 @@
         &__button {
           background-color: #3CCACE;
           color: white;
+          border: none;
           border-radius: 5px;
           width: 100%;
           height: 48px;
           line-height: 48px;
+          }
+        &__soldout {
+          background-color: lightgray;
+          color: gray;
+          border: none;
+          border-radius: 5px;
+          width: 100%;
+          height: 48px;
+          line-height: 48px;
+          }
         }
       }
     }
-  }
   &__Footer {
     display: flex;
     background-color: whitesmoke;

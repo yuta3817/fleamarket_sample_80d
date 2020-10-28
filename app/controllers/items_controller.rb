@@ -17,7 +17,9 @@ class ItemsController < ApplicationController
   
   def confirm
     @product = Product.find_by(id: params[:id])
+    @amount = @product.price + @product.delivery_charge
     @product_image = ProductImage.find_by(product_id: params[:id])
+    @purchased = ProductPurchase.find_by(product_id: params[:id])
     @address = Address.find_by(user_id: current_user.id)
     if Card.find_by(user_id: current_user.id)
       @card = Card.find_by(user_id: current_user.id)
@@ -26,6 +28,28 @@ class ItemsController < ApplicationController
       @card_info = customer.cards.retrieve(@card.card_id)
     end
     render layout: "sub_layout"
+  end
+
+  def pay
+    @product = Product.find_by(id: params[:id])
+    amount = @product.price + @product.delivery_charge
+    @card = Card.find_by(user_id: current_user.id)
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    charge = Payjp::Charge.create(
+      amount: amount,
+      currency: 'jpy',
+      customer: @card.customer_id
+    )
+    @purchased = ProductPurchase.new(
+      user_id: current_user.id,
+      product_id: @product.id
+    )
+    if @purchased.save
+      redirect_to root_path
+    else
+      render :confirm
+    # redirect_to root_path
+    end
   end
 
   # ログインしていないユーザーをユーザー登録画面へ飛ばす
