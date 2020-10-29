@@ -1,13 +1,28 @@
 .CardForm
-  .CardForm__title
-    = title
-  カード番号
-  .CardForm__outer{id: "number-form"}
-  有効期限
-  .CardForm__outer{id: "expiry-form"}
-  セキュリティコード
-  .CardForm__outer{id: "cvc-form"}
-  #message
-  = form_with model: model, url: path, id: "card_form" do |form|
-    #card_token
-    = form.submit "#{btn}", class:"CardForm__button", id: "create_card"
+  .CardForm__content
+    .CardForm__title
+      = title
+    .CardForm__number
+      %label.CardForm__number--label{for: "number-form"}
+        カード番号
+        %span.CardForm__must 必須
+      .CardForm__number--form{id: "number-form"}
+    .CardForm__expiry-cvv
+      .CardForm__expiry-cvv__part
+        %label.CardForm__expiry-cvv__part--label{for: "expiry-form"}
+          有効期限
+          %span.CardForm__must 必須
+        .CardForm__expiry-cvv__part--form{id: "expiry-form"}
+      .CardForm__expiry-cvv__part
+        %label.CardForm__expiry-cvv__part--label{for: "cvc-form"}
+          セキュリティコード
+          %span.CardForm__must 必須
+        .CardForm__expiry-cvv__part--form{id: "cvc-form"}
+    .CardForm__message{id: "message"}
+    .CardForm__submit
+      = form_with model: model, url: path, id: "card_form" do |form|
+        #card_token
+        = form.submit "#{btn}", class:"CardForm__submit--button", id: "create_card"
+    .CardForm__return
+      .CardForm__return--link
+        = link_to "もどる", :back

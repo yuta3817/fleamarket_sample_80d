@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // styleの指定
   var style = {
     base: {
-      color: '#198fcc',
+      color: '#000000',
       '::placeholder': {
         fontStyle: 'italic',
-        color: 'green',
+        color: 'gray',
       }
     },
     invalid: {
