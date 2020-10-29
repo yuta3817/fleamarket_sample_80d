@@ -24,7 +24,7 @@
             カード情報
           .Confirm__Main__content__payment-method__menu__change
             - if @card && current_user.id == @card.user_id
-              = link_to "変更する >", edit_card_path(@card.id)
+              = link_to "変更する >", edit_card_path(@card.id), data: { "turbolinks": false }
             - else
               = link_to "登録する >", new_card_path
         .Confirm__Main__content__payment-method__menu__method

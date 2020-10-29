@@ -54,9 +54,7 @@ class ItemsController < ApplicationController
 
   # ログインしていないユーザーをユーザー登録画面へ飛ばす
   def move_to_login
-    unless user_signed_in?
-      redirect_to action: :index  #仮でindexにしているが実際はユーザー登録画面に飛ばす
-    end
+    redirect_to action: :index unless user_signed_in?  # 仮でindexにしているが実際はユーザー登録画面に飛ばす
   end
 
   # 自分の出品した商品の購入確認ページにはアクセスできないようにする

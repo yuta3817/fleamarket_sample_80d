@@ -16,7 +16,7 @@ class CardController < ApplicationController
     else
       customer = Payjp::Customer.create(
         card: params['payjp_token'],
-        metadata: {user_id: current_user.id}
+        metadata: { user_id: current_user.id }
       )
       @card = Card.new(
         user_id: current_user.id,
@@ -57,9 +57,7 @@ class CardController < ApplicationController
   end
 
     # ログインしていないユーザーをユーザー登録画面へ飛ばす
-    def move_to_login
-      unless user_signed_in?
-        redirect_to "/"
-      end
-    end
+  def move_to_login
+    redirect_to "/" unless user_signed_in?
+  end
 end

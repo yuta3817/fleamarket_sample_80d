@@ -65,8 +65,8 @@ gem 'pry-rails'
 gem 'ancestry'
 gem 'active_hash'
 gem 'devise', '4.7.3'
-gem 'payjp', '0.0.7'
 gem 'dotenv-rails'
+gem 'payjp', '0.0.7'
 gem 'jquery-rails'
 
 group :production do
