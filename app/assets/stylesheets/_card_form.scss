@@ -59,17 +59,16 @@
   }
   &__message {
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 12px 16px;
     max-width: 375px;
-    height: 50px;
-    line-height: 50px;
+    height: 80px;
     color: red;
   }
   &__submit {
     font-size: 24px;
     font-weight: bold;
     margin: 0 auto;
-    padding: 24px 16px 0;
+    padding: 0 16px;
     max-width: 375px;
     &--button {
       background-color: #3CCACE;
