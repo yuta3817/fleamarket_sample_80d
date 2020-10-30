@@ -68,6 +68,7 @@ gem 'devise', '4.7.3'
 gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'payjp', '0.0.7'
+gem 'rspec-rails', '~> 4.0.0.beta2'
 
 group :production do
   gem 'unicorn'
