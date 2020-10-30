@@ -1,6 +1,14 @@
 .Listing
   = form_with model: @product, local: true do |f|
     .Listing__Main
+      - if @product.errors.any?
+        .Listing__Main__errors
+          .Listing__Main__errors__contents
+            .Listing__Main__errors__contents__count
+              = "#{@product.errors.full_messages.count}件のエラーが発生しました。"
+            %ul.Listing__Main__errors__contents__message
+              - @product.errors.full_messages.each do |message|
+                %li= message
       .Listing__Main__ListingImage
         .Listing__Main__ListingImage__title
           %label.Listing-title 出品画像
@@ -97,9 +105,9 @@
               %label 販売利益
             %span -
       .Listing__Main__ListingButton
-        = f.submit "出品する", class: "listing-button"
+        = f.submit "出品する",data:{turbolinks: false}, class: "listing-button"
         .back
-          = link_to "#", class: ".Listing__Main__ListingButton__back" do
+          = link_to "/", class: ".Listing__Main__ListingButton__back" do
             もどる
       .Listing__Main__caution
         %p 禁止されている行為および商品は必ずご確認ください

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  # マークアップ画面の確認のため現状仮のルーティングを行っている
+  devise_for :users
+
   root 'items#show'
   get 'confirm', to: 'items#confirm'
 
-  resources :products 
+  resources :products, only:[:index, :new, :create]
 end

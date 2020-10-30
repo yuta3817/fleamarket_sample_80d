@@ -14,8 +14,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new
-      
+      render action: :new, layout: "sub_layout"
     end
   end
 
@@ -27,6 +26,16 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :detail, :category_id, :brand_id, :status_id, :delivery_charge, :prefecture_id, :delivery_date, :price, product_images_attributes: [:image]).merge(user_id: 1)
+    params.require(:product).permit(:name,
+                                    :detail,
+                                    :category_id,
+                                    :brand_id,
+                                    :status_id,
+                                    :delivery_charge,
+                                    :prefecture_id,
+                                    :delivery_date,
+                                    :price,
+                                    product_images_attributes: [:image]
+                                    ).merge(user_id: current_user.id)
   end
 end

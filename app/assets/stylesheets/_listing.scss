@@ -13,6 +13,25 @@
     padding: 40px;
     background-color: white;
 
+    &__errors{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+
+      &__contents{
+
+        &__count{
+          font-size: 20px;
+          font-weight: bold;
+          color: red;
+        }
+
+        &__message{
+          color: red;
+        }
+      }
+    }
+
     .Listing-title{
       font-weight: 600;
     }
