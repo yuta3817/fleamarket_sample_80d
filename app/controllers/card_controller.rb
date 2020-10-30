@@ -2,10 +2,12 @@ class CardController < ApplicationController
   require 'payjp'
 
   before_action :move_to_login
+  after_action :session_clear, only: [:create, :update]
   
   def new
     @title = "カード情報新規登録"
     @btn = "登録"
+    session[:previous_url] = request.referer
     redirect_to "/" if Card.find_by(user_id: current_user.id)
   end
   
@@ -24,7 +26,7 @@ class CardController < ApplicationController
         card_id: params['card_token']
       )
       if @card.save
-        redirect_back(fallback_location: root_path)
+        redirect_to session[:previous_url]
       else
         render :new
       end
@@ -35,6 +37,7 @@ class CardController < ApplicationController
     @title = "カード情報変更"
     @btn = "変更"
     @card = Card.find_by(id: params[:id])
+    session[:previous_url] = request.referer
     redirect_to "/" if @card.nil? || @card.user_id != current_user.id
   end
 
@@ -50,7 +53,7 @@ class CardController < ApplicationController
       card: params['payjp_token']
     )
     if @card.update(card_id: params['card_token'])
-      redirect_back(fallback_location: root_path)
+      redirect_to session[:previous_url]
     else
       render :edit
     end
@@ -59,5 +62,10 @@ class CardController < ApplicationController
     # ログインしていないユーザーをユーザー登録画面へ飛ばす
   def move_to_login
     redirect_to "/" unless user_signed_in?
+  end
+
+  # セッションの開放
+  def session_clear
+    session[:previous_url].clear
   end
 end
