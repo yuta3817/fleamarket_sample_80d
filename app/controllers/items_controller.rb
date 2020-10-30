@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
   require 'payjp'
 
-  before_action :authenticate_user!, only: [:confirm]
-  before_action :move_to_login, only: [:confirm]
-  before_action :listing_user, only: [:confirm]
+  before_action :authenticate_user!, only: [:confirm, :pay]
+  before_action :move_to_login, only: [:confirm, :pay]
+  before_action :listing_user?, only: [:confirm]
+  before_action :has_card?, only: [:pay]
 
   def index
   end
@@ -33,7 +34,6 @@ class ItemsController < ApplicationController
   def pay
     @product = Product.find_by(id: params[:id])
     amount = @product.price + @product.delivery_charge
-    @card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     charge = Payjp::Charge.create(
       amount: amount,
@@ -48,7 +48,6 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       render :confirm
-    # redirect_to root_path
     end
   end
 
@@ -58,11 +57,15 @@ class ItemsController < ApplicationController
   end
 
   # 自分の出品した商品の購入確認ページにはアクセスできないようにする
-  def listing_user
+  def listing_user?
     @product = Product.find_by(id: params[:id])
     if current_user.id == @product.user_id
       redirect_to action: :index
     end
+  end
+
+  def has_card?
+    render :confirm unless @card = Card.find_by(user_id: current_user.id)
   end
 
 end
