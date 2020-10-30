@@ -126,7 +126,13 @@
           width: 100%;
           height: 48px;
           line-height: 48px;
+          &:hover {
+            cursor: pointer;
           }
+          &:active {
+            outline: none;
+          }
+        }
         &__soldout {
           background-color: lightgray;
           color: gray;
@@ -156,7 +162,6 @@
           text-decoration: none;
           font-size: 12px;
         }
-
         &__link a:hover {
           text-decoration: underline;
           opacity: 0.6;

@@ -22,11 +22,12 @@
         .Confirm__Main__content__payment-method__menu
           .Confirm__Main__content__payment-method__menu__text
             カード情報
+            %span.CardForm__must 必須
           .Confirm__Main__content__payment-method__menu__change
             - if @card && current_user.id == @card.user_id
               = link_to "変更する >", edit_card_path(@card.id), data: { "turbolinks": false }
             - else
-              = link_to "登録する >", new_card_path
+              = link_to "登録する >", new_card_path, data: { "turbolinks": false }
         .Confirm__Main__content__payment-method__menu__method
           - if @card && current_user.id == @card.user_id
             %div
@@ -35,11 +36,12 @@
               カード番号（下4桁）
             = "* * * * - * * * * - * * * * - " + @card_info.last4
           - else
-            カードが登録されていません
+            購入するにはカード情報を登録してください
       .Confirm__Main__content__address
         .Confirm__Main__content__address__menu
           .Confirm__Main__content__address__menu__text
             配送先
+            %span.CardForm__must 必須
           .Confirm__Main__content__address__menu__change
             = link_to "変更する >", "#"
         .Confirm__Main__content__address__code
@@ -48,7 +50,7 @@
           = @address.prefecture + " " + @address.city + " " + @address.town + " " + @address.number + " " + @address.building
         .Confirm__Main__content__address__name
           = @address.last_name + " " + @address.first_name
-      - if @purchased
+      - if @purchased || Card.where(user_id: current_user.id).exists? == false
         .Confirm__Main__content__purchase-button
           = submit_tag("購入できません", disabled: true, class: "Confirm__Main__content__purchase-button__soldout")
       - else
