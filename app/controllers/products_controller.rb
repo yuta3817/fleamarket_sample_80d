@@ -14,6 +14,9 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
+      # 保存失敗時に画像入力欄をひとつにする処理
+      @product.product_images = []
+      @product.product_images.new
       render action: :new, layout: "sub_layout"
     end
   end
