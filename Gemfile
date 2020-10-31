@@ -67,6 +67,7 @@ gem 'active_hash'
 gem 'devise', '4.7.3'
 gem 'dotenv-rails'
 gem 'factory_bot_rails'
+gem 'faker', "~> 2.8"
 gem 'jquery-rails'
 gem 'payjp', '0.0.7'
 gem 'rspec-rails', '~> 4.0.0.beta2'
