@@ -22,8 +22,7 @@ class ItemsController < ApplicationController
     @product_image = ProductImage.find_by(product_id: params[:id])
     @purchased = ProductPurchase.find_by(product_id: params[:id])
     @address = Address.find_by(user_id: current_user.id)
-    if Card.find_by(user_id: current_user.id)
-      @card = Card.find_by(user_id: current_user.id)
+    if @card = Card.find_by(user_id: current_user.id)
       Payjp.api_key = ENV['PAYJP_SECRET_KEY']
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_info = customer.cards.retrieve(@card.card_id)

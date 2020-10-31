@@ -14,7 +14,7 @@
     .Header
       .Header__center
         .Header__inner
-          = link_to "#" do
+          = link_to root_path do
             = image_tag asset_path("logo.png"), class: "Header__inner__logo"
           .Header__inner__searchbox
             = form_with url: "#" do |form|
