@@ -6,7 +6,6 @@ describe Product do
       product = build(:product)
       product.product_images << build(:product_image, image: nil)
       product.valid?
-      
       expect(product.errors[:"product_images.image"]).to include("を入力してください")
     end
 
