@@ -9,7 +9,7 @@
           name: 商品名
           detail: 商品の説明
           category_id: カテゴリー
-          status: 商品の状態
+          status_id: 商品の状態
           delivery_charge: 配送料負担
           prefecture_id: 発送元の地域
           delivery_date: 発送までの日数
