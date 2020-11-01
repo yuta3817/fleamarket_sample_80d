@@ -1,0 +1,131 @@
+%nav.Nav
+  %ul.Nav__category
+    %li.Nav__content
+      = link_to "FURIMA", "#"
+    %li.Nav__content
+      %i.fas.fa-angle-right
+    %li.Nav__content
+      = link_to "レディース", "#"
+    %li.Nav__content
+      %i.fas.fa-angle-right
+    %li.Nav__content
+      = link_to "トップス", "#"
+    %li.Nav__content
+      %i.fas.fa-angle-right
+    %li.Nav__content
+      = link_to "Tシャツ/カットソー(半袖/袖なし)", "#"
+    %li.Nav__content
+      %i.fas.fa-angle-right
+    %li.Nav__content
+      = link_to "テスト", "#"
+      %ul.Nav__category::after
+  
+.Main
+  .Main__content
+    .contentAll
+      .Topcontent
+        .Items
+          %h2.Items__name
+            テスト
+          .Items__imageall 
+            %ul.Items__imageul
+              %li.Items__imageli
+                = image_tag asset_path("sweater-1222876_1280.jpg")
+            %ul.Items__imageulb
+              %li.Items__imagelib
+                = image_tag asset_path("sweater-1222876_1280.jpg")
+          .Items__price
+            %span.price
+              ¥10000
+            .Items__pricedetail
+              %span.Items__pricedetail__left
+                (税込)
+              %span.Items__pricedetail__right
+                送料込み
+          .Items__detail  
+            テストテストテストテストテストテスト
+          .Items__table
+            %table.Table
+              %tbody
+                %tr.Table__content
+                  %th.Table__left
+                    出品者
+                  %td.Table__right
+                    あああ
+                %tr.Table__content
+                  %th.Table__left
+                    カテゴリー
+                  %td.Table__right 
+                    = link_to "レディース", "#"
+                    %br
+                    = link_to "トップス", "#"
+                    %br
+                    = link_to "Tシャツ/カットソー（半袖/袖なし）", "#"
+                    %br
+                %tr.Table__content
+                  %th.Table__left
+                    ブランド
+                  %td.Table__right
+                %tr.Table__content
+                  %th.Table__left
+                    商品のサイズ
+                  %td.Table__right
+                %tr.Table__content
+                  %th.Table__left
+                    商品の状態
+                  %td.Table__right
+                    新品/未使用
+                %tr.Table__content
+                  %th.Table__left
+                    配送料の負担
+                  %td.Table__right
+                    送料込み（出品者負担）
+                %tr.Table__content
+                  %th.Table__left
+                    発送元の地域
+                  %td.Table__right
+                    = link_to "北海道", "#"
+                %tr.Table__content
+                  %th.Table__left
+                    発送日の目安
+                  %td.Table__right
+                    1-2日で発送
+          .Items__option
+            %ul.option
+              %li.optionBtn-left
+                %i.fa.fa-star
+                お気に入り 1
+            %ul.option
+              %li.optionBtn-right
+                = link_to "#" do
+                  %i.fa.fa-flag
+                  不適切な商品の通報
+        .Topcontent__comments
+          %ul.commentContents
+            %textarea.comment
+            %p.noticecomment
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %br
+            %button.commentbutton
+              %i.fa.fa-comment
+                %i.fa.fa-comment::before
+                  コメントする
+      %ul.Links
+        %li.Linksleft
+          = link_to "#" do
+            %i.fa.fa-angle-left
+            %span
+              前の商品
+        %li.Linksright
+          = link_to "#" do
+            %span
+              後ろの商品
+            %i.fa.fa-angle-right
+        %ul.Links::after
+      .Related
+        = link_to "レディースをもっと見る", "#"
+        .ProductLists
+          .ProductList
+            = link_to image_tag asset_path("istockphoto-1235519143-1024x1024.jpg")           
