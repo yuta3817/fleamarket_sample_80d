@@ -1,7 +1,5 @@
 class ProductsController < ApplicationController
-
-  def index
-  end
+  before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
 
   def new
     @product = Product.new
@@ -21,8 +19,10 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
+  def update
+  end
 
+  def destory
   end
 
 
