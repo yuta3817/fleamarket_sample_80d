@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :items, only: [:new, :show]
   get 'items/confirm/:id', to: 'items#confirm'
   post 'items/confirm/:id', to: 'items#pay'
+  get 'items/completion/:id', to: 'items#completion'
 
   resources :card, only: [:new, :create, :edit, :update, :destroy]
 

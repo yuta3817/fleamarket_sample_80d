@@ -44,10 +44,17 @@ class ItemsController < ApplicationController
       product_id: @product.id
     )
     if @purchased.save
-      redirect_to root_path
+      redirect_to action: :completion, id: @product.id
     else
       render :confirm
     end
+  end
+
+  def completion
+    @product = Product.find_by(id: params[:id])
+    @product_image = ProductImage.find_by(product_id: params[:id])
+    @amount = @product.price + @product.delivery_charge
+
   end
 
   # ログインしていないユーザーをユーザー登録画面へ飛ばす

@@ -360,7 +360,7 @@ DEPENDENCIES
   capistrano-rails-console
   capistrano-rbenv
   capistrano3-unicorn
-  capybara (>= 2.
+  capybara (>= 2.15)
   devise (= 4.7.3)
   dotenv-rails
   factory_bot_rails
