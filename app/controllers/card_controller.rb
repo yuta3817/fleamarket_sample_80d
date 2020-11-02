@@ -2,7 +2,6 @@ class CardController < ApplicationController
   require 'payjp'
 
   before_action :move_to_login
-  before_action :destroy, only: [:update]
   after_action :session_clear, only: [:create, :update]
   
   def new
@@ -63,7 +62,7 @@ class CardController < ApplicationController
   def destroy
     @card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
-    @customer = Payjp::Customer.retrieve(@card.customer_id)
+    customer = Payjp::Customer.retrieve(@card.customer_id)
     customer.delete
     @card.destroy
     redirect_back(fallback_location: root_path)
