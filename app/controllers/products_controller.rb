@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @product = Product.new
@@ -19,7 +19,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = Product.find(6)
+    render layout: "sub_layout"
+  end
+
   def update
+    @product = Product.find(6)
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destory
@@ -38,7 +49,7 @@ class ProductsController < ApplicationController
                                     :prefecture_id,
                                     :delivery_date,
                                     :price,
-                                    product_images_attributes: [:image]
+                                    product_images_attributes: [:image, :_destroy, :id]
                                     ).merge(user_id: current_user.id)
   end
 end

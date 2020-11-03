@@ -1,0 +1,22 @@
+.Listing__Main__ListingImage
+  .Listing__Main__ListingImage__title
+    %label.Listing-title 出品画像
+    %span.Listing-subtitle 必須
+  %p 最大5枚までアップロードできます
+  .Listing__Main__ListingImage__picture
+    #image-box
+      .previews
+        - if product.persisted?
+          - product.product_images.each_with_index do |product_image, i|
+            .preview
+              .img_box{data: {index: i }}
+                = image_tag "#{product_image.image.url}", data: { index: i }, class: "preview_image"
+                .js-remove
+                  削除
+        = f.fields_for :product_images do |image|
+          = image.label :image ,class: "Listing__Main__ListingImage__picture__field" do
+            .js-file_group{data: {index: image.index}}
+              = image.file_field :image, class: "file-field js-file"
+              こちらをクリックして画像アップロードしてください
+          - if product.persisted?
+            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
