@@ -1,6 +1,14 @@
 .Listing
   = form_with model: @product, local: true do |f|
     .Listing__Main
+      - if @product.errors.any?
+        .Listing__Main__errors
+          .Listing__Main__errors__contents
+            .Listing__Main__errors__contents__count
+              = "#{@product.errors.full_messages.count}件のエラーが発生しました。"
+            %ul.Listing__Main__errors__contents__message
+              - @product.errors.full_messages.each do |message|
+                %li= message
       = render partial: "image_form", locals: { f: f, product: @product}
       %hr
         .Listing__Main__ListingProduct
@@ -82,6 +90,9 @@
               %span -
         .Listing__Main__ListingButton
           = f.submit "編集する",data:{turbolinks: false}, class: "listing-button"
+          .back
+            = link_to "/", class: ".Listing__Main__ListingButton__back" do
+              削除
           .back
             = link_to "/", class: ".Listing__Main__ListingButton__back" do
               もどる
