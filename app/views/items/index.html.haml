@@ -1,117 +1,169 @@
 .UserInformation
-  .UserInformation-header
-    .UserInformation-header-top
-      %img.Confirm__header__logo{:alt => "furima", :src => "/assets/logo-white.png"}/
+  = form_with model: @user, local: true do |f|
+    .UserInformation__Main
+      %h1 会員情報入力
 
-    .UserInformation-header-bottom
-      .UserInformation-top-word
-        %h1会員情報入力
-  
-  %hr
-  
-  .UserInformation-contents
-    .UserInformation-contents-top
-      .UserInformation-contents-nickname  
-        %label.title ニックネーム
-        %span.subtitle 必須
-        %form.UserInformation-contents-nickname-content
-        %input{type: "text", placeholder: "例)フリマ次郎"}
+      
+      .UserInformation__Main__contents
+        .UserInformation__Main__contents__top
+          .UserInformation__Main__contents__nickname
+            %label.user__title ニックネーム
+            %span.user__subtitle 必須
+            %form.UserInformation__Main__contents__nickname__content
+            = f.text_field :name , placeholder: "例)フリマ次郎", class: "user-input"
 
-    
-      .UserInformation-contents-email
-        %label.title メールアドレス
-        %span.subtitle 必須
-        %form.UserInformation-contents-nickname-content
-        %input.{type: 'text', placeholder: "PC・携帯どちらでも可"}
         
+          .UserInformation__Main__contents-email
+            %label.user__title メールアドレス
+            %span.user__subtitle 必須
+            %form.UserInformation__Main__contents-nickname-content
+            = f.text_field :email ,placeholder: "PC・携帯どちらでも可",class: "user-input"
+            
 
-      .UserInformation-contents-password
-        %label.title パスワード
-        %span.subtitle 必須
-        %form.UserInformation-contents-nickname-content
-        %input.{type: 'text', placeholder: "7文字以上の半角英数字"}
-        %p パスワードを入力してください
-        %p 英字と数字の両方を含めて設定してください
+          .UserInformation__Main__-contents-password
+            %label.user__title パスワード
+            %span.user__subtitle 必須
+            %form.UserInformation__Main__-contents-nickname-content
+            %input{type: 'text', placeholder: "7文字以上の半角英数字"}
+            %p パスワードを入力してください
+            %p 英字と数字の両方を含めて設定してください
 
-    .UserInformation-contents-bottom
-      .UserInformation-contents-name
-      %p 本人確認
-      %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-    
-    
-    .UserInformation-name
-      .UserInformation-name-zenkaku
-        %label.title お名前(全角)
-        %span.subtitle 必須
-        .UserInformation-name-zenkaku-lastname
-          %form.UserInformation-name-zenkak_content
-          %input{type: "text",placeholder: "例)山田",class: "lastname-front-input"}
-        .UserInformation-name-zenkaku-firstname
-          %form.UserInformation-name-kana_content
-          %input{type: "text",placeholder: "例)花子",class: "lastname-second-input"}
-        .UserInformation-name-kana-caution
-          性を入力してください
+        .UserInformation__Main____contents__bottom
+          .UserInformation__Main___contents__name
+          %p 本人確認
+          %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        
+        
+        .UserInformation__Main____name
+          .UserInformation__Main____name__zenkaku
+            %label.user__title お名前(全角)
+            %span.user__subtitle 必須
+            .UserInformation__Main____name__zenkaku__lastname
+              %form.UserInformation__Main__-__name__zenkak__content
+              %input{type: "text",placeholder: "例)山田",class: "lastname-front-input"}
+            .UserInformation__Main____name__zenkaku__firstname
+              %form.UserInformation__Main____name-kana__content
+              %input{type: "text",placeholder: "例)花子",class: "lastname-second-input"}
+            .UserInformation__Main____name__kana__caution
+              性を入力してください
 
-      .UserInformation-name-kana  
-          %label.title お名前ｶﾅ(全角)
-          %span.subtitle 必須
-        .UserInformation-name-kana-lastname
-          %form.UserInformation-name-kana_content
-          %input{type: "text",placeholder: "例)ヤマダ",class: "lastname-front-input"}
-        .UserInformation-name-kana-firstname
-          %form.UserInformation-name-kana_content
-          %input{type: "text",placeholder: "例)ハナコ",class: "lastname-second-input"}
-        .UserInformation-name-kana-caution
-          性カナを入力してください
+          .UserInformation__Main__-name-kana  
+            %label.user__title お名前ｶﾅ(全角)
+            %span.user__subtitle 必須
+          .UserInformation__Main____name__kana__lastname
+            %form.UserInformation__Main____name__kana__content
+            %input{type: "text",placeholder: "例)ヤマダ",class: "lastname-front-input"}
+          .UserInformation__Main____name__kana__firstname
+            %form.UserInformation__Main____name__kana__content
+            %input{type: "text",placeholder: "例)ハナコ",class: "lastname-second-input"}
+          .UserInformation__Main____name__kana__caution
+            性カナを入力してください
 
-      .UserInformation-birthday
-          %label.title 生年月日
-          %span.subtitle 必須
-        .UserInformation-birthday-input
-          %select{name: "barth",class: "barthday-input"}
-          %option{value: "0"} 2020
-          %option{value: "1"} 2019
-          %option{value: "3"} 2018
-          %option{value: "4"} 2017
-          %option{value: "5"} 2016
-          %option{value: "6"} 2015
-          %option{value: "7"} 2014
-          %option{value: "8"} 2013
-          %option{value: "9"} 2012
-          %option{value: "10"} 2011
-          %option{value: "11"} 2010
-          %option{value: "12"} 
-          %option{value: "13"} 
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担） %select{name: "barden",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担） %select{name: "barden",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担） %select{name: "barden",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担） %select{name: "barden",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担） %select{name: "barden",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担） %select{name: "barden",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担） %select{name: "barden",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担） %select{name: "barden",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担） %select{name: "barden",class: "Listing-input"}
-          %option{value: "0"} 選択してください
-          %option{value: "1"} 送料込み（出品者負担）
-          %option{value: "2"} 着払い（購入者負担）
-          
+          .UserInformation__Main____birthday
+            %label.user__title 生年月日
+            %span.user__subtitle 必須
+          .UserInformation__Main____birthday__input__Year
+            = f.date_select :birthday , class: "day-input"
+            %select{name: "barth",class: "barthday-input__year"} 
+              %option{value: "0"} 2020
+              %option{value: "1"} 2019
+              %option{value: "3"} 2018
+              %option{value: "4"} 2017
+              %option{value: "5"} 2016
+              %option{value: "6"} 2015
+              %option{value: "7"} 2014
+              %option{value: "8"} 2013
+              %option{value: "9"} 2012
+              %option{value: "10"} 2011
+              %option{value: "11"} 2010
+              %option{value: "12"} 2009
+              %option{value: "13"} 2008
+              %option{value: "14"} 2007
+              %option{value: "15"} 2006
+              %option{value: "16"} 2005
+              %option{value: "17"} 2004
+              %option{value: "18"} 2003
+              %option{value: "19"} 2002
+              %option{value: "20"} 2001       
+              %option{value: "21"} 2000
+              %option{value: "22"} 1999
+              %option{value: "23"} 1998
+              %option{value: "24"} 1997
+              %option{value: "25"} 1996
+              %option{value: "26"} 1995
+              %option{value: "27"} 1994
+              %option{value: "28"} 1993
+              %option{value: "29"} 1992
+              %option{value: "30"} 1991
+              %option{value: "31"} 1990
+              %option{value: "32"} 1989
+              %option{value: "33"} 1988 
+              %option{value: "34"} 1987          
+              %option{value: "35"} 1986
+              %option{value: "36"} 1985
+              %option{value: "37"} 1984
+              %option{value: "38"} 1983    
+              %option{value: "39"} 1982
+              %option{value: "40"} 1981
+              %option{value: "41"} 1980
+              %option{value: "42"} 1979
+              %option{value: "43"} 1978
+              %option{value: "44"} 1976
+              %option{value: "45"} 1975
+              %option{value: "46"} 1974
+              %option{value: "47"} 1973
+              %option{value: "48"} 1972
+              %option{value: "49"} 1971
+              %option{value: "50"} 1970
+              %option{value: "51"} 1969
 
-  .UserInformation-footer 
+          .UserInformation__Main____birthday__input__month
+            %select{name: "barth",class: "barthday-input__month"}
+              %option{value: "0"} 1
+              %option{value: "1"} 2
+              %option{value: "3"} 3
+              %option{value: "4"} 4
+              %option{value: "5"} 5
+              %option{value: "6"} 6
+              %option{value: "7"} 7
+              %option{value: "8"} 8
+              %option{value: "9"} 9
+              %option{value: "10"} 10
+              %option{value: "11"} 11
+              %option{value: "12"} 12
+
+          .UserInformation__Main____birthday__input__day 
+            %select{name: "barth",class: "barthday-input__day"}
+              %option{value: "0"} 1
+              %option{value: "1"} 2
+              %option{value: "3"} 3
+              %option{value: "4"} 4
+              %option{value: "5"} 5
+              %option{value: "6"} 6
+              %option{value: "7"} 7
+              %option{value: "8"} 8
+              %option{value: "9"} 9
+              %option{value: "10"} 10
+              %option{value: "11"} 11
+              %option{value: "12"} 12
+              %option{value: "13"} 13
+              %option{value: "14"} 14
+              %option{value: "15"} 15
+              %option{value: "16"} 16
+              %option{value: "17"} 17
+              %option{value: "18"} 18
+              %option{value: "19"} 19
+              %option{value: "20"} 20       
+              %option{value: "21"} 21
+              %option{value: "22"} 22
+              %option{value: "23"} 23
+              %option{value: "24"} 24
+              %option{value: "25"} 25
+              %option{value: "26"} 26
+              %option{value: "27"} 27
+              %option{value: "28"} 28
+              %option{value: "29"} 29
+              %option{value: "30"} 30
+              %option{value: "31"} 31
+      
+      .UserInformation__Main____footer 

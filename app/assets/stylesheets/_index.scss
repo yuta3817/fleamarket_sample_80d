@@ -1,0 +1,61 @@
+*{
+  box-sizing: border-box;
+}
+
+.user-input{
+  padding: 15px;
+  width: 400px;
+}
+
+.day-input{
+  font-size: 20px;
+}
+
+
+.UserInformation{
+
+  display: flex;
+  justify-content: center;
+  background-color: #f8f8f8;
+  font-family: Arial, Helvetica, sans-serif;
+
+
+  &__Main{
+    background-color: white;
+    width: 600px;
+    margin-top: 60px;
+    padding: 50px 100px;
+
+    &__top{
+
+      color: aqua;
+    }
+
+    
+  }
+
+  &__contents{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(245,245,245);
+    font-family: Arial, Helvetica, sans-serif;
+
+
+    &__nickname{
+      
+
+      &__contents{
+        
+
+        
+      }
+    }
+  }
+}
+
+
+
+
+.title{
+  font-size: x-large;
+}
