@@ -23,14 +23,14 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(6)
-    # @product = Product.find(params[:id])
+    check_listing_user
+    @product = Product.find(params[:id])
     render layout: "sub_layout"
   end
 
   def update
-    @product = Product.find(6)
-    # @product = Product.find(params[:id])
+    check_listing_user
+    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to root_path
     else
@@ -59,7 +59,7 @@ class ProductsController < ApplicationController
   end
 
   def check_listing_user
-    unless @product.user_id = current.user
+    unless @product.user_id = current_user.id
       redirect_to root_path 
     end
   end
