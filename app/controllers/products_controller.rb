@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
-  before_action :check_listing_user, only: [:edit, :update, :destroy]
+  before_action :set_product, only: [:edit, :update, :destroy]
 
   def new
     @product = Product.new
@@ -24,12 +24,10 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
     render layout: "sub_layout"
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to root_path
     else
@@ -57,9 +55,10 @@ class ProductsController < ApplicationController
                                     ).merge(user_id: current_user.id)
   end
 
-  def check_listing_user
+  def set_product
     unless @product.user_id = current_user.id
       redirect_to root_path 
     end
+    @product = Product.find(params[:id])
   end
 end
