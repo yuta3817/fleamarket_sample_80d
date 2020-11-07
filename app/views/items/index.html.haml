@@ -11,8 +11,7 @@
         .UserInformation__Main__contents__nickname
           %label.user__title ニックネーム
           %span.user__subtitle 必須
-          %form.UserInformation__Main__contents__nickname__content
-          = f.text_field :name , placeholder: "例)フリマ次郎", class: "user-input"
+          = f.text_field :nickname , placeholder: "例)フリマ次郎", class: "user-input"
           
         .UserInformation__Main__contents__email
           %label.user__title メールアドレス
@@ -23,7 +22,6 @@
         .UserInformation__Main__contents__password
           %label.user__title パスワード
           %span.user__subtitle 必須
-          %form.UserInformation__Main__contents-nickname-content
           = f.text_field :password ,placeholder: "7文字以上の半角英数字",class: "user-input"
           .UserInformation__Main__contents__password__text
             ※英字と数字の両方を含めて設定してください
@@ -41,9 +39,9 @@
             %span.user__subtitle 必須
             .UserInformation__Main__name__zenkaku__contents
               .UserInformation__Main__name__zenkaku__contents__lastname
-                = f.text_field :name ,placeholder: "例)山田",class: "user-name-input"
+                = f.text_field :first_name ,placeholder: "例)山田",class: "user-name-input"
               .UserInformation__Main__name__zenkaku__contents__firstname
-                = f.text_field :name ,placeholder: "例)花子",class: "user-name-input"
+                = f.text_field :last_name ,placeholder: "例)花子",class: "user-name-input"
 
 
           .UserInformation__Main__name__kana  
@@ -51,9 +49,9 @@
             %span.user__subtitle 必須
           .UserInformation__Main__name__kana__contents
             .UserInformation__Main__name__kana__contents__lastname
-              = f.text_field :name ,placeholder: "例)ヤマダ",class: "user-name-input"
+              = f.text_field :first_name_kana ,placeholder: "例)ヤマダ",class: "user-name-input"
             .UserInformation__Main__name__kana__contents__firstname
-              = f.text_field :name ,placeholder: "例)ハナコ",class: "user-name-input"
+              = f.text_field :last_name_kana ,placeholder: "例)ハナコ",class: "user-name-input"
 
           .UserInformation__Main__birthday
             %label.user__title 生年月日
@@ -61,6 +59,8 @@
           .UserInformation__Main__birthday__input__Year
             = f.date_select :birthday ,{use_month_numbers:true, date_separator:'年'}, class: "day-input2"
             = "日"
+
+          
 
       .UserInformation__Main__button
         = f.submit '登録', class: 'user-submit'
