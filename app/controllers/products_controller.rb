@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :check_listing_user, only: [:edit, :update, :destroy]
 
   def new
     @product = Product.new
@@ -23,13 +24,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    check_listing_user
     @product = Product.find(params[:id])
     render layout: "sub_layout"
   end
 
   def update
-    check_listing_user
     @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to root_path
