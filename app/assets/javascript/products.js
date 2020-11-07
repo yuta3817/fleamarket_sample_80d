@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', ()=> {
+  
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<label class="Listing__Main__ListingImage__picture__field"
@@ -45,16 +46,15 @@ $(document).on('turbolinks:load', ()=> {
   $('.hidden-destroy').hide();
 
   $('#image-box').on('change', '.js-file', function(e) {
+    
     const targetIndex = $(this).parent().data('index');
     
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
 
-    // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
-    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-      img.setAttribute('src', blobUrl);
-    } else if ($('.js-file').length == 5 ) {
+    // インプットが5以上にならないよう
+    if ($('.js-file').length == 5 ) {
       $('.Listing__Main__ListingImage__picture__field').addClass("hidden-class");
       $('.previews').append(buildImg(targetIndex, blobUrl));
       // 6個目の画像インプットできないよう隠す用のインプットボタン
@@ -80,8 +80,10 @@ $(document).on('turbolinks:load', ()=> {
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
+    // プレビュー画像消す
     $(this).parent().parent().remove();
     
+    // 同じindexのfield_forを消す
     $($(`div[data-index="${targetIndex}"]`)[0]).parent().remove();
 
     // 隠していた画像選択ボタンがあれば表示させる
@@ -90,4 +92,16 @@ $(document).on('turbolinks:load', ()=> {
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
+
+  // product編集ページ開いた時に動作
+  if(document.URL.match(/products/) && document.URL.match(/edit/)){
+
+    // DBから呼び出した画像のfield_forを隠す
+    $('.Listing__Main__ListingImage__picture__field').addClass("hidden-class");
+    // 入力用フォーム追加
+    $('.previews').append(buildFileField(fileIndex[0]));
+    // 使った数字に1をたす
+    fileIndex.shift();
+    fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+  }
 });

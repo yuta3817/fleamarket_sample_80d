@@ -1,0 +1,100 @@
+.Listing
+  = form_with model: @product, local: true do |f|
+    .Listing__Main
+      - if @product.errors.any?
+        .Listing__Main__errors
+          .Listing__Main__errors__contents
+            .Listing__Main__errors__contents__count
+              = "#{@product.errors.full_messages.count}件のエラーが発生しました。"
+            %ul.Listing__Main__errors__contents__message
+              - @product.errors.full_messages.each do |message|
+                %li= message
+      = render partial: "image_form", locals: { f: f, product: @product}
+      %hr
+        .Listing__Main__ListingProduct
+          .Listing__Main__ListingProduct__name
+            .Listing__Main__ListingProduct__name__title
+              %label.Listing-title 商品名
+              %span.Listing-subtitle 必須
+            %form.Listing__Main__ListingProduct__name__content
+              = f.text_field :name ,placeholder: "40文字まで",class: "Listing-input"
+          .Listing__Main_ListingProduct__explain
+            .Listing__Main__ListingProduct__explain__title
+              %label.Listing-title 商品の説明
+              %span.Listing-subtitle 必須
+            = f.text_area :detail, class: "Listing__Main__ListingProduct__explain__content-area", placeholder: "商品の特徴をここに記載"
+        %hr
+        .Listing__Main__ListingDetail
+          %p 商品の詳細
+          .Listing__Main__ListingDetail__category
+            .Listing__Main__ListingDetail__category__title
+              %label.Listing-title カテゴリー
+              %span.Listing-subtitle 必須
+            = f.collection_select(:category_id, Category.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+            
+          .Listing__Main__ListingDetail__brand
+            .Listing__Main__ListingDetail__brand__title
+              %label.Listing-title ブランド
+              %span 任意
+            = f.collection_select(:brand_id, Brand.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+            
+          .Listing__Main__ListingDetail__status
+            .Listing__Main__ListingDetail__status__title
+              %label.Listing-title 商品の状態
+              %span.Listing-subtitle 必須
+            = f.collection_select(:status_id, Status.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+
+        %hr
+
+        .Listing__Main__ListingDelivary
+          %p 配送について
+          .Listing__Main__ListingDelivary__barden
+            .Listing__Main__ListingDelivary__barden__title
+              %label.Listing-title 配送料負担
+              %span.Listing-subtitle 必須
+            = f.collection_select(:delivery_charge, Charge.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+          .Listing__Main__ListingDelivary__area
+            .Listing__Main__ListingDelivary__area__title
+              %label.Listing-title 発送元の地域
+              %span.Listing-subtitle 必須
+            = f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+          .Listing__Main__ListingDelivary__days
+            .Listing__Main__ListingDelivary__days__title
+              %label.Listing-title 発送までの日数
+              %span.Listing-subtitle 必須
+            = f.collection_select(:delivery_date, Delivery.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+
+        %hr
+
+        .Listing__Main__ListingPrice
+          %p 価格（¥300〜9,999,999）
+          .Listing__Main__ListingPrice__sellingprice
+            .Listing__Main__ListingPrice__sellingprice__title
+              .Listing__Main__ListingPrice__sellingprice__title__second
+                %label.Listing-title 販売価格
+                %span.Listing-subtitle 必須
+              .Listing__Main__ListingPrice__sellingprice__input
+                %span ¥
+                .Listing__Main__ListingPrice__sellingprice__input__number
+                  = f.number_field :price, min: 0,class: "input-number"
+            .Listing__Main__ListingPrice__sellingprice__fee
+              .Listing__Main__ListingPrice__sellingprice__fee__title
+                %label 販売手数料（10%）
+              %span -
+              
+            %hr
+
+            .Listing__Main__ListingPrice__sellingprice__profit
+              .Listing__Main__ListingPrice__sellingprice__profit__title
+                %label 販売利益
+              %span -
+        .Listing__Main__ListingButton
+          = f.submit "編集する",data:{turbolinks: false}, class: "listing-button"
+          .back
+            = link_to "/", class: ".Listing__Main__ListingButton__back" do
+              削除
+          .back
+            = link_to "/", class: ".Listing__Main__ListingButton__back" do
+              もどる
+        .Listing__Main__caution
+          %p 禁止されている行為および商品は必ずご確認ください

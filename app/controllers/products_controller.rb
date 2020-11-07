@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :check_listing_user, only: [:edit, :update, :destroy]
+  before_action :set_product, only: [:edit, :update, :destroy]
 
   def new
     @product = Product.new
@@ -15,11 +17,23 @@ class ProductsController < ApplicationController
       # 保存失敗時に画像入力欄をひとつにする処理
       @product.product_images = []
       @product.product_images.new
-      render action: :new, layout: "sub_layout"
+      render :new, layout: "sub_layout"
     end
   end
 
+  def show
+  end
+
+  def edit
+    render layout: "sub_layout"
+  end
+
   def update
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit, layout: "sub_layout"
+    end
   end
 
   def destory
@@ -38,7 +52,17 @@ class ProductsController < ApplicationController
                                     :prefecture_id,
                                     :delivery_date,
                                     :price,
-                                    product_images_attributes: [:image]
+                                    product_images_attributes: [:image, :_destroy, :id]
                                     ).merge(user_id: current_user.id)
+  end
+
+  def check_listing_user
+    unless @product.user_id = current_user.id
+      redirect_to root_path 
+    end
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
