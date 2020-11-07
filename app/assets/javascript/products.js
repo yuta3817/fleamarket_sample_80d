@@ -103,5 +103,5 @@ $(document).on('turbolinks:load', ()=> {
     // 使った数字に1をたす
     fileIndex.shift();
     fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
-  };
+  }
 });
