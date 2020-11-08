@@ -1,4 +1,5 @@
 .my-page__logout__main{
+  height: 100hv;
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
@@ -8,7 +9,7 @@
     font-size: 20px;
   }
   &__link{
-    margin: 60px auto 0px auto;
+    margin: 60px auto 15px auto;
     background-color: #3ccace;
     text-align: center;
     width: 150px;
