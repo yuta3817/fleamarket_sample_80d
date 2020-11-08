@@ -4,4 +4,7 @@ class ItemsController < ApplicationController
 
   def get
   end
+
+  def get
+  end
 end

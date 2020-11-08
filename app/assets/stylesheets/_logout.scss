@@ -1,0 +1,20 @@
+.my-page__logout__main{
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  &__message{
+    color: black;
+    margin: 80px auto 0px auto;
+    font-size: 20px;
+  }
+  &__link{
+    margin: 60px auto 0px auto;
+    background-color: #3ccace;
+    text-align: center;
+    width: 150px;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
