@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'mypage', to: 'items#mypage'
-  get 'logout', to: 'items#logout'
-
   devise_for :users
   # マークアップ画面の確認のため現状仮のルーティングを行っている
   root to: 'items#index'
@@ -12,6 +9,8 @@ Rails.application.routes.draw do
   resources :items, only: [:new ,:show] do
     collection do
       get 'confirm'
+      get 'mypage', to: 'items#mypage'
+      get 'logout', to: 'items#logout'
     end
   end
 end

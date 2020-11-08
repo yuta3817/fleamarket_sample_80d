@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
   def index
   end
 
-
   def mypage
   end
   
@@ -28,4 +27,3 @@ class ItemsController < ApplicationController
     end
   end
 end
-
