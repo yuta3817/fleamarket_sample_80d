@@ -2,9 +2,6 @@ class ItemsController < ApplicationController
   def index
   end
 
-  def get
-  end
-
-  def get
+  def mypage
   end
 end
