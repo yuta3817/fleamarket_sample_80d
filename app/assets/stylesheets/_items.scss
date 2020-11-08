@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+}
+.Nav {
+  width: 100%;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  position: relative;
+  padding: 0 60px;
+  &__category {
+    padding: 17px 0 16px;
+    width: 100%;
+    max-width: 1040px;
+    font-size: 14px;
+    margin: 0 auto;
+  }
+  &__content {
+    padding: 0 10px 0 0;
+    float: left;
+  }
+  &__content a{
+    text-decoration: none;
+    color: #333;
+  }
+    .fa {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+    .Nav__category::after{
+      display: block;
+      content: "";
+      clear: both;
+  }
+  }
+
+.Main {
+  background-color: #f8f8f8;
+  height: 2020px;
+  &__content {
+    padding: 40px;
+    margin: 0 auto;
+  }
+  .contentAll {
+    width: 700px;
+    margin: 0 auto;
+  }
+  .Topcontent {
+    .Items {
+      background-color: #fff;
+      padding: 24px 40px 40px;
+      &__name {
+        text-align: center;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      &__imageall {
+        text-align: center;
+        margin: 16px 0 0;
+      }
+      &__imageul {
+        display: flex;
+        position: relative;
+      }
+      &__imageli {
+        display: flex;
+        flex-direction: column;
+        width: 560px;
+        align-items: center;
+        margin: 0 auto;
+      }
+      &__imageli img {
+        width: 560px;
+        height: 346px;
+      }
+      &__imageulb {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      &__imagelib {
+        width: 25%;
+        margin: 0 10px 0 0;
+      }
+      &__imagelib img {
+        width: 140px;
+        height: 87px;
+      }
+      &__price {
+        margin: 24px 0 24px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+      .price {
+        font-size: 46px;
+        font-weight: bold;
+        margin: 0 10px 0 0;
+      }
+      .Items__pricedetail {
+        text-align: center;
+      }
+      &__left {
+        font-size: 16px;
+      }
+      &__right {
+        font-size: 16px;
+      }
+      &__detail {
+        line-height: 1.5;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+      &__table {
+        margin-bottom: 20px;
+      }
+      .Table {
+        width: 100%;
+        height: 375px;
+        border-collapse: collapse;
+        border: 1px solid #f8f8f8;
+        &__content {
+          display: table-row;
+          vertical-align: inherit;
+          border-color: inherit;
+        }
+        .Table__left {
+          width: 20%;
+          background-color: #eee;
+          font-weight: 400;
+          padding: 8px;
+          border: 1px solid #dedede;
+          font-size: 14px;
+          text-align: center;
+        }
+        .Table__right {
+          width: 61%;
+          padding: 15px 15px;
+          border: 1px solid #dedede;
+          font-size: 14px;
+        }
+        .Table__right a {
+          text-decoration: none;
+          color: #3CCACE;
+        }
+        }
+        .Items__option {
+          display: flex;
+          justify-content: space-between;
+        }
+        .option {
+          margin: 10px 0 0;
+          display: flex;
+        }
+        .optionBtn-left {
+          margin-right: auto;
+          padding: 6px 10px;
+          border-radius: 40px;
+          color: #3CCACE;
+          border: 1px solid #ffb340;
+        }
+        .fa-star a{
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          text-decoration: none;
+          color: #3CCACE;
+        }
+        .fa-star::before a{
+          content: "\f005";
+        }
+        .optionBtn-right {
+          font-size: 14px;
+        }
+        .optionBtn-right a{
+          padding: 6px 10px;
+          display: inline-block;
+          border-radius: 4px;
+          color: #333;
+          border: 1px solid #333;
+          text-decoration: none;
+        }
+        .fa a{
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+        }
+        .fa-flag::before a{
+          content: "\f005";
+        }
+        }
+        .Topcontent__comments {
+          padding: 24px;
+          background-color: #fff;
+          margin: 10px 0;
+          text-align: center;
+        }
+        .commentContents {
+          list-style: none;
+        }
+        .comment {
+          width: 100%;
+          min-height: 104px;
+          padding: 10px;
+        }
+        .noticecomment {
+          padding: 8px;
+          font-size: 14px;
+          background-color: #f8f8f8;
+          margin: 10px 0;
+          text-align: left;
+        }
+        .commentbutton {
+          font-size: 18px;
+          line-height: 48px;
+          background: #3CCACE;
+          border: 1px solid #3CCACE;
+          color: #fff;
+          width: 60%;
+          font-size: 18px;
+          border-radius: 100px;
+        }
+      }
+    }
+  .Links {
+    list-style: none;
+  }
+  .Linksleft {
+    float: left;
+  }
+  .Linksleft a {
+    color: #3CCACE;
+    text-decoration: none;
+  }
+  .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+  .fa-angle-left::before {
+    content: "\f104";
+  }
+  .Linksright {
+    float: right;
+  }
+  .Linksright a {
+    color: #3CCACE;
+    text-decoration: none;
+  }
+  .Links::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+  .Related a{
+    display: block;
+    margin: 24px 0 8px;
+    color: #3CCACE;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+    position: relative;
+  }
+  .ProductList {
+    margin: 0 0 10px;
+    float: left;
+    width: calc(100% / 3);
+  }
+  .ProductList img {
+    width: 233px;
+    height: 245px;
+  }
