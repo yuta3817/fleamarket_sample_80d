@@ -70,9 +70,10 @@
             %span.user__subtitle 必須
             .UserInformation__Main__address__name__zenkaku__contents
               .UserInformation__Main__address__name__zenkaku__contents__lastname
-                = f.text_field :first_name ,placeholder: "例)山田",class: "user-name-input"
+                %input{type:"text",placeholder: "例)山田",class: "user-name-input"}
               .UserInformation__Main__address__name__zenkaku__contents__firstname
-                = f.text_field :last_name ,placeholder: "例)花子",class: "user-name-input"
+                %input{type:"text",placeholder: "例)花子",class: "user-name-input"}
+
 
 
           .UserInformation__Main__address__name__kana  
@@ -80,53 +81,55 @@
             %span.user__subtitle 必須
             .UserInformation__Main__address__name__kana__contents
               .UserInformation__Main__address__name__kana__contents__lastname
-                = f.text_field :first_name_kana ,placeholder: "例)ヤマダ",class: "user-name-input"
+                %input{type:"text",placeholder: "例)山田",class: "user-name-input"}
+
               .UserInformation__Main__address__name__kana__contents__firstname
-                = f.text_field :last_name_kana ,placeholder: "例)ハナコ",class: "user-name-input"
+                %input{type:"text",placeholder: "例)ハナコ",class: "user-name-input"}
+
 
           .UserInformation__Main__address__zipcode
             %label.user__title 郵便番号
             %span.user__subtitle 必須
             .UserInformation__Main__zip__code__contents
-              = f.text_field :first_name_kana ,placeholder: "例)550-0015",class: "user-input"
-              
+              %input{type:"text",placeholder: "例)555-0015",class: "user-input"}
+
           .UserInformation__Main__address__prefecture
             %label.user__title 都道府県
             %span.user__subtitle 必須
             .UserInformation__Main__prefecture__contents
-              = f.text_field :first_name_kana ,placeholder: "例)大阪府",class: "user-input"
+              %input{type:"text",placeholder: "例)大阪府",class: "user-input"}
 
 
           .UserInformation__Main__address__city
             %label.user__title 市町村
             %span.user__subtitle 必須
             .UserInformation__Main__address__city__contents
-              = f.text_field :first_name_kana ,placeholder: "例)大阪市",class: "user-input"
+              %input{type:"text",placeholder: "例)大阪市",class: "user-input"}
 
           .UserInformation__Main__address__town
             %label.user__title 区、町、村
             %span.user__subtitle 必須
             .UserInformation__Main__address__town__contents
-              = f.text_field :first_name_kana ,placeholder: "例)中央区",class: "user-input"
+              %input{type:"text",placeholder: "例)中央区",class: "user-input"}
 
 
           .UserInformation__Main__address__number
             %label.user__title 番地
             %span.user__subtitle 必須
-            .UserInformation__Main__address__number__contents
-              = f.text_field :first_name_kana ,placeholder: "例)１丁目１−１",class: "user-input"
+            .UserInformation__Main__address__number__conten
+              %input{type:"text",placeholder: "例)1丁目1-1",class: "user-input"}
 
           .UserInformation__Main__address__building
             %label.user__title 建物名
             %span.user__subtitle 必須
             .UserInformation__Main__address__building__contents
-              = f.text_field :first_name_kana ,placeholder: "例)マンション名",class: "user-input"
+              %input{type:"text",placeholder: "マンション名",class: "user-input"}
 
           .UserInformation__Main__address__telephone
             %label.user__title 電話番号
             %span.user__subtitle 必須
             .UserInformation__Main__address__telephone__contents
-              = f.text_field :first_name_kana ,placeholder: "例)06~~~~~~~~",class: "user-input"
+              %input{type:"text",placeholder: "例)06~~~~~~~~",class: "user-input"}
 
 
         .UserInformation__Main__button
