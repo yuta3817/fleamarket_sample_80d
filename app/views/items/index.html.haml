@@ -1,142 +1,237 @@
-.UserInformation
-  = form_with model: @user, local: true do |f|
-    .UserInformation__Main
-      .UserInformation__Main__title
-        .UserInformation__Main__title__content
-          会員情報入力
+.Top__Header
 
-      %hr
+.Top__FirstImg
+  .Top__FirstImg__content
+    .Top__FirstImg__content__title
+      人生を変えるフリマアプリ
+    .Top__FirstImg__content__subtitle
+      %p FURIMAは誰でもかんたんに出品・購入できる
+      %p フリマアプリです。
+    .Top__FirstImg__content__link
+      .Top__FirstImg__content__link__apple
+        = link_to "#" do
+          = image_tag asset_path("appstore.svg"), class: "Top__FirstImg__content__link__apple__icon"
+      .Top__FirstImg__content__link__google
+        = link_to "#" do
+          = image_tag asset_path("google.svg"), class: "Top__FirstImg__content__link__google__icon"
 
-      .UserInformation__Main__contents
-        .UserInformation__Main__contents__nickname
-          %label.user__title ニックネーム
-          %span.user__subtitle 必須
-          = f.text_field :nickname , placeholder: "例)フリマ次郎", class: "user-input"
-          
-        .UserInformation__Main__contents__email
-          %label.user__title メールアドレス
-          %span.user__subtitle 必須
-          = f.text_field :email ,placeholder: "PC・携帯どちらでも可",class: "user-input"
-          
+.Top__Introduction
+  .Top__Introduction__contents
+    .Top__Introduction__contents__title
+      FURIMAが選ばれる3つの理由
+    .Top__Introduction__contents__line
+    .Top__Introduction__contents__boxes
+      .Top__Introduction__contents__boxes__block
+        = image_tag asset_path("pict-reason-01.jpg"), class: "Top__Introduction__contents__boxes__block__img"
+        .Top__Introduction__contents__boxes__block__num
+          1
+        .Top__Introduction__contents__boxes__block__title
+          %span.Top__Introduction__contents__boxes__block__title__color 3分
+          ですぐに出品
+        .Top__Introduction__contents__boxes__block__text
+          スマホで入力するだけで簡単に出品できる！
+      .Top__Introduction__contents__boxes__block
+        = image_tag asset_path("pict-reason-02.jpg"), class: "Top__Introduction__contents__boxes__block__img"
+        .Top__Introduction__contents__boxes__block__num
+          2
+        .Top__Introduction__contents__boxes__block__title
+          %span.Top__Introduction__contents__boxes__block__title__color シンプル
+          で使いやすい
+        .Top__Introduction__contents__boxes__block__text
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      .Top__Introduction__contents__boxes__block
+        = image_tag asset_path("pict-reason-03.jpg"), class: "Top__Introduction__contents__boxes__block__img"
+        .Top__Introduction__contents__boxes__block__num
+          3
+        .Top__Introduction__contents__boxes__block__title
+          手数料
+          %span.Top__Introduction__contents__boxes__block__title__color 業界最安
+        .Top__Introduction__contents__boxes__block__text1
+          最大3%でお得に出品&購入！
 
-        .UserInformation__Main__contents__password
-          %label.user__title パスワード
-          %span.user__subtitle 必須
-          = f.text_field :password ,placeholder: "7文字以上の半角英数字",class: "user-input"
-          .UserInformation__Main__contents__password__text
-            ※英字と数字の両方を含めて設定してください
+.Top__SecondImg
+  .Top__SecondImg__content
+    .Top__SecondImg__content__title
+      会員数日本一位
+    .Top__SecondImg__content__subtitle
+      %p FURIMAは、フリマアプリで最も人気。
+      %p 出品・購入回数も業界最多です！
+      %p ほしかったあの商品に出会えるかもしれません。
+    .Top__FirstImg__content__link
+      .Top__FirstImg__content__link__apple
+        = link_to "#" do
+          = image_tag asset_path("appstore.svg"), class: "Top__FirstImg__content__link__apple__icon"
+      .Top__FirstImg__content__link__google
+        = link_to "#" do
+          = image_tag asset_path("google.svg"), class: "Top__FirstImg__content__link__google__icon"
 
-        .UserInformation__Main__contents__check
-          .UserInformation__Main__contents__check__title
-            本人確認
-          .UserInformation__Main__contents__check__text  
-            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-        
-        
-        .UserInformation__Main__name
-          .UserInformation__Main__name__zenkaku
-            %label.user__title お名前(全角)
-            %span.user__subtitle 必須
-            .UserInformation__Main__name__zenkaku__contents
-              .UserInformation__Main__name__zenkaku__contents__lastname
-                = f.text_field :first_name ,placeholder: "例)山田",class: "user-name-input"
-              .UserInformation__Main__name__zenkaku__contents__firstname
-                = f.text_field :last_name ,placeholder: "例)花子",class: "user-name-input"
+.Top__Feature
+  .Top__Feature__contents
+    .Top__Feature__contents__title
+      FURIMAの特徴
+    .Top__Feature__contents__line
+    .Top__Feature__contents__boxes
+      .Top__Feature__contents__boxes__block
+        = image_tag asset_path("icon-01.png"), class: "Top__Feature__contents__boxes__block__img"
+        .Top__Feature__contents__boxes__block__title
+          簡単に売り買いできる
+        .Top__Feature__contents__boxes__block__text
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .Top__Feature__contents__boxes__block
+        = image_tag asset_path("icon-03.png"), class: "Top__Feature__contents__boxes__block__img"
+        .Top__Feature__contents__boxes__block__title
+          売上金は即日振込みに対応
+        .Top__Feature__contents__boxes__block__text
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      .Top__Feature__contents__boxes__block
+        = image_tag asset_path("icon-04.png"), class: "Top__Feature__contents__boxes__block__img"
+        .Top__Feature__contents__boxes__block__title
+          様々な支払いに対応
+        .Top__Feature__contents__boxes__block__text
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
+.Top__PickupCategory
+  .Top__PickupCategory__contents
+    .Top__PickupCategory__contents__title
+      ピックアップカテゴリー
+    .Top__PickupCategory__contents__subtitle
+      新規投稿商品
+    .Top__PickupCategory__contents__boxes
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food1.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 豚骨ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 890円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★4
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food2.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 二郎系ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 850円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★2
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            =image_tag asset_path("food3.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 鶏白湯ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 950円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★5
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            =image_tag asset_path("food4.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 背脂ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 880円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★3
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            =image_tag asset_path("food5.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p ずんどう屋ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 890円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★1
 
-          .UserInformation__Main__name__kana  
-            %label.user__title お名前ｶﾅ(全角)
-            %span.user__subtitle 必須
-          .UserInformation__Main__name__kana__contents
-            .UserInformation__Main__name__kana__contents__lastname
-              = f.text_field :first_name_kana ,placeholder: "例)ヤマダ",class: "user-name-input"
-            .UserInformation__Main__name__kana__contents__firstname
-              = f.text_field :last_name_kana ,placeholder: "例)ハナコ",class: "user-name-input"
-
-          .UserInformation__Main__birthday
-            %label.user__title 生年月日
-            %span.user__subtitle 必須
-          .UserInformation__Main__birthday__input
-            != sprintf(f.date_select(:birthday, {prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'},{class:"day-input2"}),'年','月')+'日'
-
-      %hr
-
-      .UserInformation__Main__address
-        .UserInformation__Main__address__send
-          送付先情報
-        .UserInformation__Main__address__name
-          .UserInformation__Main__address__name__zenkaku
-            %label.user__title お名前(全角)
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__name__zenkaku__contents
-              .UserInformation__Main__address__name__zenkaku__contents__lastname
-                = f.text_field :first_name ,placeholder: "例)山田",class: "user-name-input"
-              .UserInformation__Main__address__name__zenkaku__contents__firstname
-                = f.text_field :last_name ,placeholder: "例)花子",class: "user-name-input"
-
-
-          .UserInformation__Main__address__name__kana  
-            %label.user__title お名前ｶﾅ(全角)
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__name__kana__contents
-              .UserInformation__Main__address__name__kana__contents__lastname
-                = f.text_field :first_name_kana ,placeholder: "例)ヤマダ",class: "user-name-input"
-              .UserInformation__Main__address__name__kana__contents__firstname
-                = f.text_field :last_name_kana ,placeholder: "例)ハナコ",class: "user-name-input"
-
-          .UserInformation__Main__address__zipcode
-            %label.user__title 郵便番号
-            %span.user__subtitle 必須
-            .UserInformation__Main__zip__code__contents
-              = f.text_field :first_name_kana ,placeholder: "例)550-0015",class: "user-input"
-              
-          .UserInformation__Main__address__prefecture
-            %label.user__title 都道府県
-            %span.user__subtitle 必須
-            .UserInformation__Main__prefecture__contents
-              = f.text_field :first_name_kana ,placeholder: "例)大阪府",class: "user-input"
-
-
-          .UserInformation__Main__address__city
-            %label.user__title 市町村
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__city__contents
-              = f.text_field :first_name_kana ,placeholder: "例)大阪市",class: "user-input"
-
-          .UserInformation__Main__address__town
-            %label.user__title 区、町、村
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__town__contents
-              = f.text_field :first_name_kana ,placeholder: "例)中央区",class: "user-input"
-
-
-          .UserInformation__Main__address__number
-            %label.user__title 番地
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__number__contents
-              = f.text_field :first_name_kana ,placeholder: "例)１丁目１−１",class: "user-input"
-
-          .UserInformation__Main__address__building
-            %label.user__title 建物名
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__building__contents
-              = f.text_field :first_name_kana ,placeholder: "例)マンション名",class: "user-input"
-
-          .UserInformation__Main__address__telephone
-            %label.user__title 電話番号
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__telephone__contents
-              = f.text_field :first_name_kana ,placeholder: "例)06~~~~~~~~",class: "user-input"
-
-
-        .UserInformation__Main__button
-          = f.submit '登録', class: 'user-submit'
-
-
-
-
-
-
-
-
-
+.Top__PickupCategory
+  .Top__PickupCategory__contents
+    .Top__PickupCategory__contents__title
+      ピックアップブランド
+    .Top__PickupCategory__contents__subtitle
+      アーカイバ
+    .Top__PickupCategory__contents__boxes
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food1.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 豚骨ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 890円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★4
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            =image_tag asset_path("food2.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 二郎系ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 850円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★2
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food3.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 鶏白湯ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 950円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★5
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food4.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p 背脂ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 880円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★3
+      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
+        .Top__PickupCategory__contents__boxes__block
+          .Top__PickupCategory__contents__boxes__block__imgblock
+            = image_tag asset_path("food5.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+          .Top__PickupCategory__contents__boxes__block__name
+            %p ずんどう屋ラーメン
+          .Top__PickupCategory__contents__boxes__block__text
+            .Top__PickupCategory__contents__boxes__block__text__price
+              %p 890円
+              .Top__PickupCategory__contents__boxes__block__text__price__tax
+                (税込)
+            .Top__PickupCategory__contents__boxes__block__text__like
+              %p ★1

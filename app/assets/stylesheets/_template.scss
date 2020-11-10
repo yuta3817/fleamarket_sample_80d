@@ -1,0 +1,179 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+  min-height: 82px;
+  &__center {
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding-top: 15px;
+  }
+  &__inner {
+    display: flex;
+    width: 100%;
+    max-width: 1040px;
+    &__logo {
+      display: block;
+      width: 140px;
+      padding: 0 30px 10px 0;
+    }
+    &__searchbox {
+      width: 100%;
+      &__form {
+        box-sizing: border-box;
+        padding-left: 5px;
+        height: 36px;
+        width: calc(100% - 50px);
+        vertical-align: bottom;
+      }
+      &__button {
+        background-color: #3CCACE;
+        box-sizing: border-box;
+        cursor: pointer;
+        border: 0;
+        padding: 8px;
+        height: 36px;
+        width: 36px;
+      }
+      &__button-image {
+        width: 100%;
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    font-size: 14px;
+    &__left {
+      display: flex;
+      &__list {
+        margin-right: 46px;
+      }
+    }
+    &__right {
+      display: flex;
+      &__list {
+        margin-left: 16px;
+      }
+    }
+  }
+  &__black {
+    text-decoration: none;
+    color: #000000;
+  }
+  &__hover:hover {
+    color: orange;
+  }
+}
+
+
+.App {
+  background-color: #272727;
+  background-image:image-url("bg-appBanner-pict.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 100px 40px;
+  color: white;
+  text-shadow: 0 0 0.2em gray;
+  text-align: center;
+  &__inner {
+    &__title {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    &__text {
+      font-size: 35px;
+    }
+  &__badge {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 20px auto 0;
+    width: 100%;
+    &__apple {
+      margin-right: 10px;
+      width: 180px;
+    }
+    &__apple:hover {
+      opacity: 0.6;
+    }
+    &__google {
+      width: 180px;
+    }
+    &__google:hover {
+      opacity: 0.6;
+    }
+  }
+  }
+}
+
+.Footer {
+  background-color: #272727;
+  padding: 60px 0;
+  &__inner {
+    color: #ffffff;
+    text-align: center;
+    &__contents {
+      display: flex;
+      margin: 0 auto;
+      max-width: 840px;
+      &__content {
+        width: calc(1 / 3 * 100%);
+        margin: 0 2% 0 0 ;
+        &__list-head {
+          margin-bottom: 20px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__list {
+          font-size: 12px;
+          &__content {
+            line-height: 32px;
+          }
+        }
+      }
+      &__logo {
+        width: 160px;
+      }
+      &__copyright {
+        font-size: 14px;
+      }
+    }
+  }
+  &__white {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  &__white:hover {
+    text-decoration: underline;
+  }
+}
+
+.Listing-button {
+  background-color: #3CCACE;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 4%;
+  padding: 15px;
+  width: 120px;
+  &__text {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  &__image {
+    width: 60%;
+    vertical-align: bottom;
+  }
+}
+
+.Listing-button:hover {
+  opacity: 0.9;
+}
