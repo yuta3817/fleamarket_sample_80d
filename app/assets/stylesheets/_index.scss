@@ -5,6 +5,7 @@
 .user-input{
   padding: 15px;
   width: 400px;
+
 }
 
 .user-name-input{
@@ -66,6 +67,7 @@
           font-weight: bold;
         }
       }
+      
     }
 
 
@@ -73,8 +75,7 @@
 
 
     &__name{
-
-
+      
       &__zenkaku{
         margin-top: 30px;
         
@@ -109,15 +110,56 @@
 
     &__button{
       margin-top: 50px;
+
     }
 
+
+    &__actions{
+      margin-bottom: 30px;
+
+    }
+    &__login{
+      &__email{
+        margin-top: 30px;
+      }
+      &__password{
+        margin-top: 30px;
+      }
+    }
     
+    &__address{
+
+      &__name{
+
+        &__zenkaku{
+
+          &__contents{
+
+            display: flex;
+
+          }
+        }
+      
+        &__kana{
+          &__contents{
+            display: flex;
+          }
+
+        }
+      
+    }
+
+
+
   }
 
 
 
   
 }
+
+
+
 
 
 .user__title{
@@ -141,3 +183,5 @@
   color: white;
   border: none;
 }
+
+
