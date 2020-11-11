@@ -1,21 +1,24 @@
-.AccountPage__right
-  .AccountPage__right__title
-    ログイン
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .FormField
-      .FormField__label--normal
-        = f.label :email
-      .FormField__input--normal
-        = f.email_field :email, autofocus: true
-      .FormField
-        .FormField__label--normal
-          = f.label :password
-          %i (英数字8文字以上)
-        .FormField__input--normal
-          = f.password_field :password, autocomplete: "off" 
-      .actions
-        = f.submit "Log in", class: 'Button UserButton'
-    .AccountPage__right__down
-      登録
-    .Button.UserButton
-      = render "devise/shared/links"
+.UserInformation
+  .UserInformation__Main
+    .UserInformation__Main__actions
+      アカウントをお持ちでない方はこちら
+      .UserInformation__Main__actions__button  
+        %button{type: "submit", class: 'user-submit'}
+          新規会員登録
+
+    %hr
+    .UserInformation__Main__login
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .UserInformation__Main__login__email
+          .user__title メールアドレス
+          .UserInformation__Main__login__email__input
+            = f.email_field :email, autofocus: true ,placeholder: "メールアドレス",class: "user-input"
+        .UserInformation__Main__login__password
+          .user__title パスワード
+          .UserInformation__Main__login__password__input
+            = f.password_field :password, autocomplete: "off" ,placeholder: "パスワード",class: "user-input"
+
+      
+
+          .UserInformation__Main__button
+            = f.submit 'ログイン', class: 'user-submit'        
