@@ -1,0 +1,12 @@
+.UserLogin
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .FormField__label--normal
+      = f.label :email
+      = f.email_field :email, autofocus: true
+    .FormField
+      .FormField__label--normal
+        = f.label :password
+          %i (英数字8文字以上)
+        = f.password_field :password, autocomplete: "off"
+      .actions
+        = f.submit "Log in", class: 'Button UserButton'

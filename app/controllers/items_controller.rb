@@ -1,12 +1,16 @@
 class ItemsController < ApplicationController
   require 'payjp'
 
-  before_action :authenticate_user!, only: [:confirm, :pay]
+  before_action :authenticate_user!, only: [:new, :confirm, :pay]
   before_action :move_to_login, only: [:confirm, :pay]
   before_action :listing_user?, only: [:confirm]
   before_action :has_card?, only: [:pay]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
+  end
+
+  def mypage
   end
   
   def show
@@ -56,7 +60,9 @@ class ItemsController < ApplicationController
     @amount = @product.price + @product.delivery_charge
 
   end
+  
 
+  private
   # ログインしていないユーザーをユーザー登録画面へ飛ばす
   def move_to_login
     redirect_to action: :index unless user_signed_in?  # 仮でindexにしているが実際はユーザー登録画面に飛ばす
@@ -74,4 +80,9 @@ class ItemsController < ApplicationController
     render :confirm unless @card = Card.find_by(user_id: current_user.id)
   end
 
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
 end

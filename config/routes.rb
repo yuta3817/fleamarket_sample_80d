@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  get 'users/index'
-  # マークアップ画面の確認のため現状仮のルーティングを行っている
   root to: 'items#index'
-  resources :items, only: [:new, :show]
-  get 'items/confirm/:id', to: 'items#confirm'
-  post 'items/confirm/:id', to: 'items#pay'
-  get 'items/completion/:id', to: 'items#completion'
-
+  
+  resources :products, only:[:index, :new, :create, :edit, :update ,:destory]
+  
+  resources :items, only: [:new ,:show] do
+    collection do
+      get 'confirm/:id', to: 'items#confirm'
+      post 'confirm/:id', to: 'items#pay'
+      get 'completion/:id', to: 'items#completion'
+      get 'mypage', to: 'items#mypage'
+      get 'logout', to: 'items#logout'
+    end
+  end
+  
   resources :card, only: [:new, :create, :edit, :update, :destroy]
-
 end

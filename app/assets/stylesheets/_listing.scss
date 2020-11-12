@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 .Listing{
+
   display: flex;
   justify-content: center;
   background-color: rgb(245,245,245);
@@ -12,12 +13,34 @@
     padding: 40px;
     background-color: white;
 
+    &__errors{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+
+      &__contents{
+
+        &__count{
+          font-size: 20px;
+          font-weight: bold;
+          color: red;
+        }
+
+        &__message{
+          color: red;
+        }
+      }
+    }
+
     .Listing-title{
       font-weight: 600;
     }
     .Listing-subtitle{
       background-color: red;
       color: white;
+      border-radius: 2px;
+      padding: 3px;
+      font-size: 8px;
     }
     .Listing-input{
       border: 1px solid #ccc;
@@ -29,61 +52,57 @@
       padding: 0 56px 0 16px;
       margin-top: 16px;
       background-color: white;
-      %option{
-        padding-left: 40px;
-      }
     }
 
     &__ListingImage{
-      padding-bottom: 40px;
+      margin-bottom: 50px;
+
       &__title{
         margin-bottom: 16px;
       }
       &__picture{
-        background-color: rgb(245,245,245);
-        border-color: rgb(204,204,204);
-        height: 150px;
-        margin-top: 16px;
-        display: block;
-        cursor: pointer;
-        border: 1px dashed rgb(204,204,204);
-        &__content{
-          height: 100%;
-          font-size: 12px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          line-height: 1.4em;
-          form{
-            height: 100%;
-            width: 100%;
-            .picture-form{
-              height: 100%;
-              .Listing-formspace{
-                height: 100%;
-                font-size: 12px;
-                line-height: 1.4em;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                .icon-camera{
-                  height: 24px;
-                  width: 24px;
-                }
-                .file-field{
-                  display: none;
-                }
-              }
-            }
+
+        &__field{
+          height: 150px;
+          width: 620px;
+          cursor: pointer;
+          
+
+          .js-file_group{
+            height: 140px;
+            width: 115px;
+            margin: 3px 0 0 3px;
+            padding: 30px 5px 0 5px;
+            border: 1px solid rgb(204,204,204);
+            font-size: 11px;
+            color: lightslategrey;
           }
+        }
+
+        #image-box{
+          background-color: rgb(245,245,245);
+          border-color: rgb(204,204,204);
+          height: 150px;
+          margin-top: 16px;
+          border: 1px dashed rgb(204,204,204);
+          overflow: hidden;
+          
+        }
+
+        .hidden-class{
+          display: none;
+        }
+
+        .hidden-input{
+          display: none;
         }
       }
     }
 
+    .file-field{
+      font-size: 10px;
+      display: none;
+    }
 
     &__ListingProduct{
       padding: 40px 0;
@@ -106,7 +125,6 @@
           font-size: 16px;
           border-color: #ccc;
         }
-        
       }
     }
 
@@ -259,3 +277,38 @@
     }
   }
 }
+
+
+
+.previews {
+  display: flex;
+  height: 170px;
+
+  .preview{
+    height: 148px;
+    width: 124px;
+    background-color: white;
+    padding: 0 6px;
+    border: 0.5px solid lightgrey;
+    
+
+    .img_box{
+      height: 118px;
+      
+      
+      .preview_image{
+        width: 110px;
+        height: 110px;
+        margin-top: 10px;
+        object-fit: cover;
+      }
+      .js-remove{
+        font-size: 12px;
+        color: blue;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }  
+}
+

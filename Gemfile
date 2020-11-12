@@ -38,6 +38,9 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'factory_bot_rails'
+  gem 'faker', "~> 2.8"
 end
 
 group :development do
@@ -65,11 +68,14 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'pry-rails'
 gem 'ancestry'
 gem 'active_hash'
+gem 'carrierwave'
 gem 'devise', '4.7.3'
 gem 'dotenv-rails'
 gem 'factory_bot_rails'
 gem 'faker', "~> 2.8"
+gem 'fog-aws'
 gem 'jquery-rails'
+gem 'mini_magick'
 gem 'payjp', '0.0.7'
 gem 'rspec-rails', '~> 4.0.0.beta2'
 

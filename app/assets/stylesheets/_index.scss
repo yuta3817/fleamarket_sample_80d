@@ -1,0 +1,252 @@
+*{
+  box-sizing: border-box;
+}
+
+.user-input{
+  padding: 15px;
+  width: 400px;
+
+}
+
+.user-name-input{
+  padding: 15px;
+  width: 190px;
+}
+
+.day-input2{
+  padding: 15px;
+}
+
+
+.UserInformation{
+
+  display: flex;
+  justify-content: center;
+  background-color: #f8f8f8;
+  font-family: Arial, Helvetica, sans-serif;
+  
+
+
+  &__Main{
+    background-color: white;
+    width: 600px;
+    margin-top: 60px;
+    padding: 50px 100px;
+
+    &__title{
+
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      &__content{
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    &__contents{
+      margin-top: 40px;
+
+      &__email{
+        margin-top: 30px;
+      }
+
+      &__password{
+        margin-top: 30px;
+
+        &__text{
+          color: gray;
+          font-size: 13px;
+        }
+      }
+
+      &__check{
+        margin-top: 30px;
+        &__title{
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+      
+    }
+
+
+
+
+
+    &__name{
+      
+      &__zenkaku{
+        margin-top: 30px;
+        
+        &__contents{
+
+          display: flex;
+
+          &__lastname{
+            margin-right: 20px;
+          }
+        }
+
+      }
+
+      &__kana{
+        margin-top: 30px;
+
+        &__contents{
+
+          display: flex;
+
+          &__lastname{
+            margin-right: 20px;
+          }
+        }
+      }
+    
+    }
+    &__birthday{
+      margin-top: 30px;
+
+    &__input{
+
+      margin-bottom: 30px;
+    }
+      
+    }
+
+    &__button{
+      margin-top: 50px;
+
+    }
+
+
+    &__actions{
+      margin-bottom: 30px;
+
+    }
+    &__login{
+      &__email{
+        margin-top: 30px;
+      }
+      &__password{
+        margin-top: 30px;
+      }
+    }
+    
+    &__address{
+
+      &__send{
+
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 30px;
+      }
+
+    
+
+      &__name{
+
+        &__zenkaku{
+
+          margin-top: 30px;
+
+          &__contents{
+
+            display: flex;
+
+            &__lastname{
+
+              margin-right: 20px;
+
+            }
+            
+            
+
+          }
+        }
+      
+        &__kana{
+          margin-top: 30px;
+          &__contents{
+            display: flex;
+            &__lastname{
+              margin-right: 20px;
+            }
+          }
+
+        }
+      }
+      &__zipcode{
+        margin-top: 30px;
+      }
+
+      &__prefecture{
+        margin-top: 30px;
+      }
+
+      &__city{
+        margin-top: 30px;
+      }
+
+      &__town{
+        margin-top: 30px;
+      }
+
+      &__number{
+        margin-top: 30px;
+      }
+
+      &__building{
+        margin-top: 30px;
+      }
+
+      &__telephone{
+        margin-top: 30px;
+      }
+
+
+    }
+
+    
+
+
+
+  }
+  &__button{
+    display: flex;
+    justify-content: center;
+    
+  }
+
+
+
+  
+}
+
+
+
+
+
+.user__title{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.user__subtitle{
+  font-size: 12px;
+  color: white;
+  background-color: red;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.user-submit{
+  padding: 15px;
+  width: 400px;
+  background-color: #3CCACE;
+  border-radius: 3px;
+  color: white;
+  border: none;
+}
