@@ -1,0 +1,71 @@
+.my-page_main{
+  //height: 250vh;
+  background-color: whitesmoke;
+  .my-page__contents{
+    background-color: #ffffff;
+    //height: 230vh;
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 20px;
+    .my-page__user{
+      background-color: #3ccace;
+      text-align: center;
+      background-size: cover;
+      &__img{
+        border-radius: 5px;
+        margin-top: 30px;
+        height: 80px;
+        width: 80px;
+        background-color: whitesmoke;
+      }
+    }
+    .my-page__info{
+      font-size: 24px;
+      margin: 15px 0px;
+      font-weight: bold;
+      text-align: center;
+      &__add{
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+        border-bottom: 3px solid #3ccace;
+      }
+    }
+    .my-page__logout-Button{
+      font-size: 18px;
+      background-color: #3ccace;
+      width: 300px;
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 40px;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .my-page__add__list{
+      display: block;
+      .my-page__row{
+        display: flex;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        font-size: 18px;
+        .my-page__item{
+          width: 250px;
+        }
+        .my-page__card-Button{
+          font-size: 18px;
+          background-color: #3ccace;
+          text-align: center;
+          width: 100px;
+          a{
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

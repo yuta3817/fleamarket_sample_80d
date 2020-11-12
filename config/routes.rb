@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :items, only: [:new ,:show] do
     collection do
       get 'confirm'
+      get 'mypage', to: 'items#mypage'
+      get 'logout', to: 'items#logout'
     end
   end
 end
