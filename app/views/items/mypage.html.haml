@@ -130,9 +130,11 @@
             カード情報未登録
       .card-change
         - if @card && current_user.id == @card.user_id
-          = link_to "変更する", edit_card_path(@card.id), data: { "turbolinks": false }
+          = link_to "変更", edit_card_path(@card.id), data: { "turbolinks": false }
+          | 
+          = link_to "削除", card_path(@card.id), method: :delete
         - else
-          = link_to "登録する", new_card_path, data: { "turbolinks": false }
+          = link_to "登録", new_card_path, data: { "turbolinks": false }
     .my-page__logout-Button
       = link_to '#' do
         ログアウト
