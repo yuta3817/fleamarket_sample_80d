@@ -71,13 +71,10 @@ gem 'active_hash'
 gem 'carrierwave'
 gem 'devise', '4.7.3'
 gem 'dotenv-rails'
-gem 'factory_bot_rails'
-gem 'faker', "~> 2.8"
 gem 'fog-aws'
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'payjp', '0.0.7'
-gem 'rspec-rails', '~> 4.0.0.beta2'
 
 group :production do
   gem 'unicorn'

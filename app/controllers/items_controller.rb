@@ -65,10 +65,8 @@ class ItemsController < ApplicationController
     @product = Product.find_by(id: params[:id])
     @product_image = ProductImage.find_by(product_id: params[:id])
     @amount = @product.price + @product.delivery_charge
-
   end
   
-
   private
   # ログインしていないユーザーをユーザー登録画面へ飛ばす
   def move_to_login
