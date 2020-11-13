@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :product_purchases, dependent: :destroy
   has_one :address, dependent: :destroy
   has_one :card, dependent: :destroy
-  validates :name, presence: true, uniqueness: true
+  # validates :nickname, presence: true, uniqueness: true
 end
