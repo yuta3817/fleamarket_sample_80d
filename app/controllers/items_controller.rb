@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show, :mypage, :confirm]
-  before_action :authenticate_user!, only: [:new]
+  before_action :move_to_index, except: [:index, :show, :mypage, :confirm, :logout]
+  before_action :authenticate_user!, only: []
 
   def index
   end
@@ -11,10 +11,10 @@ class ItemsController < ApplicationController
   def show
   end
   
-  def new
-  end
-  
   def confirm
+  end
+
+  def logout
   end
 
   private

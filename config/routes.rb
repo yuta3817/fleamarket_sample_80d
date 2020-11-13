@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     collection do
       get 'confirm'
       get 'mypage'
-      get 'logout', to: 'items#logout'
+      get 'logout'
     end
   end
 end
