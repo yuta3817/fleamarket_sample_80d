@@ -1,3 +1,4 @@
+= render partial: "layouts/header_sub"
 .UserInformation
   .UserInformation__Main
     .UserInformation__Main__actions
@@ -21,4 +22,5 @@
       
 
           .UserInformation__Main__button
-            = f.submit 'ログイン', class: 'user-submit'        
+            = f.submit 'ログイン', class: 'user-submit'
+= render partial: "layouts/footer_sub"

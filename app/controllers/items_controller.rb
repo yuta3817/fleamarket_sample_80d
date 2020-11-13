@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
-  before_action :authenticate_user!, only: [:new, :confirm]
+  before_action :move_to_index, except: [:index, :show, :mypage, :confirm]
+  before_action :authenticate_user!, only: [:new]
 
   def index
   end
@@ -12,11 +12,9 @@ class ItemsController < ApplicationController
   end
   
   def new
-    render layout: "sub_layout"
   end
   
   def confirm
-    render layout: "sub_layout"
   end
 
   private

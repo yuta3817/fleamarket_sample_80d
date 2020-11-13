@@ -6,7 +6,6 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.product_images.new
-    render layout: "sub_layout"
   end
 
   def create
@@ -17,7 +16,7 @@ class ProductsController < ApplicationController
       # 保存失敗時に画像入力欄をひとつにする処理
       @product.product_images = []
       @product.product_images.new
-      render :new, layout: "sub_layout"
+      render :new
     end
   end
 
@@ -25,14 +24,13 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    render layout: "sub_layout"
   end
 
   def update
     if @product.update(product_params)
       redirect_to root_path
     else
-      render :edit, layout: "sub_layout"
+      render :edit
     end
   end
 
