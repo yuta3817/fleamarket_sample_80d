@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   require 'payjp'
 
-  before_action :authenticate_user!, only: [:new, :confirm, :pay]
-  before_action :move_to_login, only: [:confirm, :pay]
+  before_action :authenticate_user!, only: [:new, :confirm, :pay, :mypage]
+  before_action :move_to_login, only: [:confirm, :pay, :mypage]
   before_action :listing_user?, only: [:confirm]
   before_action :has_card?, only: [:pay]
   before_action :move_to_index, except: [:index, :show]
@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
 
   def mypage
     @user = User.find_by(id: params[:id])
+    redirect_to root_path if @user.id != current_user.id
     @address = Address.find_by(user_id: params[:id])
     if @card = Card.find_by(user_id: current_user.id)
       Payjp.api_key = ENV['PAYJP_SECRET_KEY']
