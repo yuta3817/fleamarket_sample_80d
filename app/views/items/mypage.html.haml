@@ -12,22 +12,22 @@
         .my-page__item
           苗字
         .my-page__prefecture
-          = @user.first_name
+          = @user.last_name
       %li.my-page__row
         .my-page__item
           苗字カナ
         .my-page__city
-          = @user.first_name_kana
+          = @user.last_name_kana
       %li.my-page__row
         .my-page__item
           名前
         .my-page__block-number
-          = @user.last_name
+          = @user.first_name
       %li.my-page__row
         .my-page__item
           名前カナ
         .my-page__bilding
-          = @user.last_name_kana
+          = @user.first_name_kana
       %li.my-page__row
         .my-page__item
           誕生日
@@ -76,12 +76,12 @@
         .my-page__item
           苗字
         .my-page__prefecture
-          = @address.first_name
+          = @address.last_name
       %li.my-page__row
         .my-page__item
           名前
         .my-page__city
-          = @address.last_name
+          = @address.first_name
       %li.my-page__row
         .my-page__item
           都道府県
