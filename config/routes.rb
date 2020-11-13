@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get 'confirm/:id', to: 'items#confirm'
       post 'confirm/:id', to: 'items#pay'
       get 'completion/:id', to: 'items#completion'
-      get 'mypage', to: 'items#mypage'
+      get 'mypage/:id', to: 'items#mypage'
       get 'logout', to: 'items#logout'
     end
   end

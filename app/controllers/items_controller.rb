@@ -11,6 +11,13 @@ class ItemsController < ApplicationController
   end
 
   def mypage
+    @user = User.find_by(id: params[:id])
+    @address = Address.find_by(user_id: params[:id])
+    if @card = Card.find_by(user_id: current_user.id)
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_info = customer.cards.retrieve(@card.card_id)
+    end
   end
   
   def show
