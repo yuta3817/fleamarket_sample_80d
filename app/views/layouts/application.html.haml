@@ -11,38 +11,4 @@
     = javascript_include_tag 'https://js.pay.jp/v2/pay.js'
     = javascript_include_tag 'application'
   %body
-    .Header
-      .Header__center
-        .Header__inner
-          = link_to root_path do
-            = image_tag asset_path("logo.png"), class: "Header__inner__logo"
-          .Header__inner__searchbox
-            = form_with url: "#" do |form|
-              = form.text_field :keyword, placeholder: "キーワードから探す", class: "Header__inner__searchbox__form"
-              %button{ type:"submit", class:"Header__inner__searchbox__button" }
-                = image_tag asset_path("icon-search 1"), class:"Header__inner__searchbox__button-image"
-        .Header__nav
-          %ul.Header__nav__left
-            %li.Header__nav__left__list
-              = link_to "#", class:"Header__black Header__hover" do
-                カテゴリー
-            %li.Header__nav__left__list
-              = link_to "#", class:"Header__black Header__hover" do
-                ブランド
-          %ul.Header__nav__right
-            %li.Header__nav__right__list
-              = link_to "/users/sign_in", class:"Header__black" do
-                ログイン
-            %li.Header__nav__right__list
-              = link_to "/users/sign_up", class:"Header__black" do
-                新規会員登録
-            %li.Header__nav__right__list
-              = link_to "/users/sign_out", method: :delete, class:"Header__black" do
-                ログアウト
     = yield
-    = link_to "products/new" do
-      .Listing-button
-        .Listing-button__text
-          出品する
-        = image_tag asset_path("icon_camera.png"), class: "Listing-button__image"
-        

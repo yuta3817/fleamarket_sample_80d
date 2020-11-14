@@ -35,7 +35,6 @@ class ItemsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_info = customer.cards.retrieve(@card.card_id)
     end
-    render layout: "sub_layout"
   end
 
   def logout
