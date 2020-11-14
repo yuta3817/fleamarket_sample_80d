@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   require 'payjp'
 
-  before_action :authenticate_user!, only: [:new, :confirm, :pay, :mypage]
-  before_action :move_to_login, only: [:confirm, :pay, :mypage]
-  before_action :listing_user?, only: [:confirm]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_login, only: [:confirm, :pay, :completion, :mypage]
+  before_action :listing_user?, only: [:confirm, :pay]
   before_action :has_card?, only: [:pay]
   before_action :move_to_index, except: [:index, :show]
 
@@ -24,10 +24,6 @@ class ItemsController < ApplicationController
   def show
   end
   
-  def new
-    render layout: "sub_layout"
-  end
-  
   def confirm
     @product = Product.find_by(id: params[:id])
     @amount = @product.price + @product.delivery_charge
@@ -40,6 +36,9 @@ class ItemsController < ApplicationController
       @card_info = customer.cards.retrieve(@card.card_id)
     end
     render layout: "sub_layout"
+  end
+
+  def logout
   end
 
   def pay

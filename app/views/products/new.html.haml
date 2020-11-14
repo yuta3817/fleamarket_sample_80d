@@ -1,3 +1,4 @@
+= render partial: "layouts/header_sub"
 .Listing
   = form_with model: @product, local: true do |f|
     .Listing__Main
@@ -96,4 +97,5 @@
             もどる
       .Listing__Main__caution
         %p 禁止されている行為および商品は必ずご確認ください
+= render partial: "layouts/footer_sub"
 

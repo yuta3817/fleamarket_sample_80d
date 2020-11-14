@@ -1,3 +1,4 @@
+= render partial: "layouts/header_sub"
 .Confirm__Main
   = form_with(action: :pay, method: :post) do
     .Confirm__Main__content
@@ -56,3 +57,4 @@
       - else
         .Confirm__Main__content__purchase-button
           = submit_tag("購入を確定する", class: "Confirm__Main__content__purchase-button__button")
+= render partial: "layouts/footer_sub"

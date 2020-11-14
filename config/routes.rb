@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   resources :products, only:[:index, :new, :create, :edit, :update ,:destory]
   
-  resources :items, only: [:new ,:show] do
+  resources :items do
     collection do
       get 'confirm/:id', to: 'items#confirm'
       post 'confirm/:id', to: 'items#pay'
