@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
   end
 
   def destory
+    @product.destory
   end
 
 
