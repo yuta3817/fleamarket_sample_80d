@@ -47,27 +47,32 @@
         .my-page__item
           都道府県
         .my-page__prefecture
-          = @address.prefecture
+          -# = @address.prefecture
+          大阪府
       %li.my-page__row
         .my-page__item
           市区町村
         .my-page__city
-          = @address.city + " " + @address.town
+          -# = @address.city + " " + @address.town
+          西区南堀江
       %li.my-page__row
         .my-page__item
           番地
         .my-page__block-number
-          = @address.number
+          -# = @address.number
+          777
       %li.my-page__row
         .my-page__item
           マンション名・ビル名
         .my-page__bilding
-          = @address.building
+          -# = @address.building
+          ビル
       %li.my-page__row
         .my-page__item
           電話番号
         .my-page__telephone
-          = @address.telephone.insert(3, "-").insert(8, "-")
+          -# = @address.telephone.insert(3, "-").insert(8, "-")
+          090-1111-1111
     .my-page__info
       .my-page__info__add
         お届け先情報
@@ -77,37 +82,44 @@
         .my-page__item
           苗字
         .my-page__prefecture
-          = @address.last_name
+          -# = @address.last_name
+          hoge
       %li.my-page__row
         .my-page__item
           名前
         .my-page__city
-          = @address.first_name
+          -# = @address.first_name
+          hoge
       %li.my-page__row
         .my-page__item
           都道府県
         .my-page__prefecture
-          = @address.prefecture
+          -# = @address.prefecture
+          hoge
       %li.my-page__row
         .my-page__item
           市区町村
         .my-page__city
-          = @address.city + " " + @address.town
+          -# = @address.city + " " + @address.town
+          hoge
       %li.my-page__row
         .my-page__item
           番地
         .my-page__block-number
-          = @address.number
+          -# = @address.number
+          hoge
       %li.my-page__row
         .my-page__item
           マンション名・ビル名
         .my-page__bilding
-          = @address.building
+          -# = @address.building
+          hoge
       %li.my-page__row
         .my-page__item
           電話番号
         .my-page__telephone
-          = @address.telephone.insert(3, "-").insert(8, "-")
+          -# = @address.telephone.insert(3, "-").insert(8, "-")
+          hoge
     .my-page__info
       .my-page__info__add
         カード情報
