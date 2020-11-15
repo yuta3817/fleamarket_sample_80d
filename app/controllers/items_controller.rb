@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   require 'payjp'
 
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :logout]
   before_action :move_to_login, only: [:confirm, :pay, :completion, :mypage]
   before_action :listing_user?, only: [:confirm, :pay]
   before_action :has_card?, only: [:pay]
