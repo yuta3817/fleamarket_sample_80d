@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'items#index'
   
-  resources :products, only:[:index, :new, :create, :edit, :update ,:destory]
+  resources :products, only:[:index, :new, :create, :edit, :update , :destroy]
   
   resources :items do
     collection do

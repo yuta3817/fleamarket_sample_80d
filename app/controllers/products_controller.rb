@@ -34,8 +34,9 @@ class ProductsController < ApplicationController
     end
   end
 
-  def destory
-    @product.destory
+  def destroy
+    @product.destroy
+    redirect_to root_path
   end
 
 
@@ -56,7 +57,7 @@ class ProductsController < ApplicationController
   end
 
   def check_listing_user
-    unless @product.user_id = current_user.id
+    unless @product.user_id == current_user.id
       redirect_to root_path 
     end
   end
