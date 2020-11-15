@@ -46,11 +46,14 @@
           .Confirm__Main__content__address__menu__change
             = link_to "変更する >", "#"
         .Confirm__Main__content__address__code
-          = "〒" + @address.zip_code.insert(3, "-")
+          -# = "〒" + @address.zip_code.insert(3, "-")
+          111-1111
         .Confirm__Main__content__address__address
-          = @address.prefecture + " " + @address.city + " " + @address.town + " " + @address.number + " " + @address.building
+          -# = @address.prefecture + " " + @address.city + " " + @address.town + " " + @address.number + " " + @address.building
+          大阪府
         .Confirm__Main__content__address__name
-          = @address.last_name + " " + @address.first_name
+          -# = @address.last_name + " " + @address.first_name
+          てっく　たろう
       - if @purchased || Card.where(user_id: current_user.id).exists? == false
         .Confirm__Main__content__purchase-button
           = submit_tag("購入できません", disabled: true, class: "Confirm__Main__content__purchase-button__soldout")
