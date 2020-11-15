@@ -36,13 +36,13 @@ class CardController < ApplicationController
   def edit
     @title = "カード情報変更"
     @btn = "変更"
-    @card = Card.find_by(id: params[:id])
+    @card = Card.find(params[:id])
     session[:previous_url] = request.referer
     redirect_to "/" if @card.nil? || @card.user_id != current_user.id
   end
 
   def update
-    @card = Card.find_by(id: params[:id])
+    @card = Card.find(params[:id])
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     customer = Payjp::Customer.retrieve(@card.customer_id)
     # 既存のカード情報を削除

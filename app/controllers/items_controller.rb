@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def mypage
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
     redirect_to root_path if @user.id != current_user.id
     @address = Address.find_by(user_id: params[:id])
     if @card = Card.find_by(user_id: current_user.id)
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   end
   
   def confirm
-    @product = Product.find_by(id: params[:id])
+    @product = Product.find(params[:id])
     @amount = @product.price + @product.delivery_charge
     @product_image = ProductImage.find_by(product_id: params[:id])
     @purchased = ProductPurchase.find_by(product_id: params[:id])
@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @product = Product.find_by(id: params[:id])
+    @product = Product.find(params[:id])
     amount = @product.price + @product.delivery_charge
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     charge = Payjp::Charge.create(
@@ -61,7 +61,7 @@ class ItemsController < ApplicationController
   end
 
   def completion
-    @product = Product.find_by(id: params[:id])
+    @product = Product.find(params[:id])
     @product_image = ProductImage.find_by(product_id: params[:id])
     @amount = @product.price + @product.delivery_charge
   end
@@ -74,7 +74,7 @@ class ItemsController < ApplicationController
 
   # 自分の出品した商品の購入確認ページにはアクセスできないようにする
   def listing_user?
-    @product = Product.find_by(id: params[:id])
+    @product = Product.find(params[:id])
     if current_user.id == @product.user_id
       redirect_to action: :index
     end
