@@ -4,7 +4,7 @@
     .my-page__user
       = image_tag asset_path("member_photo_noimage_thumb.png"),class: 'my-page__user__img'
       .my-page__user__name
-        マスター
+        = @user.nickname
     .my-page__info
       .my-page__info__add
         本人情報
@@ -13,27 +13,27 @@
         .my-page__item
           苗字
         .my-page__prefecture
-          西村
+          = @user.last_name
       %li.my-page__row
         .my-page__item
           苗字カナ
         .my-page__city
-          ニシムラ
+          = @user.last_name_kana
       %li.my-page__row
         .my-page__item
           名前
         .my-page__block-number
-          マスター
+          = @user.first_name
       %li.my-page__row
         .my-page__item
           名前カナ
         .my-page__bilding
-          マスター
+          = @user.first_name_kana
       %li.my-page__row
         .my-page__item
           誕生日
         .my-page__telephone
-          1991/01/11
+          = @user.birthday
     .my-page__info
       .my-page__info__add
         連絡先・住所
@@ -42,71 +42,72 @@
         .my-page__item
           郵便番号
         .my-page__prefecture
-          〒542-0076
+          = "〒" + @address.zip_code.insert(3, "-")
       %li.my-page__row
         .my-page__item
           都道府県
         .my-page__prefecture
-          大阪府
+          = @address.prefecture
       %li.my-page__row
         .my-page__item
           市区町村
         .my-page__city
-          大阪市 中央区
+          = @address.city + " " + @address.town
       %li.my-page__row
         .my-page__item
           番地
         .my-page__block-number
-          難波五丁目 1-60
+          = @address.number
       %li.my-page__row
         .my-page__item
           マンション名・ビル名
         .my-page__bilding
-          難波スカイオ15階
+          = @address.building
       %li.my-page__row
         .my-page__item
           電話番号
         .my-page__telephone
-          050-3187-3522
+          = @address.telephone.insert(3, "-").insert(8, "-")
     .my-page__info
       .my-page__info__add
         お届け先情報
+        -# お届け先情報のテーブルが不明のためaddressを使用
     %ul.my-page__add__list
       %li.my-page__row
         .my-page__item
           苗字
         .my-page__prefecture
-          西村
+          = @address.last_name
       %li.my-page__row
         .my-page__item
           名前
         .my-page__city
-          マスター
+          = @address.first_name
       %li.my-page__row
         .my-page__item
           都道府県
         .my-page__prefecture
-          大阪府
+          = @address.prefecture
       %li.my-page__row
         .my-page__item
           市区町村
         .my-page__city
-          大阪市 中央区
+          = @address.city + " " + @address.town
       %li.my-page__row
         .my-page__item
           番地
         .my-page__block-number
-          難波五丁目 1-60
+          = @address.number
       %li.my-page__row
         .my-page__item
           マンション名・ビル名
         .my-page__bilding
-          難波スカイオ15階
+          = @address.building
       %li.my-page__row
         .my-page__item
           電話番号
         .my-page__telephone
-          050-3187-3522
+          = @address.telephone.insert(3, "-").insert(8, "-")
     .my-page__info
       .my-page__info__add
         カード情報
@@ -118,13 +119,24 @@
           カード払い
       %li.my-page__row
         .my-page__item
-          登録カード変更
-        .my-page__card-Button
-          = link_to '#' do
-            .my-page__Button
-              変更する
+          登録カード情報
+        .my-page__prefecture
+          - if @card && current_user.id == @card.user_id
+            %div
+              = @card_info.brand
+            %div
+              カード番号（下4桁）
+            = "* * * * - * * * * - * * * * - " + @card_info.last4
+          - else
+            カード情報未登録
+      .card-change
+        - if @card && current_user.id == @card.user_id
+          = link_to "変更", edit_card_path(@card.id), data: { "turbolinks": false }
+          | 
+          = link_to "削除", card_path(@card.id), method: :delete
+        - else
+          = link_to "登録", new_card_path, data: { "turbolinks": false }
     .my-page__logout-Button
       = link_to '#' do
-        .my-page__Button
-          ログアウト
+        ログアウト
 = render partial: "layouts/footer_sub"
