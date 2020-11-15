@@ -137,6 +137,6 @@
         - else
           = link_to "登録", new_card_path, data: { "turbolinks": false }
     .my-page__logout-Button
-      = link_to '#' do
+      = link_to '/users/sign_out' ,method: :delete do
         ログアウト
 = render partial: "layouts/footer_sub"

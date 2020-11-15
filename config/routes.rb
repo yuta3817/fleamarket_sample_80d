@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       post 'confirm/:id', to: 'items#pay'
       get 'completion/:id', to: 'items#completion'
       get 'mypage/:id', to: 'items#mypage'
-      get 'logout', to: 'items#logout'
+      get 'logout'
     end
   end
   resources :card, only: [:new, :create, :edit, :update, :destroy]
