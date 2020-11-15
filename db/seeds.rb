@@ -1,3 +1,24 @@
+User.create(nickname:"admin",
+            email: "admin@admin",
+            password: "aaaaaaaa",
+            first_name: "admin",
+            last_name: "admin",
+            first_name_kana: "アドミン",
+            last_name_kana: "アドミン",
+            birthday: "2020-01-01"
+)
+
+User.create(nickname:"hoge",
+            email: "hoge@hoge",
+            password: "aaaaaaaa",
+            first_name: "hoge",
+            last_name: "hoge",
+            first_name_kana: "ホゲ",
+            last_name_kana: "ホゲ",
+            birthday: "2020-02-02"
+)
+
+
 Address.create(first_name: "hoge",
                 last_name: "hoge1",
                 first_name_kana: "ホゲ",
