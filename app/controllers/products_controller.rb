@@ -34,7 +34,12 @@ class ProductsController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
+    if @product.destroy
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
 
@@ -55,7 +60,7 @@ class ProductsController < ApplicationController
   end
 
   def check_listing_user
-    unless @product.user_id = current_user.id
+    unless @product.user_id == current_user.id
       redirect_to root_path 
     end
   end

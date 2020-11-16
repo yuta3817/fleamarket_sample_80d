@@ -91,12 +91,8 @@
               %span -
         .Listing__Main__ListingButton
           = f.submit "編集する",data:{turbolinks: false}, class: "listing-button"
-          .back
-            = link_to "/", class: ".Listing__Main__ListingButton__back" do
-              削除
-          .back
-            = link_to "/", class: ".Listing__Main__ListingButton__back" do
-              もどる
+          = link_to '削除' ,product_path(@product), method: :delete, class: "listing-delete"
+          = link_to '戻る', root_path, class: "save-button"
         .Listing__Main__caution
           %p 禁止されている行為および商品は必ずご確認ください
 = render partial: "layouts/footer_sub"
