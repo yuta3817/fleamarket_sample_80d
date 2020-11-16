@@ -77,7 +77,7 @@
               .Listing__Main__ListingPrice__sellingprice__input
                 %span ¥
                 .Listing__Main__ListingPrice__sellingprice__input__number
-                  = f.number_field :price, min: 0,class: "input-number"
+                  = f.number_field :price, min: 100, class: "input-number"
             .Listing__Main__ListingPrice__sellingprice__fee
               .Listing__Main__ListingPrice__sellingprice__fee__title
                 %label 販売手数料（10%）
