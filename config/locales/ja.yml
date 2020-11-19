@@ -18,7 +18,6 @@
         user:
           email: メールアドレス
           password: パスワード
-          
           nickname: ニックネーム
           first_name: 名前（名）
           last_name: 苗字（姓）
