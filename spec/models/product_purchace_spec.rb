@@ -7,7 +7,7 @@ describe ProductPurchase do
         product_id: 1
       )
       purchased.valid?
-      expect(purchased.errors[:user_id]).to include("can't be blank")
+      expect(purchased.errors[:user_id]).to include("を入力してください")
     end
     it "is invalid without a product_id" do
       purchased = ProductPurchase.new(
@@ -15,7 +15,7 @@ describe ProductPurchase do
         product_id: ""
       )
       purchased.valid?
-      expect(purchased.errors[:product_id]).to include("can't be blank")
+      expect(purchased.errors[:product_id]).to include("を入力してください")
     end
   end
 end
