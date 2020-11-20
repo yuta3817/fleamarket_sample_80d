@@ -259,17 +259,30 @@
         border: none;
         font-weight: bold;
         font-size: 17px;
+        color: white;
         background-color: gray;
         width: 100%;
         min-height: 48px;
-        padding: 0 24px;
+        padding: 10px 24px;
         border-radius: 4px;
         margin-top: 24px;
-        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
       }
-      .back{
+      .listing-delete{
+        font-weight: bold;
+        font-size: 17px;
+        background-color: red;
+        color: white;
+        width: 100%;
+        min-height: 48px;
+        padding: 10px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        text-shadow: none;
+        border: none;
         margin-top: 24px;
-        color: #0095ee;
+        text-align: center;
       }
     }
     &__caution{

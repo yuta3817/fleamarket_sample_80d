@@ -69,11 +69,12 @@ gem 'pry-rails'
 gem 'ancestry'
 gem 'active_hash'
 gem 'carrierwave'
-gem 'mini_magick'
-gem 'jquery-rails'
-gem 'devise'
+gem 'devise', '4.7.3'
+gem 'dotenv-rails'
 gem 'fog-aws'
-
+gem 'jquery-rails'
+gem 'mini_magick'
+gem 'payjp', '0.0.7'
 
 group :production do
   gem 'unicorn'

@@ -12,4 +12,5 @@ FactoryBot.define do
     created_at { Faker::Time.between(from: DateTime.now - 3, to: DateTime.now - 2) }
     updated_at { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
   end
+
 end
