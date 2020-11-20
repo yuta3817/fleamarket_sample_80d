@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :confirm]
 
   def index
+    @products = Product.all.order("created_at DESC").first(5)
   end
 
   def mypage
