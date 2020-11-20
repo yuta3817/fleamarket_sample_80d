@@ -10,7 +10,6 @@
   }
   &__Main {
     background-color:whitesmoke;
-    min-height: calc(100vh - 300px);
     &__content {
       background-color: white;
       text-align: center;
@@ -31,6 +30,7 @@
         padding: 32px 16px;
         max-width: 375px;
         &__image {
+          object-fit: cover;
           border-radius: 5px;
           height: 80px;
           width: 80px;
@@ -76,6 +76,14 @@
           &__text {
             font-weight: bold;
           }
+          &__change a {
+            text-decoration: none;
+            color: #3CCACE;
+          }
+          &__change a:hover {
+            text-decoration: underline;
+            opacity: 0.6;
+          }
         }
       }
       &__address {
@@ -91,6 +99,14 @@
           &__text {
             font-weight: bold;
           }
+          &__change a {
+            text-decoration: none;
+            color: #3CCACE;
+          }
+          &__change a:hover {
+            text-decoration: underline;
+            opacity: 0.6;
+          }
         }
       }
       &__purchase-button {
@@ -99,17 +115,36 @@
         margin: 0 auto;
         padding: 32px 16px 48px;
         max-width: 375px;
+        & a {
+          text-decoration: none;
+        }
         &__button {
           background-color: #3CCACE;
           color: white;
+          border: none;
           border-radius: 5px;
           width: 100%;
           height: 48px;
           line-height: 48px;
+          &:hover {
+            cursor: pointer;
+          }
+          &:active {
+            outline: none;
+          }
+        }
+        &__soldout {
+          background-color: lightgray;
+          color: gray;
+          border: none;
+          border-radius: 5px;
+          width: 100%;
+          height: 48px;
+          line-height: 48px;
+          }
         }
       }
     }
-  }
   &__Footer {
     display: flex;
     background-color: whitesmoke;
@@ -118,11 +153,33 @@
     padding: 20px 0;
     height: 200px;
     box-sizing: border-box;
+    &__content{
+      &__list {
+        display: flex;
+        &__link a {
+          margin: 0 5px;
+          color: #000000;
+          text-decoration: none;
+          font-size: 12px;
+        }
+        &__link a:hover {
+          text-decoration: underline;
+          opacity: 0.6;
+        }
+      }
+    }
     &__logo {
       filter: grayscale(100%) opacity(25%);
       display: block;
       margin: 20px auto;
       height: 48px;
     }
+  }
+}
+
+@media (max-width: 640px) {
+  .Confirm__Footer__content__list {
+    display: list-item;
+    text-align: center;
   }
 }
