@@ -1,4 +1,139 @@
 = render partial: "layouts/header_sub"
 .wrapper
-  = render "product_details"
+  %nav.Nav
+    %ul.Nav__category
+      %li.Nav__content
+        = link_to "FURIMA", "#"
+      %li.Nav__content
+        %i.fas.fa-angle-right
+      %li.Nav__content
+        = link_to "食べ物", "#"
+      %li.Nav__content
+        %i.fas.fa-angle-right
+      %li.Nav__content
+        = link_to "ラーメン", "#"
+      %li.Nav__content
+        %i.fas.fa-angle-right
+      %li.Nav__content
+        = link_to "豚骨ラーメン", "#"
+      %li.Nav__content
+        %i.fas.fa-angle-right
+      %li.Nav__content
+        = link_to "テスト", "#"
+        %ul.Nav__category::after
+  
+  .Main
+    .Main__content
+      .contentAll
+        .Topcontent
+          .Items
+            %h2.Items__name
+              = @product.name
+            .Items__imageall
+              %ul.Items__imageul
+                %li.Items__imageli
+                  = image_tag @product.product_images[0].image.url, class: "Items__imageli"
+              %ul.Items__imageulb
+                %li.Items__imagelib
+                  = image_tag @product.product_images[1].image.url, class: "Items__imagelib" if @product.product_images[1].present?
+            .Items__price
+              %span.price
+                = @product.price.to_s + "円"
+              .Items__pricedetail
+                %span.Items__pricedetail__left
+                  (税込)
+                %span.Items__pricedetail__right
+                  送料込み
+            .Items__detail  
+              = @product.detail
+            .Items__table
+              %table.Table
+                %tbody
+                  %tr.Table__content
+                    %th.Table__left
+                      出品者
+                    %td.Table__right
+                      = @product.user.nickname
+                  %tr.Table__content
+                    %th.Table__left
+                      カテゴリー
+                    %td.Table__right 
+                      = link_to @product.category.name, "#"
+                  %tr.Table__content
+                    %th.Table__left
+                      ブランド
+                    %td.Table__right
+                      = @product.brand.name
+                  %tr.Table__content
+                    %th.Table__left
+                      商品の状態
+                    %td.Table__right
+                      = @product.status.name
+                  %tr.Table__content
+                    %th.Table__left
+                      配送料の負担
+                    %td.Table__right
+                      = @product.charge.name
+                  %tr.Table__content
+                    %th.Table__left
+                      発送元の地域
+                    %td.Table__right
+                      = link_to @product.prefecture.name, "#"
+                  %tr.Table__content
+                    %th.Table__left
+                      発送日の目安
+                    %td.Table__right
+                      = @product.delivery.name
+            .Items__option
+              %ul.option
+                %li.optionBtn-left
+                  %i.fa.fa-star
+                  お気に入り 1
+              %ul.option
+                %li.optionBtn-right
+                  = link_to "#" do
+                    %i.fa.fa-flag
+                    不適切な商品の通報
+            %br
+            - if user_signed_in? 
+              - if user_signed_in?&& current_user.id == @product.user_id
+                .Edit
+                  %button.Edit__left 
+                    商品情報の編集
+                  %button.Edit__right 
+                    商品の削除
+              - else
+                .purchase
+                  %button.purchasebutton
+                    購入する
+          .Topcontent__comments
+            %ul.commentContents
+              %textarea.comment
+              %p.noticecomment
+                相手のことを考え丁寧なコメントを心がけましょう。
+                %br
+                不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              %br
+              %button.commentbutton
+                %i.fa.fa-comment
+                  %i.fa.fa-comment::before
+                    コメントする
+        %ul.Links
+          %li.Linksleft
+            = link_to "#" do
+              %i.fa.fa-angle-left
+              %span
+                前の商品
+          %li.Linksright
+            = link_to "#" do
+              %span
+                後ろの商品
+              %i.fa.fa-angle-right
+          %ul.Links::after
+        .Related
+          = link_to "ラーメンをもっと見る", "#"
+          .ProductLists
+            .ProductList
+              = link_to image_tag asset_path("food2.jpg")
+
 = render partial: "layouts/footer_sub"
