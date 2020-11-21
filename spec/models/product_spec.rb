@@ -33,10 +33,10 @@ describe Product do
       expect(product.errors[:status_id]).to include("を入力してください")
     end
 
-    it "is invalid without a delivery_charge" do
-      product = build(:product, delivery_charge: "")
+    it "is invalid without a charge_id" do
+      product = build(:product, charge_id: "")
       product.valid?
-      expect(product.errors[:delivery_charge]).to include("を入力してください")
+      expect(product.errors[:charge_id]).to include("を入力してください")
     end
 
     it "is invalid without a prefecture_id" do
@@ -45,10 +45,10 @@ describe Product do
       expect(product.errors[:prefecture_id]).to include("を入力してください")
     end
 
-    it "is invalid without a delivery_date" do
-      product = build(:product, delivery_date: "")
+    it "is invalid without a delivery_id" do
+      product = build(:product, delivery_id: "")
       product.valid?
-      expect(product.errors[:delivery_date]).to include("を入力してください")
+      expect(product.errors[:delivery_id]).to include("を入力してください")
     end
 
     it "is invalid without a price" do

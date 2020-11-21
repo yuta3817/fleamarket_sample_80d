@@ -53,7 +53,7 @@
             .Listing__Main__ListingDelivary__barden__title
               %label.Listing-title 配送料負担
               %span.Listing-subtitle 必須
-            = f.collection_select(:delivery_charge, Charge.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+            = f.collection_select(:charge_id, Charge.all, :id, :name, {prompt: true}, {class:"Listing-input"})
           .Listing__Main__ListingDelivary__area
             .Listing__Main__ListingDelivary__area__title
               %label.Listing-title 発送元の地域
@@ -63,7 +63,7 @@
             .Listing__Main__ListingDelivary__days__title
               %label.Listing-title 発送までの日数
               %span.Listing-subtitle 必須
-            = f.collection_select(:delivery_date, Delivery.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+            = f.collection_select(:delivery_id, Delivery.all, :id, :name, {prompt: true}, {class:"Listing-input"})
 
         %hr
 

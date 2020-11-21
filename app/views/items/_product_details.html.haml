@@ -5,15 +5,15 @@
     %li.Nav__content
       %i.fas.fa-angle-right
     %li.Nav__content
-      = link_to "レディース", "#"
+      = link_to "食べ物", "#"
     %li.Nav__content
       %i.fas.fa-angle-right
     %li.Nav__content
-      = link_to "トップス", "#"
+      = link_to "ラーメン", "#"
     %li.Nav__content
       %i.fas.fa-angle-right
     %li.Nav__content
-      = link_to "Tシャツ/カットソー(半袖/袖なし)", "#"
+      = link_to "豚骨ラーメン", "#"
     %li.Nav__content
       %i.fas.fa-angle-right
     %li.Nav__content
@@ -26,24 +26,24 @@
       .Topcontent
         .Items
           %h2.Items__name
-            テスト
-          .Items__imageall 
+            = @product.name
+          .Items__imageall
             %ul.Items__imageul
               %li.Items__imageli
-                = image_tag asset_path("sweater-1222876_1280.jpg")
+                = image_tag @product.product_images[0].image.url, class: "Items__imageli"
             %ul.Items__imageulb
               %li.Items__imagelib
-                = image_tag asset_path("sweater-1222876_1280.jpg")
+                = image_tag @product.product_images[0].image.url, class: "Items__imagelib"
           .Items__price
             %span.price
-              ¥10000
+              = @product.price
             .Items__pricedetail
               %span.Items__pricedetail__left
                 (税込)
               %span.Items__pricedetail__right
                 送料込み
           .Items__detail  
-            テストテストテストテストテストテスト
+            = @product.detail
           .Items__table
             %table.Table
               %tbody
@@ -51,45 +51,42 @@
                   %th.Table__left
                     出品者
                   %td.Table__right
-                    あああ
+                    = @product.user.nickname
                 %tr.Table__content
                   %th.Table__left
                     カテゴリー
                   %td.Table__right 
-                    = link_to "レディース", "#"
-                    %br
-                    = link_to "トップス", "#"
-                    %br
-                    = link_to "Tシャツ/カットソー（半袖/袖なし）", "#"
-                    %br
+                    = link_to @product.category.name, "#"
                 %tr.Table__content
                   %th.Table__left
                     ブランド
                   %td.Table__right
+                    = @product.brand.name
                 %tr.Table__content
                   %th.Table__left
                     商品のサイズ
                   %td.Table__right
+
                 %tr.Table__content
                   %th.Table__left
                     商品の状態
                   %td.Table__right
-                    新品/未使用
+                    = @product.status.name
                 %tr.Table__content
                   %th.Table__left
                     配送料の負担
                   %td.Table__right
-                    送料込み（出品者負担）
+                    = @product.charge.name
                 %tr.Table__content
                   %th.Table__left
                     発送元の地域
                   %td.Table__right
-                    = link_to "北海道", "#"
+                    = link_to @product.prefecture.name, "#"
                 %tr.Table__content
                   %th.Table__left
                     発送日の目安
                   %td.Table__right
-                    1-2日で発送
+                    = @product.delivery.name
           .Items__option
             %ul.option
               %li.optionBtn-left
@@ -100,6 +97,18 @@
                 = link_to "#" do
                   %i.fa.fa-flag
                   不適切な商品の通報
+          %br
+          - if user_signed_in? 
+            - if user_signed_in?&& current_user.id == @product.user_id
+              .Edit
+                %button.Edit__left 
+                  商品情報の編集
+                %button.Edit__right 
+                  商品の削除
+            - else
+              .purchase
+                %button.purchasebutton
+                  購入する
         .Topcontent__comments
           %ul.commentContents
             %textarea.comment
@@ -125,7 +134,7 @@
             %i.fa.fa-angle-right
         %ul.Links::after
       .Related
-        = link_to "レディースをもっと見る", "#"
+        = link_to "ラーメンをもっと見る", "#"
         .ProductLists
           .ProductList
-            = link_to image_tag asset_path("istockphoto-1235519143-1024x1024.jpg")           
+            = link_to image_tag asset_path("food2.jpg")
