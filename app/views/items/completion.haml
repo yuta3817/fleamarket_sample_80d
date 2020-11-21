@@ -1,0 +1,18 @@
+= render partial: "layouts/header_sub"
+.CardForm
+  .CardForm__content
+    .CardForm__title
+      購入が確定しました
+    .Confirm__Main__content__purchasedetail
+      = image_tag "#{@product_image.image}", alt: "商品画像", class: "Confirm__Main__content__purchasedetail__image"
+      .Confirm__Main__content__purchasedetail__detail
+        .Confirm__Main__content__purchasedetail__detail__name
+          = @product.name
+        .Confirm__Main__content__purchasedetail__detail__price
+          .Confirm__Main__content__purchasedetail__detail__price__text
+            支払い金額
+          .Confirm__Main__content__purchasedetail__detail__price__price
+            = "¥" + @amount.to_s(:delimited)
+    .Completion__return
+      = link_to "トップページへもどる", root_path, class: "Completion__return--top"
+= render partial: "layouts/footer_sub"

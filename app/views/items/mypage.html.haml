@@ -1,0 +1,154 @@
+= render partial: "layouts/header_sub"
+.my-page_main
+  .my-page__contents
+    .my-page__user
+      = image_tag asset_path("member_photo_noimage_thumb.png"),class: 'my-page__user__img'
+      .my-page__user__name
+        = @user.nickname
+    .my-page__info
+      .my-page__info__add
+        本人情報
+    %ul.my-page__add__list
+      %li.my-page__row
+        .my-page__item
+          苗字
+        .my-page__prefecture
+          = @user.last_name
+      %li.my-page__row
+        .my-page__item
+          苗字カナ
+        .my-page__city
+          = @user.last_name_kana
+      %li.my-page__row
+        .my-page__item
+          名前
+        .my-page__block-number
+          = @user.first_name
+      %li.my-page__row
+        .my-page__item
+          名前カナ
+        .my-page__bilding
+          = @user.first_name_kana
+      %li.my-page__row
+        .my-page__item
+          誕生日
+        .my-page__telephone
+          = @user.birthday
+    .my-page__info
+      .my-page__info__add
+        連絡先・住所
+    %ul.my-page__add__list
+      %li.my-page__row
+        .my-page__item
+          郵便番号
+        .my-page__prefecture
+          -# = "〒" + @address.zip_code.insert(3, "-")
+      %li.my-page__row
+        .my-page__item
+          都道府県
+        .my-page__prefecture
+          -# = @address.prefecture
+          大阪府
+      %li.my-page__row
+        .my-page__item
+          市区町村
+        .my-page__city
+          -# = @address.city + " " + @address.town
+          西区南堀江
+      %li.my-page__row
+        .my-page__item
+          番地
+        .my-page__block-number
+          -# = @address.number
+          777
+      %li.my-page__row
+        .my-page__item
+          マンション名・ビル名
+        .my-page__bilding
+          -# = @address.building
+          ビル
+      %li.my-page__row
+        .my-page__item
+          電話番号
+        .my-page__telephone
+          -# = @address.telephone.insert(3, "-").insert(8, "-")
+          090-1111-1111
+    .my-page__info
+      .my-page__info__add
+        お届け先情報
+        -# お届け先情報のテーブルが不明のためaddressを使用
+    %ul.my-page__add__list
+      %li.my-page__row
+        .my-page__item
+          苗字
+        .my-page__prefecture
+          -# = @address.last_name
+          hoge
+      %li.my-page__row
+        .my-page__item
+          名前
+        .my-page__city
+          -# = @address.first_name
+          hoge
+      %li.my-page__row
+        .my-page__item
+          都道府県
+        .my-page__prefecture
+          -# = @address.prefecture
+          hoge
+      %li.my-page__row
+        .my-page__item
+          市区町村
+        .my-page__city
+          -# = @address.city + " " + @address.town
+          hoge
+      %li.my-page__row
+        .my-page__item
+          番地
+        .my-page__block-number
+          -# = @address.number
+          hoge
+      %li.my-page__row
+        .my-page__item
+          マンション名・ビル名
+        .my-page__bilding
+          -# = @address.building
+          hoge
+      %li.my-page__row
+        .my-page__item
+          電話番号
+        .my-page__telephone
+          -# = @address.telephone.insert(3, "-").insert(8, "-")
+          hoge
+    .my-page__info
+      .my-page__info__add
+        カード情報
+    %ul.my-page__add__list
+      %li.my-page__row
+        .my-page__item
+          支払い方法
+        .my-page__prefecture
+          カード払い
+      %li.my-page__row
+        .my-page__item
+          登録カード情報
+        .my-page__prefecture
+          - if @card && current_user.id == @card.user_id
+            %div
+              = @card_info.brand
+            %div
+              カード番号（下4桁）
+            = "* * * * - * * * * - * * * * - " + @card_info.last4
+          - else
+            カード情報未登録
+      .card-change
+        - if @card && current_user.id == @card.user_id
+          = link_to "変更", edit_card_path(@card.id), data: { "turbolinks": false }
+          | 
+          = link_to "削除", card_path(@card.id), method: :delete
+        - else
+          = link_to "登録", new_card_path, data: { "turbolinks": false }
+    .my-page__logout-Button
+      = link_to '/users/sign_out' ,method: :delete do
+        ログアウト
+= render partial: "layouts/footer_sub"
