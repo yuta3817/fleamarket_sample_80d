@@ -1,14 +1,13 @@
 class Address < ApplicationRecord
   belongs_to :user
-  with_options presence: true do
-    validates :first_name
-    validates :last_name
-    validates :first_name_kana
-    validates :last_name_kana
-    validates :zip_code
-    validates :prefecture
-    validates :city
-    validates :town
-    validates :number
-  end
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :first_name_kana, presence: true
+  validates :last_name_kana, presence: true
+  validates :zip_code, presence: true
+  validates :prefecture, presence: true
+  validates :city, presence: true
+  validates :town, presence: true
+  validates :number, presence: true
+  validates :telephone, presence: true
 end

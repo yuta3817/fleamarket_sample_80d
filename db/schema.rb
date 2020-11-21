@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_11_15_044456) do
     t.datetime "updated_at", null: false
     t.index ["ancestry"], name: "index_categories_on_ancestry"
 
-ActiveRecord::Schema.define(version: 2020_10_27_102546) do
+ActiveRecord::Schema.define(version: 2020_11_11_154539) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name", null: false
@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 2020_10_27_102546) do
     t.string "number", null: false
     t.string "building"
     t.string "telephone"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 

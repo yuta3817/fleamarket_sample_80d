@@ -4,9 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
 
-  has_many :products, dependent: :destroy
-  has_many :product_purchases, dependent: :destroy
+  has_many :products
   has_one :address, dependent: :destroy
-  has_one :card, dependent: :destroy
+  accepts_nested_attributes_for :address, allow_destroy: true
   validates :nickname, presence: true, uniqueness: true
+  validates :email, presence: true
+  validates :password, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :first_name_kana, presence: true
+  validates :last_name_kana, presence: true
+  validates :birthday, presence: true
 end
