@@ -42,22 +42,22 @@
         .my-page__item
           苗字
         .my-page__prefecture
-          = @user.address.last_name
+          = @user.address.fisrt_name
       %li.my-page__row
         .my-page__item
           名前
         .my-page__city
-          = @user.address.first_name
+          = @user.address.last_name
       %li.my-page__row
         .my-page__item
           苗字(カナ)
         .my-page__prefecture
-          = @user.address.last_name_kana
+          = @user.address.first_name_kana
       %li.my-page__row
         .my-page__item
           名前(カナ)
         .my-page__city
-          = @user.address.first_name_kana
+          = @user.address.last_name_kana
       %li.my-page__row
         .my-page__item
           都道府県
