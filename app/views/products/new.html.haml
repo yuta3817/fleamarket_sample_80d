@@ -32,19 +32,19 @@
           .Listing__Main__ListingDetail__category__title
             %label.Listing-title カテゴリー
             %span.Listing-subtitle 必須
-          = f.collection_select(:category_id, Category.all, :id, :name, {prompt: true}, {class:"Listing-input"})
-          
+          .Listing__Main__ListingDetail__category__select
+            = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {include_blank: "選択してください"}, {class:"Listing-input", id: "parent_category"})
         .Listing__Main__ListingDetail__brand
           .Listing__Main__ListingDetail__brand__title
             %label.Listing-title ブランド
-            %span 任意
-          = f.collection_select(:brand_id, Brand.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+            %span.Listing-subtitle2 任意
+          = f.collection_select(:brand_id, Brand.all, :id, :name, {include_blank: "選択してください"}, {class:"Listing-input"})
           
         .Listing__Main__ListingDetail__status
           .Listing__Main__ListingDetail__status__title
             %label.Listing-title 商品の状態
             %span.Listing-subtitle 必須
-          = f.collection_select(:status_id, Status.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+          = f.collection_select(:status_id, Status.all, :id, :name, {include_blank: "選択してください"}, {class:"Listing-input"})
 
       %hr
 
@@ -54,17 +54,17 @@
           .Listing__Main__ListingDelivary__barden__title
             %label.Listing-title 配送料負担
             %span.Listing-subtitle 必須
-          = f.collection_select(:delivery_charge, Charge.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+          = f.collection_select(:delivery_charge, Charge.all, :id, :name, {include_blank: "選択してください"}, {class:"Listing-input"})
         .Listing__Main__ListingDelivary__area
           .Listing__Main__ListingDelivary__area__title
             %label.Listing-title 発送元の地域
             %span.Listing-subtitle 必須
-          = f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+          = f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class:"Listing-input"})
         .Listing__Main__ListingDelivary__days
           .Listing__Main__ListingDelivary__days__title
             %label.Listing-title 発送までの日数
             %span.Listing-subtitle 必須
-          = f.collection_select(:delivery_date, Delivery.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+          = f.collection_select(:delivery_date, Delivery.all, :id, :name, {include_blank: "選択してください"}, {class:"Listing-input"})
 
       %hr
 

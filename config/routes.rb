@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   # マークアップ画面の確認のため現状仮のルーティングを行っている
   root to: 'items#index'
   
-  resources :products, only:[:index, :new, :create, :edit, :update , :destroy]
+  resources :products, only:[:index, :new, :create, :edit, :update , :destroy] do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
   
   resources :items do
     collection do
