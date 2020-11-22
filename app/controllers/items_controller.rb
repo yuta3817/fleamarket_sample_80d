@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :logout]
 
   def index
+    @products = Product.all.order("created_at DESC").first(5)
   end
 
   def mypage
