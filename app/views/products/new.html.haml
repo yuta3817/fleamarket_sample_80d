@@ -32,7 +32,8 @@
           .Listing__Main__ListingDetail__category__title
             %label.Listing-title カテゴリー
             %span.Listing-subtitle 必須
-          = f.collection_select(:category_id, Category.all, :id, :name, {prompt: true}, {class:"Listing-input"})
+          .Listing__Main__ListingDetail__category__select
+            = f.collection_select(:category_id, @category_parent_array, :id, :name, {prompt: true}, {class:"Listing-input", id: "parent_category"})
           
         .Listing__Main__ListingDetail__brand
           .Listing__Main__ListingDetail__brand__title
