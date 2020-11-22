@@ -42,6 +42,13 @@
       padding: 3px;
       font-size: 8px;
     }
+    .Listing-subtitle2{
+      background-color:lightgray;
+      color: white;
+      border-radius: 2px;
+      padding: 3px;
+      font-size: 10px;
+    }
     .Listing-input{
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -138,7 +145,7 @@
       }
       &__brand{
         &__title{
-          margin-top: 16px;
+          margin-top: 40px;
         }
         span{
           color: white;
