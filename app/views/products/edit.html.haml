@@ -41,7 +41,7 @@
           .Listing__Main__ListingDetail__brand
             .Listing__Main__ListingDetail__brand__title
               %label.Listing-title ブランド
-              %span 任意
+              %span.Listing-subtitle2 任意
             = f.collection_select(:brand_id, Brand.all, :id, :name, {prompt: true}, {class:"Listing-input"})
             
           .Listing__Main__ListingDetail__status
