@@ -98,7 +98,7 @@
       新規投稿商品
     .Top__PickupCategory__contents__boxes
       - @products.each do |product|
-        = link_to "items/#{product.id}", class: "Top__PickupCategory__contents__boxes__link" do
+        = link_to "/items/#{product.id}", class: "Top__PickupCategory__contents__boxes__link" do
           .Top__PickupCategory__contents__boxes__block
             - if product.product_purchase.present?
               .Top__PickupCategory__contents__boxes__block__sold-out sold out
