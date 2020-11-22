@@ -6,12 +6,6 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.product_images.new
-    #セレクトボックスの初期値設定
-    @category_parent_array = []
-    #データベースから、親カテゴリーのみ抽出し、配列化
-    Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent
-    end
   end
 
   def create

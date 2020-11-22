@@ -33,7 +33,7 @@
             %label.Listing-title カテゴリー
             %span.Listing-subtitle 必須
           .Listing__Main__ListingDetail__category__select
-            = f.collection_select(:category_id, @category_parent_array, :id, :name, {include_blank: "選択してください"}, {class:"Listing-input", id: "parent_category"})
+            = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {include_blank: "選択してください"}, {class:"Listing-input", id: "parent_category"})
         .Listing__Main__ListingDetail__brand
           .Listing__Main__ListingDetail__brand__title
             %label.Listing-title ブランド

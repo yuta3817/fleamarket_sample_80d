@@ -25,11 +25,9 @@ $(function(){
   // 親カテゴリー選択後のイベント
   $('#parent_category').on('change', function(){
     var parentCategoryID = document.getElementById('parent_category').value; //選択された親カテゴリーのIDを取得
-    console.log('changed:', parentCategoryID);
     if (parentCategoryID){ //親カテゴリーが初期値でないことを確認
-      console.log(parentCategoryID);
       $.ajax({
-        url: 'get_category_children',
+        url: '/products/get_category_children',
         type: 'GET',
         data: { parent_id: parentCategoryID },
         dataType: 'json'
@@ -56,7 +54,7 @@ $(function(){
     var childId = document.getElementById('child_category').value; //選択された子カテゴリーのidを取得
     if (childId){ //子カテゴリーが初期値でないことを確認
       $.ajax({
-        url: 'get_category_grandchildren',
+        url: '/products/get_category_grandchildren',
         type: 'GET',
         data: { child_id: childId },
         dataType: 'json'
