@@ -3,9 +3,10 @@
   .UserInformation__Main
     .UserInformation__Main__actions
       アカウントをお持ちでない方はこちら
-      .UserInformation__Main__actions__button  
-        %button{type: "submit", class: 'user-submit'}
-          新規会員登録
+      .UserInformation__Main__actions__button
+        = link_to "/users/sign_up" do
+          %button{type: "submit", class: 'user-submit'}
+            新規会員登録
 
     %hr
     .UserInformation__Main__login
