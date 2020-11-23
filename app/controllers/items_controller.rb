@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   require 'payjp'
 
-  before_action :authenticate_user!, except: [:index, :show, :logout]
+  before_action :authenticate_user!, except: [:index, :logout]
   before_action :move_to_login, only: [:confirm, :pay, :completion, :mypage]
   before_action :listing_user?, only: [:confirm, :pay]
   before_action :has_card?, only: [:pay]
-  before_action :move_to_index, except: [:index, :show, :logout]
+  before_action :move_to_index, except: [:index, :logout]
 
   def index
     @products = Product.all.order("created_at DESC").first(5)
@@ -20,10 +20,6 @@ class ItemsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_info = customer.cards.retrieve(@card.card_id)
     end
-  end
-  
-  def show
-    @product = Product.find(params[:id])
   end
   
   def confirm

@@ -58,7 +58,12 @@
                     %th.Table__left
                       カテゴリー
                     %td.Table__right 
-                      = link_to @product.category.name, "#"
+                      %div
+                        = link_to @product.category.root.name, "#"
+                      %div
+                        = link_to @product.category.parent.name, "#"
+                      %div
+                        = link_to @product.category.name, "#"
                   %tr.Table__content
                     %th.Table__left
                       ブランド
@@ -96,16 +101,15 @@
                     不適切な商品の通報
             %br
             - if user_signed_in? 
-              - if user_signed_in?&& current_user.id == @product.user_id
+              - if user_signed_in? && current_user.id == @product.user_id
                 .Edit
-                  %button.Edit__left 
-                    商品情報の編集
-                  %button.Edit__right 
-                    商品の削除
+                  = link_to '商品情報の編集' ,edit_product_path(@product),data:{turbolinks: false} ,class: "Edit__left"
+                  = link_to '削除' ,product_path(@product), method: :delete, class: "Edit__right"
               - else
                 .purchase
-                  %button.purchasebutton
-                    購入する
+                  = link_to "/items/confirm/#{@product.id}" do
+                    %button.purchasebutton
+                      購入する
           .Topcontent__comments
             %ul.commentContents
               %textarea.comment

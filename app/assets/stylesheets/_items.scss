@@ -220,7 +220,7 @@
           display: flex;
           justify-content: space-between;
         }
-        button.Edit__left {
+        .Edit__left {
           font-weight: bold;
           margin-top: 20px;
           font-size: 18px;
@@ -230,8 +230,10 @@
           color: #fff;
           width: 50%;
           margin-right: 15px;
+          text-align: center;
+          text-decoration: none;
         }
-        button.Edit__right {
+        .Edit__right {
           font-weight: bold;
           margin-top: 20px;
           font-size: 18px;
@@ -240,6 +242,8 @@
           border: 1px solid #ea352d;
           color: #fff;
           width: 50%;
+          text-align: center;
+          text-decoration: none;
         }
         .purchase {
           text-align: center;

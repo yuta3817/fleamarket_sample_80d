@@ -10,17 +10,16 @@ Rails.application.routes.draw do
     get "sign_out", :to => "users/sessions#destroy" 
   end
 
-  # マークアップ画面の確認のため現状仮のルーティングを行っている
   root to: 'items#index'
   
-  resources :products, only:[:index, :new, :create, :edit, :update , :destroy] do
+  resources :products, only:[:new, :create, :show, :edit, :update , :destroy] do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
   
-  resources :items do
+  resources :items, only:[:index] do
     collection do
       get 'confirm/:id', to: 'items#confirm'
       post 'confirm/:id', to: 'items#pay'
