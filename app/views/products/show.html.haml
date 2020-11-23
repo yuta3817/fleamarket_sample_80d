@@ -68,7 +68,7 @@
                     %th.Table__left
                       ブランド
                     %td.Table__right
-                      = @product.brand.name
+                      = @product.brand.name if @product.brand
                   %tr.Table__content
                     %th.Table__left
                       商品の状態
