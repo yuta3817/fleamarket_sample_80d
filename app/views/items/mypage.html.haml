@@ -36,90 +36,53 @@
           = @user.birthday
     .my-page__info
       .my-page__info__add
-        連絡先・住所
-    %ul.my-page__add__list
-      %li.my-page__row
-        .my-page__item
-          郵便番号
-        .my-page__prefecture
-          -# = "〒" + @address.zip_code.insert(3, "-")
-      %li.my-page__row
-        .my-page__item
-          都道府県
-        .my-page__prefecture
-          -# = @address.prefecture
-          大阪府
-      %li.my-page__row
-        .my-page__item
-          市区町村
-        .my-page__city
-          -# = @address.city + " " + @address.town
-          西区南堀江
-      %li.my-page__row
-        .my-page__item
-          番地
-        .my-page__block-number
-          -# = @address.number
-          777
-      %li.my-page__row
-        .my-page__item
-          マンション名・ビル名
-        .my-page__bilding
-          -# = @address.building
-          ビル
-      %li.my-page__row
-        .my-page__item
-          電話番号
-        .my-page__telephone
-          -# = @address.telephone.insert(3, "-").insert(8, "-")
-          090-1111-1111
-    .my-page__info
-      .my-page__info__add
         お届け先情報
-        -# お届け先情報のテーブルが不明のためaddressを使用
     %ul.my-page__add__list
       %li.my-page__row
         .my-page__item
           苗字
         .my-page__prefecture
-          -# = @address.last_name
-          hoge
+          = @user.address.first_name
       %li.my-page__row
         .my-page__item
           名前
         .my-page__city
-          -# = @address.first_name
-          hoge
+          = @user.address.last_name
+      %li.my-page__row
+        .my-page__item
+          苗字(カナ)
+        .my-page__prefecture
+          = @user.address.first_name_kana
+      %li.my-page__row
+        .my-page__item
+          名前(カナ)
+        .my-page__city
+          = @user.address.last_name_kana
       %li.my-page__row
         .my-page__item
           都道府県
         .my-page__prefecture
-          -# = @address.prefecture
-          hoge
+          = @user.address.prefecture
       %li.my-page__row
         .my-page__item
           市区町村
         .my-page__city
-          -# = @address.city + " " + @address.town
-          hoge
+          = @user.address.city + " " + @user.address.town
       %li.my-page__row
         .my-page__item
           番地
         .my-page__block-number
-          -# = @address.number
-          hoge
+          = @user.address.number
       %li.my-page__row
         .my-page__item
           マンション名・ビル名
         .my-page__bilding
-          -# = @address.building
-          hoge
+          = @user.address.building if @user.address.building
       %li.my-page__row
         .my-page__item
           電話番号
         .my-page__telephone
-          -# = @address.telephone.insert(3, "-").insert(8, "-")
-          hoge
+          = @user.address.telephone.insert(3, "-").insert(8, "-")
     .my-page__info
       .my-page__info__add
         カード情報

@@ -19,7 +19,7 @@
       %ul.Header__nav__right
         - if user_signed_in?    
           %li.Header__nav__right__list
-            = link_to "/items/mypage/", class:"Header__black" do
+            = link_to "/items/mypage/#{current_user.id}", class:"Header__black" do
               マイページ 
           %li.Header__nav__right__list
             = link_to "/users/sign_out", method: :delete, class:"Header__black" do
