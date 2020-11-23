@@ -97,72 +97,22 @@
     .Top__PickupCategory__contents__subtitle
       新規投稿商品
     .Top__PickupCategory__contents__boxes
-      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
-        .Top__PickupCategory__contents__boxes__block
-          .Top__PickupCategory__contents__boxes__block__imgblock
-            = image_tag asset_path("food1.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
+      - @products.each do |product|
+        = link_to "/items/#{product.id}", class: "Top__PickupCategory__contents__boxes__link" do
+          .Top__PickupCategory__contents__boxes__block
+            - if product.product_purchase.present?
+              .Top__PickupCategory__contents__boxes__block__sold-out sold out
+            .Top__PickupCategory__contents__boxes__block__imgblock
+              = image_tag product.product_images[0].image.url, class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
           .Top__PickupCategory__contents__boxes__block__name
-            %p 豚骨ラーメン
-          .Top__PickupCategory__contents__boxes__block__text
-            .Top__PickupCategory__contents__boxes__block__text__price
-              %p 890円
-              .Top__PickupCategory__contents__boxes__block__text__price__tax
-                (税込)
-            .Top__PickupCategory__contents__boxes__block__text__like
-              %p ★4
-      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
-        .Top__PickupCategory__contents__boxes__block
-          .Top__PickupCategory__contents__boxes__block__imgblock
-            = image_tag asset_path("food2.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
-          .Top__PickupCategory__contents__boxes__block__name
-            %p 二郎系ラーメン
-          .Top__PickupCategory__contents__boxes__block__text
-            .Top__PickupCategory__contents__boxes__block__text__price
-              %p 850円
-              .Top__PickupCategory__contents__boxes__block__text__price__tax
-                (税込)
-            .Top__PickupCategory__contents__boxes__block__text__like
-              %p ★2
-      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
-        .Top__PickupCategory__contents__boxes__block
-          .Top__PickupCategory__contents__boxes__block__imgblock
-            =image_tag asset_path("food3.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
-          .Top__PickupCategory__contents__boxes__block__name
-            %p 鶏白湯ラーメン
-          .Top__PickupCategory__contents__boxes__block__text
-            .Top__PickupCategory__contents__boxes__block__text__price
-              %p 950円
-              .Top__PickupCategory__contents__boxes__block__text__price__tax
-                (税込)
-            .Top__PickupCategory__contents__boxes__block__text__like
-              %p ★5
-      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
-        .Top__PickupCategory__contents__boxes__block
-          .Top__PickupCategory__contents__boxes__block__imgblock
-            =image_tag asset_path("food4.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
-          .Top__PickupCategory__contents__boxes__block__name
-            %p 背脂ラーメン
-          .Top__PickupCategory__contents__boxes__block__text
-            .Top__PickupCategory__contents__boxes__block__text__price
-              %p 880円
-              .Top__PickupCategory__contents__boxes__block__text__price__tax
-                (税込)
-            .Top__PickupCategory__contents__boxes__block__text__like
-              %p ★3
-      = link_to "items/1", class: "Top__PickupCategory__contents__boxes__link" do
-        .Top__PickupCategory__contents__boxes__block
-          .Top__PickupCategory__contents__boxes__block__imgblock
-            =image_tag asset_path("food5.jpg"), class: "Top__PickupCategory__contents__boxes__block__imgblock__img"
-          .Top__PickupCategory__contents__boxes__block__name
-            %p ずんどう屋ラーメン
-          .Top__PickupCategory__contents__boxes__block__text
-            .Top__PickupCategory__contents__boxes__block__text__price
-              %p 890円
-              .Top__PickupCategory__contents__boxes__block__text__price__tax
-                (税込)
-            .Top__PickupCategory__contents__boxes__block__text__like
-              %p ★1
-
+            = product.name
+            .Top__PickupCategory__contents__boxes__block__text
+              .Top__PickupCategory__contents__boxes__block__text__price
+                = "#{product.price}円"
+                .Top__PickupCategory__contents__boxes__block__text__price__tax
+                  (税込)
+              .Top__PickupCategory__contents__boxes__block__text__like
+                %p ★4
 .Top__PickupCategory
   .Top__PickupCategory__contents
     .Top__PickupCategory__contents__title

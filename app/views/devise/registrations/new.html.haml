@@ -2,6 +2,14 @@
 .UserInformation
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     .UserInformation__Main
+      - if @user.errors.any?
+        .Listing__Main__errors
+          .Listing__Main__errors__contents
+            .Listing__Main__errors__contents__count
+              = "#{@user.errors.full_messages.count}件のエラーが発生しました。"
+            %ul.Listing__Main__errors__contents__message
+              - @user.errors.full_messages.each do |message|
+                %li= message
       .UserInformation__Main__title
         .UserInformation__Main__title__content
           会員情報入力
@@ -19,7 +27,6 @@
           %span.user__subtitle 必須
           = f.text_field :email ,placeholder: "PC・携帯どちらでも可",class: "user-input"
           
-
         .UserInformation__Main__contents__password
           %label.user__title パスワード
           %span.user__subtitle 必須
@@ -53,7 +60,6 @@
               = f.text_field :first_name_kana ,placeholder: "例)ヤマダ",class: "user-name-input"
             .UserInformation__Main__name__kana__contents__firstname
               = f.text_field :last_name_kana ,placeholder: "例)ハナコ",class: "user-name-input"
-
           .UserInformation__Main__birthday
             %label.user__title 生年月日
             %span.user__subtitle 必須
@@ -61,78 +67,72 @@
             != sprintf(f.date_select(:birthday, {prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'},{class:"day-input2"}),'年','月')+'日'
 
       %hr
-
-      .UserInformation__Main__address
-        .UserInformation__Main__address__send
-          送付先情報
-        .UserInformation__Main__address__name
-          .UserInformation__Main__address__name__zenkaku
-            %label.user__title お名前(全角)
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__name__zenkaku__contents
-              .UserInformation__Main__address__name__zenkaku__contents__lastname
-                %input{type:"text",placeholder: "例)山田",class: "user-name-input"}
-              .UserInformation__Main__address__name__zenkaku__contents__firstname
-                %input{type:"text",placeholder: "例)花子",class: "user-name-input"}
-
-
-
-          .UserInformation__Main__address__name__kana  
-            %label.user__title お名前ｶﾅ(全角)
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__name__kana__contents
-              .UserInformation__Main__address__name__kana__contents__lastname
-                %input{type:"text",placeholder: "例)山田",class: "user-name-input"}
-
-              .UserInformation__Main__address__name__kana__contents__firstname
-                %input{type:"text",placeholder: "例)ハナコ",class: "user-name-input"}
+      = f.fields_for :address do |address|
+        .UserInformation__Main__address
+          .UserInformation__Main__address__send
+            送付先情報
+          .UserInformation__Main__address__name
+            .UserInformation__Main__address__name__zenkaku
+              %label.user__title お名前(全角)
+              %span.user__subtitle 必須
+              .UserInformation__Main__address__name__zenkaku__contents
+                .UserInformation__Main__address__name__zenkaku__contents__lastname
+                  = address.text_field :last_name ,placeholder: "例)山田",class: "user-name-input"
+                .UserInformation__Main__address__name__zenkaku__contents__firstname
+                  = address.text_field :first_name ,placeholder: "例)花子",class: "user-name-input"
 
 
-          .UserInformation__Main__address__zipcode
-            %label.user__title 郵便番号
-            %span.user__subtitle 必須
-            .UserInformation__Main__zip__code__contents
-              %input{type:"text",placeholder: "例)555-0015",class: "user-input"}
 
-          .UserInformation__Main__address__prefecture
-            %label.user__title 都道府県
-            %span.user__subtitle 必須
-            .UserInformation__Main__prefecture__contents
-              %input{type:"text",placeholder: "例)大阪府",class: "user-input"}
+            .UserInformation__Main__address__name__kana  
+              %label.user__title お名前ｶﾅ(全角)
+              %span.user__subtitle 必須
+              .UserInformation__Main__address__name__kana__contents
+                .UserInformation__Main__address__name__kana__contents__lastname
+                  = address.text_field :last_name_kana ,placeholder: "例)山田",class: "user-name-input"
+                .UserInformation__Main__address__name__kana__contents__firstname
+                  = address.text_field :first_name_kana ,placeholder: "例)花子",class: "user-name-input"
+
+            .UserInformation__Main__address__zipcode
+              %label.user__title 郵便番号
+              %span.user__subtitle 必須
+              .UserInformation__Main__zip__code__contents
+                = address.text_field :zip_code ,placeholder: "例)555-0015",class: "user-input"
+            
+            .UserInformation__Main__address__prefecture
+              %label.user__title 都道府県
+              %span.user__subtitle 必須
+              .UserInformation__Main__prefecture__contents
+                = address.text_field :prefecture ,placeholder: "例)大阪府",class: "user-input"
+
+            .UserInformation__Main__address__city
+              %label.user__title 市町村
+              %span.user__subtitle 必須
+              .UserInformation__Main__address__city__contents
+                = address.text_field :city ,placeholder: "例)大阪市",class: "user-input"
+
+            .UserInformation__Main__address__town
+              %label.user__title 区、町、村
+              %span.user__subtitle 必須
+              .UserInformation__Main__address__town__contents
+                = address.text_field :town,placeholder: "例)中央区",class: "user-input"
+
+            .UserInformation__Main__address__number
+              %label.user__title 番地
+              %span.user__subtitle 必須
+              .UserInformation__Main__address__number__conten
+                = address.text_field :number ,placeholder: "例)1丁目1-1",class: "user-input"
+
+            .UserInformation__Main__address__building
+              %label.user__title 建物名
+              .UserInformation__Main__address__building__contents
+                = address.text_field :building ,placeholder: "例)マンション名",class: "user-input"
+
+            .UserInformation__Main__address__telephone
+              %label.user__title 電話番号
+              %span.user__subtitle 必須
+              .UserInformation__Main__address__telephone__contents
+                = address.text_field :telephone ,placeholder: "例)06~~~~~~~~",class: "user-input"
 
 
-          .UserInformation__Main__address__city
-            %label.user__title 市町村
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__city__contents
-              %input{type:"text",placeholder: "例)大阪市",class: "user-input"}
-
-          .UserInformation__Main__address__town
-            %label.user__title 区、町、村
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__town__contents
-              %input{type:"text",placeholder: "例)中央区",class: "user-input"}
-
-
-          .UserInformation__Main__address__number
-            %label.user__title 番地
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__number__conten
-              %input{type:"text",placeholder: "例)1丁目1-1",class: "user-input"}
-
-          .UserInformation__Main__address__building
-            %label.user__title 建物名
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__building__contents
-              %input{type:"text",placeholder: "マンション名",class: "user-input"}
-
-          .UserInformation__Main__address__telephone
-            %label.user__title 電話番号
-            %span.user__subtitle 必須
-            .UserInformation__Main__address__telephone__contents
-              %input{type:"text",placeholder: "例)06~~~~~~~~",class: "user-input"}
-
-
-        .UserInformation__Main__button
-          = f.submit '登録', class: 'user-submit'
-= render partial: "layouts/footer_sub"
+          .UserInformation__Main__button
+            = f.submit '登録', class: 'user-submit'

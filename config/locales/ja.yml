@@ -3,19 +3,42 @@
     activerecord:
       models:
         product: 出品商品
-        
+        user: ユーザー
+        category: カテゴリー
       attributes:
         product:
           name: 商品名
           detail: 商品の説明
-          category_id: カテゴリー
           status_id: 商品の状態
           charge_id: 配送料負担
           prefecture_id: 発送元の地域
           delivery_id: 発送までの日数
           price: 販売価格
           product_images: 出品画像
-          
+        user:
+          email: メールアドレス
+          password: パスワード
+          nickname: ニックネーム
+          first_name: 名前（名）
+          last_name: 苗字（姓）
+          first_name_kana: 名（カナ）
+          last_name_kana: 姓（カナ）
+          birthday: 生年月日
+        address:
+          first_name: 受取人の名前（名）
+          last_name: 受取人の苗字（姓）
+          first_name_kana: 受取人の名（カナ）
+          last_name_kana: 受取人の姓（カナ）
+          zip_code: 郵便番号
+          prefecture: 都道府県
+          city: 市
+          town: 区町村
+          number: 番地
+          telephone: 電話番後
+        category:
+          id:
+          name:
+
       errors:
         messages:
           record_invalid: 'バリデーションに失敗しました: %{errors}'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_27_102546) do
+ActiveRecord::Schema.define(version: 2020_11_22_081737) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name", null: false
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2020_10_27_102546) do
     t.string "number", null: false
     t.string "building"
     t.string "telephone"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 2020_10_27_102546) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -59,7 +67,6 @@ ActiveRecord::Schema.define(version: 2020_10_27_102546) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "detail", null: false
-    t.integer "category_id", null: false
     t.integer "brand_id"
     t.integer "status_id", null: false
     t.integer "charge_id", null: false
@@ -69,6 +76,8 @@ ActiveRecord::Schema.define(version: 2020_10_27_102546) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -95,5 +104,6 @@ ActiveRecord::Schema.define(version: 2020_10_27_102546) do
   add_foreign_key "product_images", "products"
   add_foreign_key "product_purchases", "products"
   add_foreign_key "product_purchases", "users"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
 end

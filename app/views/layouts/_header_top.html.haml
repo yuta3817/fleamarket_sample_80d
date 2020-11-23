@@ -17,15 +17,17 @@
           = link_to "#", class:"Header__black Header__hover" do
             ブランド
       %ul.Header__nav__right
-        %li.Header__nav__right__list
-          = link_to "/users/sign_in", class:"Header__black" do
-            ログイン
-        %li.Header__nav__right__list
-          = link_to "/users/sign_up", class:"Header__black" do
-            新規会員登録
-        %li.Header__nav__right__list
-          = link_to "/items/mypage/", class:"Header__black" do
-            マイページ
-        %li.Header__nav__right__list
-          = link_to "/users/sign_out", method: :delete, class:"Header__black" do
-            ログアウト
+        - if user_signed_in?    
+          %li.Header__nav__right__list
+            = link_to "/items/mypage/#{current_user.id}", class:"Header__black" do
+              マイページ 
+          %li.Header__nav__right__list
+            = link_to "/users/sign_out", method: :delete, class:"Header__black" do
+              ログアウト
+        - else
+          %li.Header__nav__right__list
+            = link_to "/users/sign_in", class:"Header__black" do
+              ログイン
+          %li.Header__nav__right__list
+            = link_to "/users/sign_up", class:"Header__black" do
+              新規会員登録
