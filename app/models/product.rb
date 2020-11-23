@@ -9,9 +9,9 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :detail, presence: true
   validates :status_id, presence: true
-  validates :delivery_charge, presence: true
+  validates :charge_id, presence: true
   validates :prefecture_id, presence: true
-  validates :delivery_date, presence: true
+  validates :delivery_id, presence: true
   validates :price, presence: true
   
 

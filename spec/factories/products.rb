@@ -6,9 +6,9 @@ FactoryBot.define do
     category_id                {"1"}
     brand_id                   {"1"}
     status_id                  {"1"}
-    delivery_charge            {"1"}
+    charge_id            {"1"}
     prefecture_id              {"1"}
-    delivery_date              {"1"}
+    delivery_id              {"1"}
     price                      {"3700"}
     association :user
 

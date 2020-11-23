@@ -23,11 +23,12 @@ class ItemsController < ApplicationController
   end
   
   def show
+    @product = Product.find(params[:id])
   end
   
   def confirm
     @product = Product.find(params[:id])
-    @amount = @product.price + @product.delivery_charge
+    @amount = @product.price + @product.charge_id
     @product_image = ProductImage.find_by(product_id: params[:id])
     @purchased = ProductPurchase.find_by(product_id: params[:id])
     @address = Address.find_by(user_id: current_user.id)
@@ -43,7 +44,7 @@ class ItemsController < ApplicationController
 
   def pay
     @product = Product.find(params[:id])
-    amount = @product.price + @product.delivery_charge
+    amount = @product.price + @product.charge_id
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     charge = Payjp::Charge.create(
       amount: amount,
@@ -64,7 +65,7 @@ class ItemsController < ApplicationController
   def completion
     @product = Product.find(params[:id])
     @product_image = ProductImage.find_by(product_id: params[:id])
-    @amount = @product.price + @product.delivery_charge
+    @amount = @product.price + @product.charge_id
   end
   
   private
