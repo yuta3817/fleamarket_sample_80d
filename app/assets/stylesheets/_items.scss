@@ -38,7 +38,7 @@
 
 .Main {
   background-color: #f8f8f8;
-  height: 2020px;
+  height: 2200px;
   &__content {
     padding: 40px;
     margin: 0 auto;
@@ -51,6 +51,26 @@
     .Items {
       background-color: #fff;
       padding: 24px 40px 40px;
+      .Edit {
+        display: flex;
+        justify-content: space-around;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .Edit__left {
+        font-weight: bold;
+        background: #3CCACE;
+        border: 1px solid #3CCACE;
+        color: #fff;
+        line-height: 50px;
+      }
+      .Edit__right {
+        font-weight: bold;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        line-height: 50px;
+      }
       &__name {
         text-align: center;
         font-weight: bold;
@@ -74,6 +94,7 @@
       &__imageli img {
         width: 560px;
         height: 346px;
+        object-fit: cover;
       }
       &__imageulb {
         display: flex;
@@ -87,6 +108,7 @@
       &__imagelib img {
         width: 140px;
         height: 87px;
+        object-fit: cover;
       }
       &__price {
         margin: 24px 0 24px;
@@ -194,6 +216,48 @@
         .fa-flag::before a{
           content: "\f005";
         }
+        .Edit {
+          display: flex;
+          justify-content: space-between;
+        }
+        .Edit__left {
+          font-weight: bold;
+          margin-top: 20px;
+          font-size: 18px;
+          line-height: 60px;
+          background: #3CCACE;
+          border: 1px solid #3CCACE;
+          color: #fff;
+          width: 50%;
+          margin-right: 15px;
+          text-align: center;
+          text-decoration: none;
+        }
+        .Edit__right {
+          font-weight: bold;
+          margin-top: 20px;
+          font-size: 18px;
+          line-height: 60px;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          width: 50%;
+          text-align: center;
+          text-decoration: none;
+        }
+        .purchase {
+          text-align: center;
+        }
+        .purchasebutton {
+          font-weight: bold;
+          margin-top: 20px;
+          font-size: 18px;
+          line-height: 60px;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          width: 100%;
+        }
         }
         .Topcontent__comments {
           padding: 24px;
@@ -223,7 +287,6 @@
           border: 1px solid #3CCACE;
           color: #fff;
           width: 60%;
-          font-size: 18px;
           border-radius: 100px;
         }
       }
@@ -276,5 +339,5 @@
   }
   .ProductList img {
     width: 233px;
-    height: 245px;
+    height: 220px;
   }

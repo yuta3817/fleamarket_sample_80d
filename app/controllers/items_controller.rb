@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   require 'payjp'
 
-  before_action :authenticate_user!, except: [:index, :show, :logout]
+  before_action :authenticate_user!, except: [:index, :logout]
   before_action :move_to_login, only: [:confirm, :pay, :completion, :mypage]
   before_action :listing_user?, only: [:confirm, :pay]
   before_action :has_card?, only: [:pay]
-  before_action :move_to_index, except: [:index, :show, :logout]
+  before_action :move_to_index, except: [:index, :logout]
 
   def index
     @products = Product.all.order("created_at DESC").first(5)
@@ -22,12 +22,9 @@ class ItemsController < ApplicationController
     end
   end
   
-  def show
-  end
-  
   def confirm
     @product = Product.find(params[:id])
-    @amount = @product.price + @product.delivery_charge
+    @amount = @product.price + @product.charge_id
     @product_image = ProductImage.find_by(product_id: params[:id])
     @purchased = ProductPurchase.find_by(product_id: params[:id])
     @address = Address.find_by(user_id: current_user.id)
@@ -43,7 +40,7 @@ class ItemsController < ApplicationController
 
   def pay
     @product = Product.find(params[:id])
-    amount = @product.price + @product.delivery_charge
+    amount = @product.price + @product.charge_id
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     charge = Payjp::Charge.create(
       amount: amount,
@@ -64,7 +61,7 @@ class ItemsController < ApplicationController
   def completion
     @product = Product.find(params[:id])
     @product_image = ProductImage.find_by(product_id: params[:id])
-    @amount = @product.price + @product.delivery_charge
+    @amount = @product.price + @product.charge_id
   end
   
   private
