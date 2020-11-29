@@ -21,12 +21,6 @@ describe Product do
       expect(product.errors[:detail]).to include("を入力してください")
     end
 
-    it "is invalid without a category_id" do
-      product = build(:product, category_id: "")
-      product.valid?
-      expect(product.errors[:category_id]).to include("を入力してください")
-    end
-
     it "is invalid without a status_id" do
       product = build(:product, status_id: "")
       product.valid?
