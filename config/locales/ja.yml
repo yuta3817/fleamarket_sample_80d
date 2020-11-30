@@ -15,6 +15,7 @@
           delivery_id: 発送までの日数
           price: 販売価格
           product_images: 出品画像
+          category: カテゴリー
         user:
           email: メールアドレス
           password: パスワード
