@@ -19,6 +19,7 @@
         user:
           email: メールアドレス
           password: パスワード
+          :password_confirmation: 確認用パスワード
           nickname: ニックネーム
           first_name: 名前（名）
           last_name: 苗字（姓）

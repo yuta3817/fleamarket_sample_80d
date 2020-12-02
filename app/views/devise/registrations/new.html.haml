@@ -34,6 +34,13 @@
           .UserInformation__Main__contents__password__text
             ※英字と数字の両方を含めて設定してください
 
+        .UserInformation__Main__contents__password
+          %label.user__title パスワード(確認用)
+          %span.user__subtitle 必須
+          = f.password_field :password_confirmation, type: "password",placeholder: "7文字以上の半角英数字",class: "user-input"
+          .UserInformation__Main__contents__password__text
+            ※英字と数字の両方を含めて設定してください
+
         .UserInformation__Main__contents__check
           .UserInformation__Main__contents__check__title
             本人確認
