@@ -5,20 +5,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
     
-    def new
-      @user = User.new
-      @user.build_address
-    end
+  def new
+    @user = User.new
+    @user.build_address
+  end
 
-    
-    def create
-      @user = User.new(user_params)
-      if @user.save
-        redirect_to root_path
-      else
-        render :new
-      end
-    end
+  # def create
+  #   @user = User.new(user_params)
+  #   if @user.save
+  #     redirect_to root_path
+  #   else
+  #     render :new
+  #   end
+  # end
 
   # GET /resource/edit
   # def edit
@@ -66,10 +65,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   
-  private
-
-  def user_params
-    params.require(:user).permit(:name, :nickname, :email, :password, :first_name, :last_name, :first_name_kana, :last_name_kana, :birthday, address_attributes: [:first_name, :last_name, :first_name_kana, :last_name_kana, :zip_code, :prefecture, :city, :town, :number, :building, :telephone])
-  end
-
 end
