@@ -2,6 +2,7 @@
 
 # fleamarket_sample_80d DB設計
 
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
